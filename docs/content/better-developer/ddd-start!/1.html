@@ -2265,6 +2265,99 @@ String identifier = uuid.toString();
 }
 </code></pre>
 </li>
+<li>&#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xB294; &#xBCF4;&#xD1B5; &#xBD88;&#xBCC0;(Immutable)&#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xD558;&#xC5EC; &#xBCC0;&#xACBD; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.<ul>
+<li>&#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xB97C; setter &#xB4F1;&#xC758; &#xBCC0;&#xACBD; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xBA74; &#xC2E4;&#xC218;&#xB098; &#xAE30;&#xD0C0; &#xC774;&#xC720;&#xB85C; &#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xC758; &#xAC12;&#xC774; &#xBCC0;&#xD560; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xC0DD;&#xAE30;&#xACE0; &#xC815;&#xD569;&#xC131;&#xC774; &#xAE68;&#xC9C0;&#xB294; &#xC0C1;&#xD669;&#xC774; &#xBC1C;&#xC0DD;</li>
+<li>&#xB54C;&#xBB38;&#xC5D0; &#xC8FC;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xAC12;&#xC73C;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC774;&#xC6A9;</li>
+<li>&#xC774;&#xB97C; &#xD1B5;&#xD574; &#xCC38;&#xC870; &#xD22C;&#xBA85;&#xC131;(&#xC678;&#xBD80;&#xC758; &#xBCC0;&#xD654;&#xB85C; &#xC778;&#xD574; &#xBC1B;&#xB294; &#xC601;&#xD5A5;&#xB3C4;&#xAC00; &#xC5C6;&#xC74C;)&#xACFC; &#xC2A4;&#xB808;&#xB4DC;&#xC5D0; &#xC548;&#xC804; (Thread Safe)&#xD558;&#xB2E4;&#xB294; &#xD2B9;&#xC9D5;&#xC744; &#xAC16;&#xAC8C;&#xB41C;&#xB2E4;</li>
+</ul>
+</li>
+<li>&#xB450; &#xAC1C;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xAC1D;&#xCCB4;&#xAC00; &#xAC19;&#xC740;&#xC9C0; &#xD310;&#xBCC4;&#xD558;&#xAE30; &#xC704;&#xD574; <code>&#xC2DD;&#xBCC4;&#xC790;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74;, &#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC740; <code>&#xD0C0;&#xC785; &#xB0B4; &#xBAA8;&#xB4E0; &#xC18D;&#xC131;</code>&#xC774; &#xAC19;&#xC740;&#xC9C0; &#xBE44;&#xAD50;&#xD574;&#xC57C;&#xD568;</li>
+</ul>
+<h5 id="&#xC5D4;&#xD2F0;&#xD2F0;-&#xC2DD;&#xBCC4;&#xC790;&#xC640;-&#xBC38;&#xB958;-&#xD0C0;&#xC785;">&#xC5D4;&#xD2F0;&#xD2F0; &#xC2DD;&#xBCC4;&#xC790;&#xC640; &#xBC38;&#xB958; &#xD0C0;&#xC785;</h5>
+<ul>
+<li>&#xC5D4;&#xD2F0;&#xD2F0; &#xC2DD;&#xBCC4;&#xC790;&#xB294; &#xC8FC;&#xB85C; String&#xACFC; &#xAC19;&#xC774; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xC74C;</li>
+<li>&#xC911;&#xC694;&#xD55C; &#xC810;&#xC740; &#xC5D4;&#xD2F0;&#xD2F0; &#xC2DD;&#xBCC4;&#xC790; &#xB610;&#xD55C; &#xB2E8;&#xC21C;&#xD788; &#xBB38;&#xC790;&#xC5F4;&#xC774; &#xC544;&#xB2CC; &#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC744; &#xD1B5;&#xD574; &#xB3C4;&#xBA54;&#xC778; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xB85C;&#xC758; &#xADF8; &#xC758;&#xBBF8;&#xAC00; &#xC798; &#xB4DC;&#xB7EC;&#xB098;&#xAC8C; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+    <span class="hljs-keyword">private</span> String id;
+}
+
+<span class="hljs-comment">// &#xD074;&#xB798;&#xC2A4;&#xB9CC; &#xBCF4;&#xACE0; id &#xD544;&#xB4DC;&#xAC00; Order &#xC5D4;&#xD2F0;&#xD2F0;&#xC758; &#xC2DD;&#xBCC4;&#xC790;&#xC784;&#xC744; &#xD45C;&#xD604;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+    <span class="hljs-keyword">private</span> OrderNo id;
+}
+</code></pre>
+<h5 id="&#xB3C4;&#xBA54;&#xC778;-&#xBAA8;&#xB378;&#xC5D0;-set-&#xBA54;&#xC11C;&#xB4DC;-&#xB123;&#xC9C0;-&#xC54A;&#xAE30;">&#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC5D0; set &#xBA54;&#xC11C;&#xB4DC; &#xB123;&#xC9C0; &#xC54A;&#xAE30;</h5>
+<ul>
+<li>&#xAC1C;&#xBC1C;&#xD560; &#xB54C; Vo, Dto &#xB4F1; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xC2B5;&#xAD00;&#xC801;&#xC73C;&#xB85C; getter/setter&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xB2E4;.</li>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC5D0;&#xC11C; &#xC758;&#xBBF8;&#xC5C6;&#xC774; &#xCD94;&#xAC00;&#xD558;&#xB294; set&#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC774; &#xD45C;&#xD604;&#xD558;&#xB294; &#xBC14; (&#xD575;&#xC2EC; &#xAC1C;&#xB150;, &#xC758;&#xB3C4;)&#xB97C; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xB77C;&#xC9C0;&#xAC8C;&#xD55C;&#xB2E4;.</li>
+<li>setter&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xB454; &#xC704;&#xC758; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; <code>setShippingInfo</code>, <code>setOrderState</code>&#xC740; &#xB2E8;&#xC21C;&#xD788; <code>&#xBC30;&#xC1A1;&#xC9C0; &#xC815;&#xBCF4; &#xC124;&#xC815;(set)</code>, <code>&#xC8FC;&#xBB38;&#xC0C1;&#xD0DC; &#xC124;&#xC815;(set)</code>&#xC774;&#xB77C;&#xB294; &#xC758;&#xBBF8;&#xB9CC; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;.</li>
+<li>&#xC544;&#xB798; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; <code>changeShippingInfo</code>, <code>completePayment</code>&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC; &#xC774;&#xB984;&#xC744; &#xD1B5;&#xD574; <code>&#xBC30;&#xC1A1;&#xC9C0; &#xC815;&#xBCF4; &#xBCC0;&#xACBD;</code>, <code>&#xACB0;&#xC81C; &#xC644;&#xB8CC;</code>&#xB77C;&#xB294; &#xB3C4;&#xBA54;&#xC778; &#xADDC;&#xCE59;&#xC744; &#xD45C;&#xD604;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+    ...
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setShippingInfo</span><span class="hljs-params">(ShippingInfo shippingInfo)</span> </span>{ ... }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOrderState</span><span class="hljs-params">(OrderState state)</span> </span>{ ... }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+    ...
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeShippingInfo</span><span class="hljs-params">(ShippingInfo shippingInfo)</span> </span>{ ... }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completePayment</span><span class="hljs-params">()</span> </span>{ ... }
+}
+</code></pre>
+<ul>
+<li>&#xB610;&#xD55C; default &#xC0DD;&#xC131;&#xC790;&#xB85C; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131; &#xD6C4; setter&#xB85C; &#xCD94;&#xAC00; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xD574;&#xB2F9; &#xB3C4;&#xBA54;&#xC778; &#xAC1D;&#xCCB4;&#xAC00; &#xC0DD;&#xC131; &#xC2DC; &#xBD88;&#xC644;&#xC804;&#xD55C; &#xC0C1;&#xD0DC;&#xAC00; &#xB41C;&#xB2E4;.<ul>
+<li>&#xB54C;&#xBB38;&#xC5D0; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD1B5;&#xD574; &#xD544;&#xC218; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBAA8;&#xB450; &#xBC1B;&#xACE0;, &#xC720;&#xD6A8;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD574; &#xB3C4;&#xBA54;&#xC778; &#xAC1D;&#xCCB4;&#xAC00; &#xC0DD;&#xC131;&#xB420; &#xB54C; &#xC644;&#xC804;&#xD55C; &#xC0C1;&#xD0DC;&#xB85C; &#xC0DD;&#xC131;&#xB418;&#xAC8C; &#xD574;&#xC57C;&#xD55C;&#xB2E4;. (&#xCC45; 32~33 &#xC608;&#xC2DC;&#xCF54;&#xB4DC; &#xCC38;&#xACE0;)</li>
+</ul>
+</li>
+<li>Immutable&#xD55C; &#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC790;&#xC5F0;&#xC2A4;&#xB7FD;&#xAC8C; setter&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xC9C0; &#xC54A;&#xAC8C;&#xB41C;&#xB2E4;. </li>
+<li>&#xD2B9;&#xBCC4;&#xD55C; &#xC774;&#xC720;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74;, setter&#xB97C; &#xC544;&#xBB34; &#xC758;&#xBBDC;&#xC5C6;&#xC774; &#xB9CC;&#xB4E4;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.</li>
+</ul>
+<h4 id="&#xB3C4;&#xBA54;&#xC778;-&#xC6A9;&#xC5B4;">&#xB3C4;&#xBA54;&#xC778; &#xC6A9;&#xC5B4;</h4>
+<ul>
+<li>&#xCF54;&#xB4DC;&#xC758; &#xB124;&#xC774;&#xBC0D;, &#xC6A9;&#xC5B4; &#xC120;&#xC815;&#xC774; &#xAD49;&#xC7A5;&#xD788; &#xC911;&#xC694;&#xD558;&#xB2E4;.</li>
+<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; <code>&#xACB0;&#xC81C;&#xB300;&#xAE30;&#xC911;</code>, <code>&#xC0C1;&#xD488; &#xC900;&#xBE44;&#xC911;</code>, <code>&#xCD9C;&#xACE0;&#xC644;&#xB8CC;&#xB428;</code> &#xC774;&#xB77C;&#xB294; &#xC8FC;&#xBB38;&#xC0C1;&#xD0DC;&#xAC00; &#xC788;&#xC744; &#xB54C; &#xC774;&#xB97C; 3&#xB2E8;&#xACC4;&#xB85C; &#xBCF4;&#xACE0; &#xCF54;&#xB4DC;&#xB97C; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;&#xACE0; &#xD574;&#xBCF8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeShippingInfo</span><span class="hljs-params">(ShippingInfo shippingInfo)</span> </span>{
+        verifyStep1OrStep2();
+        setShippingInfo(shippingInfo);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">verifyStep1OrStep2</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state != OrderState.STEP1 &amp;&amp; <span class="hljs-keyword">this</span>.state != OrderState.STEP2) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Already shipped.&quot;</span>);
+        }
+
+    }
+
+}
+</code></pre>
+<ul>
+<li>&#xC704; &#xCF54;&#xB4DC;&#xB294; &#xC2E4;&#xC81C;&#xB85C; &#xD604;&#xC7AC; &#xC8FC;&#xBB38;&#xC774; STEP 1,2&#xC0C1;&#xD0DC;&#xAC00; &#xC544;&#xB2CC;&#xC9C0; &#xAC80;&#xC0AC;&#xD558;&#xACE0; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xB294; &#xB4F1; &#xAE30;&#xB2A5; &#xC790;&#xCCB4;&#xB294; &#xAD6C;&#xD604;&#xC774;&#xB418;&#xC788;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xC2E0;&#xD574;&#xB2F9; &#xB3C4;&#xBA54;&#xC778;&#xC5D0; &#xC9C0;&#xC2DD;&#xC774; &#xC5C6;&#xB358; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xBCF4;&#xAC8C;&#xB418;&#xBA74; STEP1, STEP2&#xC774; &#xAC01;&#xAC01; <code>&#xACB0;&#xC81C;&#xB300;&#xAE30;&#xC911;</code>, <code>&#xC0C1;&#xD488; &#xC900;&#xBE44;&#xC911;</code>&#xC774;&#xB77C;&#xB294; &#xC0C1;&#xD0DC;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xC544;&#xBD10;&#xC57C;&#xD558;&#xB294; &#xB178;&#xB825;&#xC774; &#xD544;&#xC694;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeShippingInfo</span><span class="hljs-params">(ShippingInfo shippingInfo)</span> </span>{
+        verifyPaymentWatingOrPreparing();
+        setShippingInfo(shippingInfo);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">verifyPaymentWatingOrPreparing</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state != OrderState.PAYMENT_WAITING &amp;&amp; <span class="hljs-keyword">this</span>.state != OrderState.PREPARING) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Already shipped.&quot;</span>);
+        }
+
+    }
+
+}
+</code></pre>
+<ul>
+<li>&#xC704;&#xCC98;&#xB7FC; &#xB124;&#xC774;&#xBC0D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>&#xBC30;&#xC1A1;&#xC2DC; &#xBCC0;&#xACBD;</code>&#xC740; <code>&#xACB0;&#xC81C;&#xB300;&#xAE30;</code> &#xB610;&#xB294; <code>&#xC0C1;&#xD488; &#xC900;&#xBE44;</code> &#xC911;&#xC5D0;&#xB9CC; &#xAC00;&#xB2A5;&#xD558;&#xB2E4; &#xB77C;&#xB294; &#xB3C4;&#xBA54;&#xC778; &#xADDC;&#xCE59;&#xC744; &#xCF54;&#xB4DC;&#xB9CC; &#xBCF4;&#xACE0; &#xCD94;&#xAC00;&#xC815;&#xBCF4;&#xC5C6;&#xC774; &#xC54C;&#xC218;&#xC788;&#xAC8C;&#xB41C;&#xB2E4;.</li>
+<li>&#xC54C;&#xB9DE;&#xC740; &#xC601;&#xC5B4; &#xB2E8;&#xC5B4;, &#xB124;&#xC774;&#xBC0D; &#xACE0;&#xBBFC;&#xD558;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xC544;&#xAE4C;&#xC6CC;&#xD558;&#xC9C0; &#xB9D0;&#xC790;!</li>
 </ul>
 
                                 
@@ -2305,7 +2398,7 @@ String identifier = uuid.toString();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. 도메인 모델 시작","level":"1.4.2.1","depth":3,"next":{"title":"2. 아키텍쳐 개요","level":"1.4.2.2","depth":3,"ref":"","articles":[]},"previous":{"title":"DDD Start!","level":"1.4.2","depth":2,"path":"content/better-developer/ddd-start!/index.md","ref":"content/better-developer/ddd-start!/index.md","articles":[{"title":"1. 도메인 모델 시작","level":"1.4.2.1","depth":3,"path":"content/better-developer/ddd-start!/1.md","ref":"content/better-developer/ddd-start!/1.md","articles":[]},{"title":"2. 아키텍쳐 개요","level":"1.4.2.2","depth":3,"ref":"","articles":[]},{"title":"3. 애그리거트","level":"1.4.2.3","depth":3,"ref":"","articles":[]},{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.2.4","depth":3,"ref":"","articles":[]},{"title":"5. 리포지터리와 조회 기능(JPA 중심)","level":"1.4.2.5","depth":3,"ref":"","articles":[]},{"title":"6. 응용 서비스와 표현 영역","level":"1.4.2.6","depth":3,"ref":"","articles":[]},{"title":"7. 도메인 서비스","level":"1.4.2.7","depth":3,"ref":"","articles":[]},{"title":"8. 애그리거트 트랜잭션 관리","level":"1.4.2.8","depth":3,"ref":"","articles":[]},{"title":"9. 도메인 모델과 BOUNDED CONTEXT","level":"1.4.2.9","depth":3,"ref":"","articles":[]},{"title":"10. 이벤트","level":"1.4.2.10","depth":3,"ref":"","articles":[]},{"title":"11. CQRS","level":"1.4.2.11","depth":3,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/better-developer/ddd-start!/1.md","mtime":"2019-12-19T15:58:05.716Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T16:38:28.024Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. 도메인 모델 시작","level":"1.4.2.1","depth":3,"next":{"title":"2. 아키텍쳐 개요","level":"1.4.2.2","depth":3,"ref":"","articles":[]},"previous":{"title":"DDD Start!","level":"1.4.2","depth":2,"path":"content/better-developer/ddd-start!/index.md","ref":"content/better-developer/ddd-start!/index.md","articles":[{"title":"1. 도메인 모델 시작","level":"1.4.2.1","depth":3,"path":"content/better-developer/ddd-start!/1.md","ref":"content/better-developer/ddd-start!/1.md","articles":[]},{"title":"2. 아키텍쳐 개요","level":"1.4.2.2","depth":3,"ref":"","articles":[]},{"title":"3. 애그리거트","level":"1.4.2.3","depth":3,"ref":"","articles":[]},{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.2.4","depth":3,"ref":"","articles":[]},{"title":"5. 리포지터리와 조회 기능(JPA 중심)","level":"1.4.2.5","depth":3,"ref":"","articles":[]},{"title":"6. 응용 서비스와 표현 영역","level":"1.4.2.6","depth":3,"ref":"","articles":[]},{"title":"7. 도메인 서비스","level":"1.4.2.7","depth":3,"ref":"","articles":[]},{"title":"8. 애그리거트 트랜잭션 관리","level":"1.4.2.8","depth":3,"ref":"","articles":[]},{"title":"9. 도메인 모델과 BOUNDED CONTEXT","level":"1.4.2.9","depth":3,"ref":"","articles":[]},{"title":"10. 이벤트","level":"1.4.2.10","depth":3,"ref":"","articles":[]},{"title":"11. CQRS","level":"1.4.2.11","depth":3,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/better-developer/ddd-start!/1.md","mtime":"2019-12-20T16:36:19.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-20T16:36:32.165Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

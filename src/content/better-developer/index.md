@@ -1,6 +1,3 @@
-# Summary
-
-* [Backend](README.md)    
-* [Frontend](README.md)
-* [Better Developer](better-developer/the-art-of-readable-code.md)
-    * [읽기 좋은](a.md)
+# Better Developer 카테고리
+- [읽기 좋은 코드가 좋은 코드다](content/better-developer/the-art-of-readable-code/index.md)
+- [DDD Start!](content/better-developer/ddd-start!/index.md)
