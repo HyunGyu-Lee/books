@@ -6,7 +6,7 @@
     * [DDD Start!](content/architecture/ddd-start!/index.md)
         * [1. 도메인 모델 시작](content/architecture/ddd-start!/1.md)
         * [2. 아키텍쳐 개요](content/architecture/ddd-start!/2.md)
-        * [3. 애그리거트]()
+        * [3. 애그리거트](content/architecture/ddd-start!/3.md)
         * [4. 리포지터리와 모델구현(JPA 중심)]()
         * [5. 리포지터리와 조회 기능(JPA 중심)]()
         * [6. 응용 서비스와 표현 영역]()
