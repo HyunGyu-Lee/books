@@ -1,0 +1,981 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3. 애그리거트 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-collapse/collapse.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../backend/">
+            
+                <a href="../../backend/">
+            
+                    
+                    Backend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../frontend/">
+            
+                <a href="../../frontend/">
+            
+                    
+                    Frontend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Architecture
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    DDD Start!
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1. 도메인 모델 시작
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2. 아키텍쳐 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    3. 애그리거트
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" >
+            
+                <span>
+            
+                    
+                    4. 리포지터리와 모델구현(JPA 중심)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" >
+            
+                <span>
+            
+                    
+                    5. 리포지터리와 조회 기능(JPA 중심)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" >
+            
+                <span>
+            
+                    
+                    6. 응용 서비스와 표현 영역
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" >
+            
+                <span>
+            
+                    
+                    7. 도메인 서비스
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" >
+            
+                <span>
+            
+                    
+                    8. 애그리거트 트랜잭션 관리
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" >
+            
+                <span>
+            
+                    
+                    9. 도메인 모델과 BOUNDED CONTEXT
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" >
+            
+                <span>
+            
+                    
+                    10. 이벤트
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.11" >
+            
+                <span>
+            
+                    
+                    11. CQRS
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../better-developer/">
+            
+                <a href="../../better-developer/">
+            
+                    
+                    Better Developer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../better-developer/the-art-of-readable-code/">
+            
+                <a href="../../better-developer/the-art-of-readable-code/">
+            
+                    
+                    읽기 좋은 코드가 좋은 코드다
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../better-developer/the-art-of-readable-code/">
+            
+                <a href="../../better-developer/the-art-of-readable-code/">
+            
+                    
+                    1. 코드는 이해하기 쉬워야 한다.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" >
+            
+                <span>
+            
+                    
+                    2. 이름에 정보 담기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" >
+            
+                <span>
+            
+                    
+                    3. 오해할 수 없는 이름들
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" >
+            
+                <span>
+            
+                    
+                    4. 미학
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" >
+            
+                <span>
+            
+                    
+                    5. 주석에 담아야 하는 대상
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" >
+            
+                <span>
+            
+                    
+                    6 명확하고 간결한 주석 달기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.7" >
+            
+                <span>
+            
+                    
+                    7. 읽기 쉽게 흐름제어 만들기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.8" >
+            
+                <span>
+            
+                    
+                    8. 거대한 표현을 잘게 쪼개기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.9" >
+            
+                <span>
+            
+                    
+                    9. 변수와 가독성
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.10" >
+            
+                <span>
+            
+                    
+                    10. 상관없는 하위문제 추출하기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.11" >
+            
+                <span>
+            
+                    
+                    11. 한 번에 하나씩
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.12" >
+            
+                <span>
+            
+                    
+                    12. 생각을 코드로 만들기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.13" >
+            
+                <span>
+            
+                    
+                    13. 코드 분량 줄이기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.14" >
+            
+                <span>
+            
+                    
+                    14. 테스트와 가독성
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.15" >
+            
+                <span>
+            
+                    
+                    15. '분/시간 카운터'를 설계하고 구현하기
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >3. 애그리거트</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3-&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;">3. &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;</h1>
+<h2 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;</h2>
+<ul>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xAC1D;&#xCCB4; &#xBAA8;&#xB378;&#xC774; &#xBCF5;&#xC7A1;&#xD574;&#xC9C0;&#xBA74; &#xAC1C;&#xBCC4; &#xAD6C;&#xC131;&#xC694;&#xC18C; &#xC704;&#xC8FC;&#xB85C; &#xBAA8;&#xB378;&#xC744; &#xBC14;&#xB77C;&#xBCF4;&#xAC8C;&#xB428; -&gt; &#xC804;&#xBC18;&#xC801;&#xC778; &#xAD6C;&#xC870;, &#xB3C4;&#xBA54;&#xC778;&#xAC04; &#xAD00;&#xACC4; &#xD30C;&#xC545;&#xC5D0; &#xC5B4;&#xB824;&#xC6C0;&#xC774; &#xC0DD;&#xAE40;</li>
+<li>&#xB3C4;&#xBA54;&#xC778;&#xB4E4;&#xB07C;&#xB9AC; &#xC5B4;&#xB5A4; &#xAD00;&#xACC4;&#xAC00; &#xC788;&#xB294;&#xC9C0; &#xC5B4;&#xB5BB;&#xAC8C; &#xC5EE;&#xC5EC;&#xC788;&#xB294;&#xC9C0;&#xB97C; &#xC798; &#xBAA8;&#xB974;&#xBA74;, &#xD2B9;&#xC815; &#xB3C4;&#xBA54;&#xC778; &#xB4F1; &#xCF54;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294;&#xB370; &#xB450;&#xB824;&#xC6C0;&#xC744; &#xC720;&#xBC1C;</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xC810;&#xC744; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED;&#xC758; &#xAD6C;&#xC131; &#xC694;&#xC18C;</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xAD00;&#xB828; &#xB3C4;&#xBA54;&#xC778; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xD558;&#xB098;&#xB85C; &#xBB36;&#xC740; &#xAC83;&#xC73C;&#xB85C; &#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC744; &#xC0C1;&#xC704; &#xC218;&#xC900;&#xC5D0;&#xC11C; &#xC774;&#xD574;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB3C4;&#xC640;&#xC8FC;&#xACE0;, &#xAD00;&#xB828; &#xAC1D;&#xCCB4;&#xAC04; &#xC77C;&#xAD00;&#xC131; &#xBCF4;&#xC7A5;&#xB4F1; &#xD6A8;&#xACFC;&#xB97C; &#xC900;&#xB2E4;</li>
+<li>&#xAC01; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xC790;&#xC2E0;&#xC758; &#xACBD;&#xACC4;&#xB97C; &#xAC00;&#xC9C0;&#xBA70;, &#xB2E4;&#xB978; &#xC560;&#xAC70;&#xB9AC;&#xAC70;&#xD2B8; &#xBC0F; &#xACBD;&#xACC4; &#xBC14;&#xAE65;&#xC758; &#xB3C4;&#xBA54;&#xC778; &#xAC1D;&#xCCB4;&#xB294; &#xAD00;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;</li>
+</ul>
+<h2 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;-&#xB8E8;&#xD2B8;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;</h2>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xB3C4;&#xBA54;&#xC778; &#xADDC;&#xCE59;&#xC744; &#xC9C0;&#xD0A4;&#xAE30; &#xC704;&#xD574; &#xD574;&#xB2F9; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xC18D;&#xD55C; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xAC00; &#xC815;&#xC0C1; &#xC0C1;&#xD0DC;&#xB97C; &#xAC00;&#xC9D0;&#xC744; &#xBCF4;&#xC7A5;&#xD558;&#xB3C4;&#xB85D; &#xAD6C;&#xD604;&#xB418;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&#xC774;&#xB97C; &#xC704;&#xD574; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xAD00;&#xB9AC;&#xD560; &#xC8FC;&#xCCB4;&#xAC00; &#xD544;&#xC694;&#xD55C;&#xB370; &#xC774;&#xAC83;&#xC774; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB2E4;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB294; &#xD574;&#xB2F9; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xB300;&#xD45C;&#xD558;&#xB294; &#xD55C; &#xC5D4;&#xD2F0;&#xD2F0;&#xC774;&#xBA70;, &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xC18D;&#xD55C; &#xAC1D;&#xCCB4;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; &#xC9C1;, &#xAC04;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xC18D;&#xD55C;&#xB2E4;.</li>
+</ul>
+<h4 id="&#xB3C4;&#xBA54;&#xC778;-&#xADDC;&#xCE59;&#xACFC;-&#xC77C;&#xAD00;&#xC131;">&#xB3C4;&#xBA54;&#xC778; &#xADDC;&#xCE59;&#xACFC; &#xC77C;&#xAD00;&#xC131;</h4>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC758; &#xD575;&#xC2EC; &#xC5ED;&#xD560;&#xC740; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC77C;&#xAD00;&#xC131;&#xC774; &#xAE68;&#xC9C0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</li>
+<li>&#xC774;&#xB97C; &#xC704;&#xD574; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xC81C;&#xACF5;&#xD560; &#xB3C4;&#xBA54;&#xC778; &#xAE30;&#xB2A5;&#xC744; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xAC00; &#xC544;&#xB2CC; &#xAC1D;&#xCCB4;&#xAC00; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xC18D;&#xD55C; &#xD0C0; &#xAC1D;&#xCCB4;&#xB97C; &#xC9C1;&#xC811; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xC548;&#xB41C;&#xB2E4;.<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; &#xAD6C;&#xD604;&#xD55C; &#xC77C;&#xAD00;&#xC131;&#xC744; &#xC704;&#xD55C; &#xADDC;&#xCE59;&#xB4E4;&#xC744; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC74C;</li>
+<li>&#xBCC4;&#xB3C4;&#xB85C; &#xC9C1;&#xC811; &#xAD6C;&#xD604;&#xD558;&#xB294;&#xAC8C; &#xBD88;&#xAC00;&#xB2A5;&#xD558;&#xC9C4; &#xC54A;&#xC9C0;&#xB9CC;, &#xB3C4;&#xBA54;&#xC778; &#xADDC;&#xCE59;&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xCF54;&#xB4DC;&#xAC00; &#xC911;&#xBCF5;&#xC73C;&#xB85C; &#xBC1C;&#xC0DD;&#xD558;&#xAC8C;&#xB428;</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tip!</strong></p>
+<blockquote>
+<p>&#xB2E8;&#xC21C;&#xD788; &#xD544;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xC758;&#xBBF8;&#xC5C6;&#xB294; setter&#xB97C; public&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC9C0; &#xB9D0;&#xC790;</p>
+<p>&#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC740; Immutable&#xB85C; &#xAD6C;&#xD604;&#xD558;&#xC790;</p>
+</blockquote>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4; &#xAC1D;&#xCCB4;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD560; &#xC218;&#xB2E8;&#xC744; &#xCD5C;&#xC18C;&#xD654;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC77C;&#xAD00;&#xC131;&#xC774; &#xAE68;&#xC9C8; &#xAC00;&#xB2A5;&#xC131;&#xC744; &#xC904;&#xC784;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">// &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC778; Order &#xC5D4;&#xD2F0;&#xD2F0;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+
+  <span class="hljs-keyword">private</span> ShippingInfo shippingInfo;
+
+  <span class="hljs-comment">/**
+   * ShippingInfo&#xB97C; Immutable&#xB85C; &#xAD6C;&#xD604;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC8FC;&#xBB38;&#xC758; &#xBC30;&#xC1A1;&#xC815;&#xBCF4;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB824;&#xBA74;
+   * ShippingInfo&#xAC1D;&#xCCB4;&#xC758; &#xAC12;&#xC744; &#xC678;&#xBD80;&#xC5D0;&#xC11C; set &#xB4F1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xACE0;, &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBC29;&#xBC95; (changeShippingInfo)&#xC5D0; &#xC0C8; ShippingInfo &#xAC1D;&#xCCB4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xC5EC; &#xBCC0;&#xACBD;
+   * &#xC774; &#xC608;&#xC2DC;&#xB294; &#xD2B9;&#xC815; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4; &#xBC38;&#xB958; &#xD0C0;&#xC785; &#xB0B4; &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB3C4;, &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB97C; &#xD1B5;&#xD574;&#xC57C;&#xD568;&#xC744; &#xBCF4;&#xC5EC;&#xC90C;
+   */</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeShippingInfo</span><span class="hljs-params">(ShippingInfo newShippingInfo)</span> </span>{
+    <span class="hljs-keyword">this</span>.shippingInfo = newShippingInfo;
+  }
+
+}
+</code></pre>
+<h4 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;-&#xB8E8;&#xD2B8;&#xC758;-&#xAE30;&#xB2A5;-&#xAD6C;&#xD604;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC758; &#xAE30;&#xB2A5; &#xAD6C;&#xD604;</h4>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4;&#xBD80;&#xC758; &#xB2E4;&#xB978; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xC870;&#xD569;&#xD574; &#xAE30;&#xB2A5;&#xC744; &#xC644;&#xC131;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+  <span class="hljs-keyword">private</span> Money totalAmounts;
+  <span class="hljs-keyword">private</span> List&lt;OrderLine&gt; orderLines;
+
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">calculateTotalAmounts</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> sum = orderLine.stream().mapToInt(ol -&gt; ol.getPrice() * ol.quantity()).sum();
+    <span class="hljs-keyword">this</span>.totalAmounts = <span class="hljs-keyword">new</span> Money(sum);
+  }
+
+}
+</code></pre>
+<ul>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xACBD;&#xC6B0;&#xC5D0; &#xB530;&#xB77C; &#xAE30;&#xB2A5; &#xC2E4;&#xD589;&#xC744; &#xC704;&#xC784;&#xD558;&#xAE30;&#xB3C4; &#xD568;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">/** 
+ * &#xC704; &#xC608;&#xC2DC;&#xC5D0;&#xC11C; List&lt;OrderLine&gt;&#xAC00; &#xBCC4;&#xB3C4; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xACBD;&#xC6B0; 
+ * &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC790;&#xC2E0;&#xC758; &#xB2E8;&#xC704;&#xAE30;&#xB2A5;&#xB4E4;&#xC744; &#xAD6C;&#xD604;
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderLines</span> </span>{
+  <span class="hljs-keyword">private</span> List&lt;OrderLine&gt; lines;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Money <span class="hljs-title">getTotalAmounts</span><span class="hljs-params">()</span> </span>{ ... &#xAD6C;&#xD604; }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeOrderLines</span><span class="hljs-params">(List&lt;OrderLine&gt; newLines)</span> </span>{
+    <span class="hljs-keyword">this</span>.lines = newLines;
+  }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * totalAmounts &#xACC4;&#xC0B0;&#xC744; &#xC9C1;&#xC811;&#xD558;&#xC9C0; &#xC54A;&#xACE0; OrderLines&#xC5D0; &#xC704;&#xC784; &#xBC0F; &#xD638;&#xCD9C;
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+  <span class="hljs-keyword">private</span> OrderLines orderLines;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeOrderLines</span><span class="hljs-params">(List&lt;OrderLine&gt; orderLines)</span> </span>{
+    orderLines.change(orderLines);
+    <span class="hljs-keyword">this</span>.totalAmounts = orderLines.getTotalAmounts();
+  }
+}
+</code></pre>
+<ul>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7F0; &#xACBD;&#xC6B0; OrderLines&#xC758; public &#xBA54;&#xC18C;&#xB4DC;&#xB4E4;&#xC740; &#xC678;&#xBD80;&#xC5D0;&#xC11C;&#xB3C4; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xB294; &#xBB38;&#xC81C;&#xC810;&#xC774; &#xC0DD;&#xAE40;<ul>
+<li>&#xC774;&#xB97C; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC560;&#xCD08;&#xC5D0; OrderLines &#xB4F1; &#xAE30;&#xB2A5;&#xC744; &#xC704;&#xC784;&#xBC1B;&#xC740; &#xAC1D;&#xCCB4;&#xB97C; &#xBD88;&#xBCC0;&#xC73C;&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xC74C;</li>
+<li>&#xB610;&#xB294; &#xC811;&#xADFC;&#xC81C;&#xC5B4;&#xC790;&#xB97C; &#xC774;&#xC6A9; -&gt; &#xB300;&#xBD80;&#xBD84; &#xAC19;&#xC740; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4; &#xAC1D;&#xCCB4;&#xB4E4;&#xC740; &#xAC19;&#xC740; &#xD328;&#xD0A4;&#xC9C0;&#xC5D0; &#xC18D;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, default, protected &#xC815;&#xB3C4; &#xC218;&#xC900;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xBA74; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC74C; </li>
+</ul>
+</li>
+</ul>
+<h4 id="&#xD2B8;&#xB79C;&#xC7AD;&#xC158;-&#xBC94;&#xC704;">&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xBC94;&#xC704;</h4>
+<ul>
+<li>&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xBC94;&#xC704;&#xB294; &#xC791;&#xC744;&#xC218;&#xB85D; &#xC88B;&#xB2E4;<ul>
+<li>DB &#xD14C;&#xC774;&#xBE14; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD55C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0;&#xC11C; &#xC811;&#xADFC;&#xD558;&#xB294; &#xD14C;&#xC774;&#xBE14;&#xC774; &#xB9CE;&#xC544;&#xC9C8;&#xC218;&#xB85D; &#xC131;&#xB2A5;&#xC774; &#xC800;&#xD558;&#xB418;&#xAE30; &#xB54C;&#xBB38;</li>
+</ul>
+</li>
+<li>&#xD55C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0;&#xC11C;&#xB294; &#xD55C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB9CC; &#xC218;&#xC815;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC774; &#xB9D0;&#xC740; &#xACE7; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xC9C0; &#xC54A;&#xC74C;&#xC744; &#xC758;&#xBBF8;</li>
+</ul>
+</li>
+<li><p>&#xB9CC;&#xC57D; &#xBC30;&#xC1A1;&#xC9C0; &#xC815;&#xBCF4;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xBA74;&#xC11C; &#xB3D9;&#xC2DC;&#xC5D0; &#xBC30;&#xC1A1;&#xC9C0; &#xC8FC;&#xC18C;&#xB97C; &#xD68C;&#xC6D0;&#xC758; &#xC8FC;&#xC18C;&#xB85C; &#xC124;&#xC815;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xC790;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+<span class="hljs-keyword">private</span> Orderer orderer;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shipTo</span><span class="hljs-params">(ShippingInfo newShippingInfo)</span> </span>{
+  ... &#xBC30;&#xC1A1;&#xC9C0; &#xBCC0;&#xACBD; &#xAE30;&#xB2A5; &#xC218;&#xD589;
+
+  <span class="hljs-comment">// &#xC774;&#xB7F0; &#xC2DD;&#xC73C;&#xB85C; &#xD0C0; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xBA74; X</span>
+  orderer.getCustomer().changeAddress(newShippingInfo.getAddress());
+}
+}
+</code></pre>
+</li>
+<li>&#xC704;&#xC640; &#xAC19;&#xC740; &#xCF54;&#xB4DC;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xC790;&#xC2E0;&#xC758; &#xCC45;&#xC784; &#xBC94;&#xC704;&#xB97C; &#xB118;&#xC5B4; &#xAD00;&#xB9AC;&#xD558;&#xAC8C; &#xB418;&#xB294; &#xAF34;&#xC774;&#xB41C;&#xB2E4;.<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xC11C;&#xB85C; &#xCD5C;&#xB300;&#xD55C; &#xB3C5;&#xB9BD;&#xC801;&#xC774;&#xC5EC;&#xC57C;&#xD558;&#xB294;&#xB370;, &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC04; &#xACB0;&#xD569;&#xB3C4;&#xAC00; &#xB192;&#xC544;&#xC9C0;&#xAC8C; &#xB41C;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC720;&#xC988;&#xCF00;&#xC774;&#xC2A4; &#xAE30;&#xB2A5;&#xC744; &#xC704;&#xD574; &#xD55C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0;&#xC11C; &#xB450; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC218;&#xC815;&#xD574;&#xC57C;&#xD558;&#xBA74; &#xC751;&#xC6A9; &#xC601;&#xC5ED;&#xC744; &#xC774;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChangeOrderService</span> </span>{
+  <span class="hljs-comment">// &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xB300;&#xC0C1; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB4E4;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.</span>
+  <span class="hljs-meta">@Transactional</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeShippingInfo</span><span class="hljs-params">(OrderId id, ShippingInfon newShippingInfo)</span> </span>{
+    Order order = orderRepository.findById(id);
+    <span class="hljs-keyword">if</span> (order == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> OrderNotFoundException();
+    order.shipTo(newShippingInfo);    
+    order.getOrderer().getCustomer().changeAddress(newShippingInfo.getAddress())
+  }
+
+}
+</code></pre>
+<ul>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xBE44;&#xB3D9;&#xAE30; &#xC2DD;&#xC73C;&#xB85C; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC744; &#xD558;&#xB3C4;&#xB85D; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xC74C;</li>
+<li>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xC5D0; &#xD55C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0;&#xC11C; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC758; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xBCC0;&#xACBD;&#xC744; &#xD558;&#xAC8C;&#xB428;<ul>
+<li>&#xD300; &#xD45C;&#xC900; : &#xD300; &#xD639;&#xC740; &#xC870;&#xC9C1;&#xC758; &#xD45C;&#xC900;&#xC5D0; &#xB530;&#xB77C; &#xD558;&#xB098;&#xC758; &#xC720;&#xC988;&#xCF00;&#xC774;&#xC2A4;&#xB97C; &#xD558;&#xB098;&#xC758; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xADDC;&#xCE59;&#xC778; &#xACBD;&#xC6B0;</li>
+<li>&#xAE30;&#xC220; &#xC81C;&#xC57D; : &#xAE30;&#xC220;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xBCA4;&#xD2B8; &#xBC29;&#xC2DD;&#xC744; &#xB3C4;&#xC785;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;</li>
+<li>UI &#xAD6C;&#xD604;&#xC758; &#xD3B8;&#xB9AC; : &#xAE30;&#xB2A5;&#xC0C1;&#xC758; &#xD3B8;&#xC758;&#xB85C; &#xD55C; Action&#xC5D0; &#xC5EC;&#xB7EC; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xC640;-&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;">&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xC640; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;</h2>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xAC1C;&#xB150;&#xC801;&#xC73C;&#xB85C; &#xC644;&#xC804;&#xD55C; &#xD558;&#xB098;&#xC758; &#xB3C4;&#xBA54;&#xC778;&#xC744; &#xD45C;&#xD604;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB85C;, &#xC601;&#xC18D;&#xC131; &#xCC98;&#xB9AC;&#xC758; &#xB2E8;&#xC704;&#xAC00; &#xB41C;&#xB2E4;.</li>
+<li>&#xB54C;&#xBB38;&#xC5D0; &#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC758; &#xC601;&#xC18D;&#xC131;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB2E8;&#xC704;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xAC8C; &#xB418;&#xB09F;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4; &#xAC1D;&#xCCB4;&#xB4E4;&#xC774; &#xBB3C;&#xB9AC;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xB978; &#xD14C;&#xC774;&#xBE14;&#xC5D0; &#xC800;&#xC7A5;&#xB41C;&#xB2E4; &#xD558;&#xB354;&#xB77C;&#xB3C4;, &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB97C; &#xC5EC;&#xB7EC;&#xAC1C; &#xB9CC;&#xB4E4;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0;&#xB97C; &#xC704;&#xD55C; &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB9CC; &#xC874;&#xC7AC;</li>
+</ul>
+</li>
+<li>&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB294; &#xCD5C;&#xC18C;&#xD55C; &#xC544;&#xB798; &#xB450; &#xAC00;&#xC9C0; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD574;&#xC57C;&#xD568;<ul>
+<li>save : &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC800;&#xC7A5;</li>
+<li>findById : &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; ID&#xB85C; &#xC870;&#xD68C;</li>
+</ul>
+</li>
+<li>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xD37C;&#xC2DC;&#xC2A4;&#xD134;&#xC2A4; &#xAE30;&#xC220;&#xB85C; &#xC5B4;&#xB5A4; &#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xC9C0;&#xC5D0; &#xB530;&#xB77C; &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;, &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xAD6C;&#xD604; &#xBC29;&#xBC95;&#xC774; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xC74C;</li>
+<li>&#xB300;&#xD45C;&#xC801;&#xC778; JPA &#xAD6C;&#xD604;&#xCCB4;&#xC778; Hibernate&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xAD00;&#xACC4;&#xD615; &#xBAA8;&#xB378;&#xC5D0; &#xAC1D;&#xCCB4; &#xBAA8;&#xB378;&#xC744; &#xB9DE;&#xCD94;&#xC5B4; &#xB9E4;&#xD551;&#xD574;&#xC57C;&#xD568;</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xC601;&#xC18D;&#xD654; &#xB420;&#xB54C;, &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB294; &#xD574;&#xB2F9; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xD558;&#xC704; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xC601;&#xC18D;&#xD654;&#xB418;&#xC57C;&#xD568;</li>
+<li>&#xBC18;&#xB300;&#xB85C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC870;&#xD68C;&#xD560; &#xB54C;, &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB294; &#xD574;&#xB2F9; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xD558;&#xC704; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB97C; &#xAC19;&#xC774; &#xC870;&#xD68C;&#xD574;&#xC57C;&#xD568;</li>
+<li>&#xC800;&#xC7A5;&#xC18C;&#xAC00; RDBMS, NoSQL &#xBB34;&#xC5C7;&#xC774;&#xB4E0; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4; &#xBAA8;&#xB4E0; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC740; &#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xC6D0;&#xC790;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xC601;&#xB418;&#xC57C;&#xD568;<ul>
+<li>RDBMS&#xC758; &#xACBD;&#xC6B0; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xBCC0;&#xACBD;&#xC758; &#xC77C;&#xAD00;&#xC131;&#xC744; &#xBCF4;&#xC7A5;</li>
+<li>NoSQL&#xC758; &#xACBD;&#xC6B0; &#xD558;&#xB098;&#xC758; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xD558;&#xB098;&#xC758; &#xBB38;&#xC11C;&#xB85C; &#xC800;&#xC7A5;&#xB428;&#xC73C;&#xB85C;&#xC368; &#xC77C;&#xAD00;&#xC131; &#xBCF4;&#xC7A5;</li>
+</ul>
+</li>
+</ul>
+<h2 id="id&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;-&#xCC38;&#xC870;">ID&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xCC38;&#xC870;</h2>
+<ul>
+<li>&#xD55C; &#xAC1D;&#xCCB4;&#xAC00; &#xB2E4;&#xB978; &#xAC1D;&#xCCB4;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB4EF; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB3C4; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xCC38;&#xC870;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB97C; &#xCC38;&#xC870;</li>
+</ul>
+</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xAC04; &#xCC38;&#xC870;&#xB294; &#xD544;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xC27D;&#xAC8C; &#xAD6C;&#xD604; &#xAC00;&#xB2A5;</li>
+<li>JPA&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; @ManyToOne, @OneToMany &#xB4F1; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC744; &#xD65C;&#xC6A9;&#xD574; &#xB9E4;&#xD551;&#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xC27D;&#xAC8C; &#xB85C;&#xB529;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>ORM &#xAE30;&#xC220; &#xB355;&#xC5D0; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;&#xB97C; &#xC27D;&#xAC8C; &#xAD6C;&#xD558;&#xACE0;, &#xD544;&#xB4DC;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC27D;&#xAC8C; &#xC811;&#xADFC; &#xBC0F; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD3B8;&#xB9AC;&#xD558;&#xACA0;&#xC9C0;&#xB9CC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBB38;&#xC81C;&#xC810;&#xC774; &#xC788;&#xB2E4;<ul>
+<li>&#xD3B8;&#xD55C; &#xD0D0;&#xC0C9; &#xC624;&#xC6A9;</li>
+<li>&#xC131;&#xB2A5;&#xC5D0; &#xB300;&#xD55C; &#xACE0;&#xBBFC;</li>
+<li>&#xD655;&#xC7A5;&#xC758; &#xC5B4;&#xB824;&#xC6C0;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#xD3B8;&#xD55C;-&#xD0D0;&#xC0C9;-&#xC624;&#xC6A9;">&#xD3B8;&#xD55C; &#xD0D0;&#xC0C9; &#xC624;&#xC6A9;</h4>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC9C1;&#xC811; &#xCC38;&#xC870; &#xC2DC; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC00;&#xC7A5; &#xD070; &#xBB38;&#xC81C;&#xC810;</li>
+<li>&#xD55C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0;&#xC11C; &#xD0C0; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB97C; &#xC811;&#xADFC; &#xD560; &#xC218; &#xC788;&#xC73C;&#xBA74;, &#xC0C1;&#xD0DC; &#xB610;&#xD55C; &#xC27D;&#xAC8C; &#xBCC0;&#xACBD; &#xAC00;&#xB2A5;<ul>
+<li>&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xBC94;&#xC704;&#xC5D0;&#xC11C; &#xB9D0;&#xD558;&#xB294; &#xAC83; &#xCC98;&#xB7FC;, &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xAD00;&#xB9AC; &#xBC94;&#xC704;&#xB294; &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC73C;&#xB85C; &#xD55C;&#xC815;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xAC04; &#xC758;&#xC874;, &#xACB0;&#xD569;&#xB3C4;&#xAC00; &#xB192;&#xC544;&#xC9D0;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#xC131;&#xB2A5;&#xC5D0;-&#xB300;&#xD55C;-&#xACE0;&#xBBFC;-&#xD544;&#xC694;">&#xC131;&#xB2A5;&#xC5D0; &#xB300;&#xD55C; &#xACE0;&#xBBFC; &#xD544;&#xC694;</h4>
+<ul>
+<li>JPA&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xCC38;&#xC870;&#xB418;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; LAZY, EAGER &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xB85C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC5F0;&#xAD00;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD55C; &#xD654;&#xBA74;&#xC5D0; &#xBCF4;&#xC5EC;&#xC8FC;&#xAE30; &#xC704;&#xD55C; &#xC870;&#xD68C; &#xAE30;&#xB2A5;&#xC758; &#xACBD;&#xC6B0; &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xD55C;&#xBC88;&#xC5D0; &#xC870;&#xD68C;&#xD558;&#xB294; EAGER &#xBC29;&#xC2DD;&#xC774; &#xC720;&#xB9AC;</li>
+<li>&#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC758; &#xACBD;&#xC6B0; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xB370;&#xC774;&#xD130;&#xB294; &#xC870;&#xD68C;&#xD558;&#xC9C0; &#xC54A;&#xB294; LAZY &#xBC29;&#xC2DD;&#xC774; &#xC720;&#xB9AC;</li>
+<li>&#xC0C1;&#xD669;&#xC5D0; &#xB530;&#xB77C; &#xACE0;&#xBBFC;&#xD558;&#xC5EC; &#xC2E0;&#xC911;&#xD788; &#xC801;&#xC6A9;&#xD574;&#xC57C;&#xD568;</li>
+</ul>
+<h4 id="&#xD655;&#xC7A5;">&#xD655;&#xC7A5;</h4>
+<ul>
+<li>&#xB2E8;&#xC77C; DB&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD06C;&#xAC8C; &#xBB38;&#xC81C;&#xB77C; &#xD560; &#xAC83; &#xC5C6;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xC11C;&#xBE44;&#xC2A4;&#xAC00; &#xCEE4;&#xC838; &#xB3C4;&#xBA54;&#xC778;&#xBCC4;&#xB85C; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xBD84;&#xB9AC;&#xD558;&#xB294; &#xB4F1; &#xD655;&#xC7A5;&#xD558;&#xAC8C; &#xB420; &#xACBD;&#xC6B0;, &#xB3C4;&#xBA54;&#xC778; &#xBCC4;&#xB85C; &#xBCC4;&#xB3C4; DBMS&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xB2E4;.<ul>
+<li>&#xC2EC;&#xC9C0;&#xC5B4; &#xD2B9;&#xC815; &#xB3C4;&#xBA54;&#xC778;&#xC740; RDB, &#xB2E4;&#xB978; &#xB3C4;&#xBA54;&#xC778;&#xC740; NoSQL &#xB4F1; JPA &#xAE30;&#xC220;&#xC758; &#xD55C;&#xACC4;&#xB97C; &#xB118;&#xC5B4;&#xC11C;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAC8C;&#xB418;&#xBA74; &#xB2E8;&#xC77C; &#xAE30;&#xC220;&#xB85C;&#xB294; &#xBD88;&#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xB428;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#xD574;&#xACB0;&#xBC95;">&#xD574;&#xACB0;&#xBC95;</h4>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xD558;&#xC9C0; &#xC54A;&#xACE0; ID&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xCC38;&#xC870;&#xD558;&#xB3C4;&#xB85D; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;.</li>
+<li>&#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xACB0;&#xD569;&#xB3C4;&#xAC00; &#xB0AE;&#xC544;&#xC9D0;</li>
+<li>&#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB85C;&#xB529; &#xBC29;&#xC2DD; (LAZY, EAGER)&#xB4F1;&#xC744; &#xACE0;&#xBBFC;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC5B4;&#xC9C4;&#xB2E4;.<ul>
+<li>&#xD544;&#xC694;&#xD558;&#xBA74; &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; ID&#xB97C; &#xD1B5;&#xD574; &#xC870;&#xD68C;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</li>
+<li>&#xC774;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC218;&#xC900;&#xC5D0;&#xC11C; LAZY &#xB85C;&#xB529;&#xC744; &#xD558;&#xB294; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; &#xACB0;&#xACFC;</li>
+</ul>
+</li>
+<li>&#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD560; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xC6D0;&#xCC9C;&#xC801;&#xC73C;&#xB85C; &#xCC28;&#xB2E8;&#xB428;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC04; &#xC9C1;&#xC811; &#xCC38;&#xC870;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xBCC4;&#xB85C; &#xB2E4;&#xB978; &#xAD6C;&#xD604; &#xAE30;&#xC220;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xAE30; &#xC6A9;&#xC774;&#xD558;&#xB2E4;</li>
+</ul>
+<h4 id="id&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xCC38;&#xC870;-&#xC870;&#xD68C;-&#xC131;&#xB2A5;">ID&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xCC38;&#xC870; &#xC870;&#xD68C; &#xC131;&#xB2A5;</h4>
+<ul>
+<li>ID&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xCC38;&#xC870;&#xD560; &#xACBD;&#xC6B0; EAGER &#xC870;&#xD68C;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB2E4;. (N+1 &#xBB38;&#xC81C;)</li>
+<li>&#xC774;&#xB7F0; &#xACBD;&#xC6B0; &#xBCC4;&#xB3C4; &#xBAA8;&#xB378;&#xC744; &#xB9CC;&#xB4E4;&#xACE0; JPQL, QueryDSL &#xB4F1;&#xC73C;&#xB85C; &#xC870;&#xC778;&#xC744; &#xD1B5;&#xD574; &#xD55C;&#xBC88;&#xC5D0; &#xC870;&#xD68C;&#xD55C; &#xD6C4; &#xD574;&#xB2F9; &#xBAA8;&#xB378;&#xC5D0; &#xD504;&#xB85C;&#xC81D;&#xC158;&#xD558;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xD55C;&#xBC88;&#xC5D0; &#xC870;&#xD68C;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</li>
+<li>JPA&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xD574;&#xC11C; &#xBC18;&#xB4DC;&#xC2DC; &#xAC1D;&#xCCB4; &#xCC38;&#xC870;&#xB97C; &#xD1B5;&#xD574; &#xBAA8;&#xB4E0;&#xAC83;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.<ul>
+<li>&#xC624;&#xD788;&#xB824; &#xC774;&#xB294; &#xC2E4;&#xC6A9;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>ID &#xCC38;&#xC870;&#xB85C; &#xAD6C;&#xD604;&#xD558;&#xACE0;, &#xC704;&#xC5D0;&#xC11C; &#xB9D0;&#xD55C; &#xBC29;&#xBC95; &#xB4F1;&#xC73C;&#xB85C; &#xD55C;&#xBC88;&#xC5D0; &#xC870;&#xD68C;&#xD55C;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB9C8;&#xB2E4; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xC800;&#xC7A5;&#xC18C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D4;, &#xD55C; &#xCFFC;&#xB9AC;&#xB85C; &#xC870;&#xD68C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xBD88;&#xAC00;&#xB2A5;&#xD558;&#xB2E4;.<ul>
+<li>&#xC774; &#xACBD;&#xC6B0;&#xC5D0; &#xCE90;&#xC2DC;&#xB97C; &#xC801;&#xC6A9;&#xD558;&#xAC70;&#xB098;, &#xC870;&#xD68C; &#xC804;&#xC6A9; &#xC800;&#xC7A5;&#xC18C;&#xB97C; &#xB530;&#xB85C; &#xAD6C;&#xD604;</li>
+<li>&#xCF54;&#xB4DC;&#xAC00; &#xBCF5;&#xC7A1;&#xD574;&#xC9C8;&#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC;, &#xC2DC;&#xC2A4;&#xD15C; &#xCC98;&#xB9AC;&#xB7C9;&#xC744; &#xB192;&#xC77C;&#xC218; &#xC788;&#xC74C;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;-&#xAC04;-&#xC9D1;&#xD569;-&#xC5F0;&#xAD00;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xAC04; &#xC9D1;&#xD569; &#xC5F0;&#xAD00;</h2>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xAC04; 1:N, N:1 &#xAD00;&#xACC4;&#xAC00; &#xC788;&#xC744;&#xC218;&#xC788;&#xB2E4;.</li>
+<li>1:N &#xAD00;&#xACC4;&#xB294; Set, List &#xB4F1; &#xCEEC;&#xB809;&#xC158;&#xC73C;&#xB85C; &#xD45C;&#xD604; &#xAC00;&#xB2A5;</li>
+<li>&#xB9CC;&#xC57D; &#xD2B9;&#xC815; &#xCE74;&#xD14C;&#xACE0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; &#xC0C1;&#xD488;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xC790;<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Category</span> </span>{
+  <span class="hljs-keyword">private</span> Set&lt;Product&gt; products;  <span class="hljs-comment">// 1:N &#xAC1D;&#xCCB4; &#xC9C1;&#xC811; &#xCC38;&#xC870;</span>
+}
+</code></pre>
+</li>
+<li>&#xC704;&#xCC98;&#xB7FC; &#xAD6C;&#xD604;&#xD55C; &#xD6C4; Category &#xC870;&#xD68C; -&gt; Product &#xC870;&#xD68C; &#xC21C;&#xC73C;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xD14C;&#xC774;&#xBE14;&#xC758; &#xBAA8;&#xB4E0; Product&#xB97C; &#xC870;&#xD68C;&#xD558;&#xAC8C;&#xB428;<ul>
+<li>&#xC2EC;&#xAC01;&#xD55C; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC74C;</li>
+</ul>
+</li>
+<li>&#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D4; &#xC5F0;&#xAD00;&#xC744; &#xBC18;&#xB300;&#xC758; &#xACBD;&#xC6B0;&#xB85C; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Product</span> </span>{
+  <span class="hljs-keyword">private</span> CategoryId categoryId;  <span class="hljs-comment">// N:1 ID&#xB97C; &#xD1B5;&#xD55C; &#xCC38;&#xC870;</span>
+}
+</code></pre>
+</li>
+<li>&#xC704;&#xC640; &#xAC19;&#xC774; &#xAD6C;&#xD604;&#xD55C; &#xD6C4; &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xD1B5;&#xD574; &#xD544;&#xC694; &#xAE30;&#xB2A5; &#xAD6C;&#xD604;<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductListService</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Product&gt; <span class="hljs-title">getProductOfCategory</span><span class="hljs-params">(CategoryId id)</span> </span>{
+      Category category = categoryRepository.findById(id);
+      checkCategory(category);
+      List&lt;Product&gt; products = productRepository.findByCategoryId(category.getId());
+      <span class="hljs-keyword">return</span> products;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C;-&#xD329;&#xD1A0;&#xB9AC;&#xB85C;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xD329;&#xD1A0;&#xB9AC;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h2>
+<ul>
+<li>&#xC911;&#xC694; &#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1; &#xCC98;&#xB9AC;&#xB97C; &#xC751;&#xC6A9; &#xC601;&#xC5ED;&#xC5D0; &#xB178;&#xCD9C;&#xB418;&#xC9C0; &#xC54A;&#xC544;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&quot;&#xC0C1;&#xC810;&#xC774; &#xC81C;&#xC81C;&#xC0C1;&#xD0DC;&#xC774;&#xBA74; &#xC0C1;&#xD488;&#xC744; &#xB4F1;&#xB85D;&#xD560; &#xC218; &#xC5C6;&#xB2E4;&quot;&#xB77C;&#xB294; &#xD575;&#xC2EC; &#xAE30;&#xB2A5;&#xC744; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xAD6C;&#xD604;&#xD588;&#xB2E4;&#xACE0; &#xD558;&#xC790;.<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterProductService</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> ProductId <span class="hljs-title">registerNewProduct</span><span class="hljs-params">(NewProductRequest req)</span> </span>{
+      Store account = accountRepository.findStoreById(req.getStoreId());
+      <span class="hljs-keyword">if</span> (account.isBlock()) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> StoreBlockedException();   
+      Product product = <span class="hljs-keyword">new</span> Product(...);
+      productRepository.save(product);
+      <span class="hljs-keyword">return</span> product.getId();
+  }
+}
+</code></pre>
+</li>
+<li>&#xC704; &#xCF54;&#xB4DC;&#xB294; &#xC5B8;&#xB73B; &#xBCF4;&#xBA74; &#xD070; &#xBB38;&#xC81C; &#xC5C6;&#xC5B4;&#xBCF4;&#xC774;&#xB294; &#xCF54;&#xB4DC;&#xC774;&#xC9C0;&#xB9CC;, &#xD558;&#xB098;&#xC758; &#xB3C4;&#xBA54;&#xC778; &#xD575;&#xC2EC; &#xADDC;&#xCE59;&#xC774; &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xB178;&#xCD9C;&#xB418;&#xC5B4;&#xC788;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</li>
+<li>&#xC774;&#xB97C; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294;, &#xBCC4;&#xB3C4;&#xC758; &#xB3C4;&#xBA54;&#xC778; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xAC70;&#xB098;, &#xBCC4;&#xB3C4;&#xC758; &#xD329;&#xD1A0;&#xB9AC; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC; &#xAD6C;&#xD604;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
+  <span class="hljs-comment">// &#xB3C4;&#xBA54;&#xC778; &#xD575;&#xC2EC; &#xAE30;&#xB2A5;&#xC744; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Product <span class="hljs-title">createProduct</span><span class="hljs-params">(...)</span> </span>{
+      <span class="hljs-keyword">if</span> (isBlocked()) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> StoreBlockedException();
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Product(...);
+  }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterProductService</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> ProductId <span class="hljs-title">registerNewProduct</span><span class="hljs-params">(NewProductRequest req)</span> </span>{
+      Store account = accountRepository.findStoreById(req.getStoreId());
+      Product product = account.createProduct(...);
+      productRepository.save(product);
+      <span class="hljs-keyword">return</span> product.getId();
+  }
+}
+</code></pre>
+</li>
+<li>&#xC704;&#xCC98;&#xB7FC; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xB354; &#xC774;&#xC0C1; &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4; &#xC601;&#xC5ED;&#xC5D0;&#xC11C; Store&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB294; &#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1;&#xC744; &#xBAB0;&#xB77C;&#xB3C4; &#xB41C;&#xB2E4;.</li>
+<li>&#xB9CC;&#xC57D; Product &#xC0DD;&#xC131; &#xAC00;&#xB2A5; &#xC5EC;&#xBD80;&#xC5D0; &#xB300;&#xD55C; &#xB3C4;&#xBA54;&#xC778; &#xD575;&#xC2EC; &#xADDC;&#xCE59;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xB354;&#xB77C;&#xB3C4; Store, &#xC989; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED;&#xB9CC; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xB418;&#xBA70; &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4; &#xC601;&#xC5ED;&#xC740; &#xC601;&#xD5A5;&#xBC1B;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xAC16;&#xACE0; &#xC788;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD574;&#xC57C;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xACE0;&#xB824;&#xD558;&#xC790;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2. 아키텍쳐 개요">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3. 애그리거트","level":"1.4.1.3","depth":3,"next":{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.1.4","depth":3,"ref":"","articles":[]},"previous":{"title":"2. 아키텍쳐 개요","level":"1.4.1.2","depth":3,"path":"content/architecture/ddd-start!/2.md","ref":"content/architecture/ddd-start!/2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/architecture/ddd-start!/3.md","mtime":"2020-01-07T16:54:37.311Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-07T16:54:48.655Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapse/collapse.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
