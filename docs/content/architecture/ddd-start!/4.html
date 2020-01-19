@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>DDD Start! · GitBook</title>
+        <title>4. 리포지터리와 모델구현(JPA 중심) · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="3.html" />
     
 
     </head>
@@ -146,7 +144,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="./">
+        <li class="chapter " data-level="1.4.1" data-path="./">
             
                 <a href="./">
             
@@ -199,7 +197,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.4" data-path="4.html">
+        <li class="chapter active" data-level="1.4.1.4" data-path="4.html">
             
                 <a href="4.html">
             
@@ -576,7 +574,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >DDD Start!</a>
+        <a href="../../.." >4. 리포지터리와 모델구현(JPA 중심)</a>
     </h1>
 </div>
 
@@ -591,12 +589,67 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="ddd-start"><center>DDD Start!</center></h2>
-<h6 id="&#xB3C4;&#xBA54;&#xC778;-&#xC8FC;&#xB3C4;-&#xC124;&#xACC4;-&#xAD6C;&#xD604;&#xACFC;-&#xD575;&#xC2EC;-&#xAC1C;&#xB150;-&#xC775;&#xD788;&#xAE30;"><center>&#xB3C4;&#xBA54;&#xC778; &#xC8FC;&#xB3C4; &#xC124;&#xACC4; &#xAD6C;&#xD604;&#xACFC; &#xD575;&#xC2EC; &#xAC1C;&#xB150; &#xC775;&#xD788;&#xAE30;</center></h6>
-<h5 id="-&#xCD5C;&#xBC94;&#xADE0;--"><center>- &#xCD5C;&#xBC94;&#xADE0; -</center></h5>
-<h4 id="&#xCC45;&#xC18C;&#xAC1C;">&#xCC45;&#xC18C;&#xAC1C;</h4>
-<p>DDD(&#xB3C4;&#xBA54;&#xC778; &#xC8FC;&#xB3C4; &#xC124;&#xACC4;)&#xB97C; &#xCC98;&#xC74C; &#xC811;&#xD558;&#xB294; &#xAC1C;&#xBC1C;&#xC790;&#xB97C; &#xC704;&#xD55C; &#xCC45;. DDD&#xB97C; &#xC2E4;&#xC81C; &#xC5C5;&#xBB34;&#xC5D0; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC774;&#xB860;&#xC744; &#xC124;&#xBA85;&#xD558;&#xACE0; &#xC774;&#xB97C; &#xAD6C;&#xD604;&#xD55C; &#xCF54;&#xB4DC;&#xB97C; &#xBC14;&#xD0D5;&#xC73C;&#xB85C; &#xC785;&#xBB38;&#xC790;&#xAC00; &#xD5E4;&#xB9E4;&#xC9C0; &#xC54A;&#xACE0; DDD&#xB97C; &#xD559;&#xC2B5;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD588;&#xB2E4;. &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;, &#xC5D4;&#xD2F0;&#xD2F0;, &#xB9AC;&#xD3EC;&#xC9C0;&#xD1A0;&#xB9AC; &#xB4F1; DDD&#xC758; &#xD575;&#xC2EC; &#xD328;&#xD134;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC744; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD55C;&#xB2E4;. &#xB3C4;&#xBA54;&#xC778; &#xBAA8;&#xB378;&#xC758; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xCDA9;&#xB3CC;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xAE30;&#xBC95;(&#xC120;&#xC810; &#xC7A0;&#xAE08;, &#xBE44;&#xC120;&#xC810; &#xC7A0;&#xAE08;)&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xACE0;, &#xB3C4;&#xBA54;&#xC778; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED; &#xAC04;&#xC758; &#xC758;&#xC874;&#xC744; &#xB0AE;&#xCD94;&#xB294; &#xBC29;&#xBC95;&#xACFC; &#xBA85;&#xB839; &#xBAA8;&#xB378;&#xACFC; &#xC870;&#xD68C; &#xBAA8;&#xB378;&#xC744; &#xB098;&#xB204;&#xB294; &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4; &#xBC30;&#xC6B4;&#xB2E4;.</p>
-<p>&#xC774; &#xCC45; &#xC608;&#xC81C; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC5B8;&#xC5B4;&#xB294; &#xC790;&#xBC14;&#xC774;&#xB2E4;. &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; &#xAE30;&#xC220;&#xB85C;&#xB294; &#xC2A4;&#xD504;&#xB9C1; MVC&#xC640; JPA(ORM)&#xAC00; &#xC788;&#xB2E4;. &#xC774; &#xB450; &#xAE30;&#xC220; &#xC790;&#xCCB4;&#xB97C; &#xC798; &#xBAB0;&#xB77C;&#xB3C4; &#xCC45;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD558;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xB530;&#xB77C;&#xAC00;&#xB294;&#xB370; &#xC5B4;&#xB824;&#xC6C0;&#xC740; &#xC5C6;&#xC9C0;&#xB9CC; &#xAE30;&#xC220;&#xC5D0; &#xB300;&#xD55C; &#xAC1C;&#xC694; &#xC815;&#xB3C4;&#xB97C; &#xC54C;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xCC45;&#xC744; &#xB354; &#xC798; &#xC774;&#xD574;&#xD558;&#xB294;&#xB370; &#xB3C4;&#xC6C0;&#xC774; &#xB41C;&#xB2E4;. &#xD2B9;&#xD788; SQL&#xC5D0;&#xB9CC; &#xC775;&#xC219;&#xD558;&#xB2E4;&#xBA74; JPA&#xAC00; &#xBB54;&#xC9C0; &#xC815;&#xB3C4;&#xB294; &#xD559;&#xC2B5;&#xC744; &#xD558;&#xACE0; &#xC774; &#xCC45;&#xC744; &#xC77D;&#xAE30;&#xB97C; &#xBC14;&#xB780;&#xB2E4;.</p>
+                                <h1 id="4-&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xC640;-&#xBAA8;&#xB378;-&#xAD6C;&#xD604;-jpa-&#xC911;&#xC2EC;">4. &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xC640; &#xBAA8;&#xB378; &#xAD6C;&#xD604; (JPA &#xC911;&#xC2EC;)</h1>
+<h2 id="jpa&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;-&#xAD6C;&#xD604;">JPA&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xAD6C;&#xD604;</h2>
+<h4 id="&#xBAA8;&#xB4C8;-&#xC704;&#xCE58;">&#xBAA8;&#xB4C8; &#xC704;&#xCE58;</h4>
+<ul>
+<li>&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC640; &#xAC19;&#xC774; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED;</li>
+<li>&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xB97C; &#xC0C1;&#xC138; &#xAE30;&#xC220;&#xB85C; &#xAD6C;&#xD604;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xC778;&#xD504;&#xB77C;&#xC2A4;&#xD2B8;&#xB7ED;&#xCCD0; &#xC601;&#xC5ED;</li>
+<li>&#xC77C;&#xBD80; &#xD328;&#xD0A4;&#xC9C0; &#xAD6C;&#xC131; &#xC2DC; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED; &#xB0B4; <code>impl</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCF00;&#xC774;&#xC2A4;&#xAC00; &#xC788;&#xB294;&#xB370;, &#xC774;&#xB294; &#xADF8;&#xB9AC; &#xC88B;&#xC740; &#xBC29;&#xBC95;&#xC740; &#xC544;&#xB2C8;&#xB2E4;. (&#xC778;&#xD504;&#xB77C; &#xC694;&#xC18C;&#xB294; &#xC778;&#xD504;&#xB77C; &#xC601;&#xC5ED;&#xC5D0; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xC5EC; &#xB3C4;&#xBA54;&#xC778;&#xC758; &#xC778;&#xD504;&#xB77C; &#xC758;&#xC874;&#xC744; &#xB0AE;&#xCDB0;&#xC57C;&#xD568;)</li>
+</ul>
+<h4 id="&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;-&#xAE30;&#xBCF8;-&#xAE30;&#xB2A5;-&#xAD6C;&#xD604;">&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xAE30;&#xBCF8; &#xAE30;&#xB2A5; &#xAD6C;&#xD604;</h4>
+<ul>
+<li>&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xC758; &#xAE30;&#xBCF8; &#xAE30;&#xB2A5;&#xC740; <code>&#xC544;&#xC774;&#xB514;&#xB85C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC870;&#xD68C;</code>, <code>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC800;&#xC7A5;</code></li>
+<li>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC791;&#xC131;</li>
+<li>&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC608;&#xC2DC; (&#xB3C4;&#xBA54;&#xC778;)<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">OrderRepository</span> </span>{
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Order <span class="hljs-title">findById</span><span class="hljs-params">(OrderNo no)</span></span>;
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">(Order order)</span></span>;
+}
+</code></pre>
+</li>
+<li><p>JPA &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xAD6C;&#xD604;&#xCCB4; &#xC608;&#xC2DC; (&#xC778;&#xD504;&#xB77C;)</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Repository</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JpaOrderRepository</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OrderRepository</span> </span>{
+      <span class="hljs-meta">@PersistenceContext</span>
+      <span class="hljs-keyword">private</span> EntityManager entityManager;
+
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Order <span class="hljs-title">findById</span><span class="hljs-params">(OrderNo id)</span> </span>{
+          <span class="hljs-keyword">return</span> entityManager.find(Order.class, id);
+      }
+
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">(Order order)</span> </span>{
+          entityManager.persist(order);
+      }
+}
+</code></pre>
+</li>
+<li>JPA&#xB294; &#xC5D4;&#xD2F0;&#xD2F0; &#xAC12; &#xBCC0;&#xACBD; &#xC2DC; EntityManager&#xAC00; flush &#xB420; &#xB54C; DB&#xC5D0; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC774; &#xBC18;&#xC601;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; JPA &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xAD6C;&#xD604;&#xCCB4;&#xC5D0;&#xB294; &#xC218;&#xC815; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xD544;&#xC694; &#xC5C6;&#xC74C;</li>
+<li>&#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xC870;&#xD68C; &#xAE30;&#xB2A5; &#xC815;&#xC758; &#xC2DC; &#xD2B9;&#xC815; &#xD544;&#xB4DC;&#xB85C; &#xC870;&#xD68C; &#xC870;&#xAC74;&#xC740; <code>findBy + &#xD544;&#xB4DC;&#xBA85;</code>&#xC73C;&#xB85C; &#xD558;&#xB294;&#xAC8C; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xB2E4;<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">OrderRepository</span> </span>{
+      ...
+      <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Order&gt; <span class="hljs-title">findByOrdererId</span><span class="hljs-params">(String ordererId, <span class="hljs-keyword">int</span> startRow, <span class="hljs-keyword">int</span> size)</span></span>;
+}
+</code></pre>
+</li>
+<li>&#xC0AD;&#xC81C;&#xAE30;&#xB2A5;&#xC740; <code>delete</code> &#xB85C; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">OrderRepository</span> </span>{
+      ...
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delete</span><span class="hljs-params">(Order order)</span></span>;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="&#xC0AD;&#xC81C;-&#xAE30;&#xB2A5;">&#xC0AD;&#xC81C; &#xAE30;&#xB2A5;</h4>
+<ul>
+<li>&#xC0AD;&#xC81C; &#xC694;&#xAD6C;&#xC0AC;&#xD56D;&#xC774; &#xC788;&#xC5B4;&#xB3C4;, &#xAD00;&#xB9AC;&#xC790; &#xAE30;&#xB2A5;, &#xC6D0;&#xBCF5; &#xB4F1; &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0; &#xC774;&#xC720;&#xB85C; &#xC2E4;&#xC81C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC0AD;&#xC81C;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xB2E4;</li>
+<li>&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xB294; delete&#xB85C; &#xC2E4;&#xC81C; &#xC0AD;&#xC81C;&#xD558;&#xAE30; &#xBCF4;&#xB2E8; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD65C;&#xC6A9;</li>
+</ul>
+<h2 id="&#xB9E4;&#xD551;-&#xAD6C;&#xD604;">&#xB9E4;&#xD551; &#xAD6C;&#xD604;</h2>
+<h4 id="&#xC5D4;&#xD2F0;&#xD2F0;&#xC640;-&#xBC38;&#xB958;-&#xAE30;&#xBCF8;-&#xB9E4;&#xD551;-&#xAD6C;&#xD604;">&#xC5D4;&#xD2F0;&#xD2F0;&#xC640; &#xBC38;&#xB958; &#xAE30;&#xBCF8; &#xB9E4;&#xD551; &#xAD6C;&#xD604;</h4>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB294; &#xC5D4;&#xD2F0;&#xD2F0;&#xC774;&#xBBC0;&#xB85C; @Entity&#xB85C; &#xB9E4;&#xD551;</li>
+<li>&#xBC38;&#xB958;&#xB294; @Embeddable, @Embedded&#xB85C; &#xB9E4;&#xD551;</li>
+</ul>
 
                                 
                                 </section>
@@ -624,14 +677,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Architecture">
+                <a href="3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3. 애그리거트">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="1.html" class="navigation navigation-next " aria-label="Next page: 1. 도메인 모델 시작">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -640,7 +689,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DDD Start!","level":"1.4.1","depth":2,"next":{"title":"1. 도메인 모델 시작","level":"1.4.1.1","depth":3,"path":"content/architecture/ddd-start!/1.md","ref":"content/architecture/ddd-start!/1.md","articles":[]},"previous":{"title":"Architecture","level":"1.4","depth":1,"path":"content/architecture/index.md","ref":"content/architecture/index.md","articles":[{"title":"DDD Start!","level":"1.4.1","depth":2,"path":"content/architecture/ddd-start!/index.md","ref":"content/architecture/ddd-start!/index.md","articles":[{"title":"1. 도메인 모델 시작","level":"1.4.1.1","depth":3,"path":"content/architecture/ddd-start!/1.md","ref":"content/architecture/ddd-start!/1.md","articles":[]},{"title":"2. 아키텍쳐 개요","level":"1.4.1.2","depth":3,"path":"content/architecture/ddd-start!/2.md","ref":"content/architecture/ddd-start!/2.md","articles":[]},{"title":"3. 애그리거트","level":"1.4.1.3","depth":3,"path":"content/architecture/ddd-start!/3.md","ref":"content/architecture/ddd-start!/3.md","articles":[]},{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.1.4","depth":3,"path":"content/architecture/ddd-start!/4.md","ref":"content/architecture/ddd-start!/4.md","articles":[]},{"title":"5. 리포지터리와 조회 기능(JPA 중심)","level":"1.4.1.5","depth":3,"ref":"","articles":[]},{"title":"6. 응용 서비스와 표현 영역","level":"1.4.1.6","depth":3,"ref":"","articles":[]},{"title":"7. 도메인 서비스","level":"1.4.1.7","depth":3,"ref":"","articles":[]},{"title":"8. 애그리거트 트랜잭션 관리","level":"1.4.1.8","depth":3,"ref":"","articles":[]},{"title":"9. 도메인 모델과 BOUNDED CONTEXT","level":"1.4.1.9","depth":3,"ref":"","articles":[]},{"title":"10. 이벤트","level":"1.4.1.10","depth":3,"ref":"","articles":[]},{"title":"11. CQRS","level":"1.4.1.11","depth":3,"ref":"","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/architecture/ddd-start!/index.md","mtime":"2019-12-27T08:54:54.478Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-19T12:12:19.119Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.1.4","depth":3,"next":{"title":"5. 리포지터리와 조회 기능(JPA 중심)","level":"1.4.1.5","depth":3,"ref":"","articles":[]},"previous":{"title":"3. 애그리거트","level":"1.4.1.3","depth":3,"path":"content/architecture/ddd-start!/3.md","ref":"content/architecture/ddd-start!/3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/architecture/ddd-start!/4.md","mtime":"2020-01-14T15:46:15.234Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-19T12:12:19.119Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
