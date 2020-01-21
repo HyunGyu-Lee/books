@@ -647,8 +647,221 @@
 <h2 id="&#xB9E4;&#xD551;-&#xAD6C;&#xD604;">&#xB9E4;&#xD551; &#xAD6C;&#xD604;</h2>
 <h4 id="&#xC5D4;&#xD2F0;&#xD2F0;&#xC640;-&#xBC38;&#xB958;-&#xAE30;&#xBCF8;-&#xB9E4;&#xD551;-&#xAD6C;&#xD604;">&#xC5D4;&#xD2F0;&#xD2F0;&#xC640; &#xBC38;&#xB958; &#xAE30;&#xBCF8; &#xB9E4;&#xD551; &#xAD6C;&#xD604;</h4>
 <ul>
-<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB294; &#xC5D4;&#xD2F0;&#xD2F0;&#xC774;&#xBBC0;&#xB85C; @Entity&#xB85C; &#xB9E4;&#xD551;</li>
-<li>&#xBC38;&#xB958;&#xB294; @Embeddable, @Embedded&#xB85C; &#xB9E4;&#xD551;</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB294; &#xC5D4;&#xD2F0;&#xD2F0;&#xC774;&#xBBC0;&#xB85C; @Entity&#xB85C; &#xB9E4;&#xD551;<pre><code class="lang-java"><span class="hljs-comment">// &#xC8FC;&#xBB38; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xC778; &#xC8FC;&#xBB38; &#xC5D4;&#xD2F0;&#xD2F0;&#xB294; @Entity&#xB85C; &#xB9E4;&#xD551;</span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table</span>(name = <span class="hljs-string">&quot;purchase_order&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+      ...
+}
+</code></pre>
+</li>
+<li>&#xBC38;&#xB958;&#xB294; @Embeddable, @Embedded&#xB85C; &#xB9E4;&#xD551;<pre><code class="lang-java"><span class="hljs-comment">// &#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC740; @Embeddable&#xB85C; &#xC120;&#xC5B8;</span>
+<span class="hljs-meta">@Embeddable</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Orderer</span> </span>{
+      ...
+}
+<span class="hljs-comment">// &#xD544;&#xB4DC; &#xB9E4;&#xD551; &#xC2DC; @Embedded &#xC0AC;&#xC6A9;</span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table</span>(name = <span class="hljs-string">&quot;puchase_order&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+      <span class="hljs-meta">@Embedded</span>
+      <span class="hljs-keyword">private</span> Orderer orderer;
+}
+</code></pre>
+</li>
+<li>&#xC564;&#xD2F0;&#xD2F0;&#xC640; &#xBC38;&#xB958;&#xC758; &#xC0DD;&#xC131;&#xC790;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD544;&#xC694;&#xD55C; &#xAC83;&#xC744; &#xC804;&#xB2EC;&#xBC1B;&#xB294;&#xB2E4;.</li>
+<li>&#xBC38;&#xB958;&#xB294; Immutable&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC0DD;&#xC131; &#xC2DC;&#xC810;&#xC5D0; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC12;&#xC774;&#xC678;&#xC5D0; setter&#xB4F1; &#xAC12; &#xBCC0;&#xACBD; &#xC218;&#xB2E8;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xC989; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xACBD;&#xC6B0;&#xC5D4; &#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xC5D0; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xAC00; &#xC5C6;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xB294; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; JPA&#xC758; &#xACBD;&#xC6B0;, &#xCD5C;&#xCD08; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC744; &#xC704;&#xD574; &#xAE30;&#xBCF8; &#xC0DD;&#xC131;&#xC790;&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;.</li>
+<li>&#xC774;&#xB97C; &#xC704;&#xD574; &#xAE30;&#xBCF8; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xB9CC;&#xB4E4;&#xB418; <code>protected</code>&#xB85C; &#xC9C0;&#xC815;&#xD574; &#xB2E4;&#xB978; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.</li>
+</ul>
+<h4 id="&#xD544;&#xB4DC;-&#xC811;&#xADFC;-&#xBC29;&#xC2DD;-&#xC0AC;&#xC6A9;">&#xD544;&#xB4DC; &#xC811;&#xADFC; &#xBC29;&#xC2DD; &#xC0AC;&#xC6A9;</h4>
+<ul>
+<li>JPA&#xB294; &#xD544;&#xB4DC;(FIELD)&#xC640; &#xBA54;&#xC18C;&#xB4DC;(PROPERTY) &#xBC29;&#xC2DD; &#xB9E4;&#xD551;&#xC744; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;.<ul>
+<li>&#xBA54;&#xC18C;&#xB4DC; &#xBC29;&#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; getter, setter&#xB97C; &#xC758;&#xBB34;&#xC801;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&#xC5D4;&#xD2F0;&#xD2F0;&#xC5D0; &#xB3C4;&#xBA54;&#xC778;&#xACFC; &#xAD00;&#xB828;&#xC5C6;&#xB294; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xCF54;&#xB4DC;&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xAC8C;&#xB428; </li>
+</ul>
+</li>
+<li>&#xB54C;&#xBB38;&#xC5D0; &#xD544;&#xB4DC;(FIELD) &#xBC29;&#xC2DD; &#xB9E4;&#xD551;&#xC744; &#xD558;&#xB3C4;&#xB85D; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xC9C0;&#xC815;&#xD55C;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Access</span>(AccessType.FIELD)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+      ...
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="attibuteconverter&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xBC38;&#xB958;-&#xB9E4;&#xD551;-&#xCC98;&#xB9AC;">AttibuteConverter&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xBC38;&#xB958; &#xB9E4;&#xD551; &#xCC98;&#xB9AC;</h4>
+<ul>
+<li>&#xB450; &#xAC1C; &#xC774;&#xC0C1; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xD558;&#xB098;&#xC758; &#xCEEC;&#xB7FC;&#xC5D0; &#xB9E4;&#xD551;&#xD574;&#xC57C;&#xD558;&#xB294; &#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC774; &#xC788;&#xB294; &#xACBD;&#xC6B0;, @Embeddable&#xB85C;&#xB294; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; <code>1cm</code>, <code>10mm</code>&#xACFC; &#xAC19;&#xC774; &#xC22B;&#xC790;+&#xBB38;&#xC790;&#xB97C; &#xD569;&#xCE5C; &#xD558;&#xB098;&#xC758; &#xBB38;&#xC790;&#xC5F4; &#xCEEC;&#xB7FC;&#xC5D0; &#xC800;&#xC7A5;&#xB418;&#xB294; &#xC815;&#xBCF4;&#xB97C; &#xBC38;&#xB958;&#xB85C; &#xD45C;&#xD604;&#xD55C; &#xACBD;&#xC6B0;</li>
+</ul>
+</li>
+<li>JPA&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB7F0;&#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; AttributeConverter&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;. DB&#xCEEC;&#xB7FC; &lt;-&gt; &#xC790;&#xBC14; &#xAC1D;&#xCCB4; &#xC591;&#xBC61;&#xD5A5; &#xBCC0;&#xD658; &#xB85C;&#xC9C1;&#xC744; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>Json, Enum &#xB4F1; &#xC5EC;&#xB7EC; &#xD615;&#xD0DC;&#xC758; &#xAC12;&#xC744; &#xB9E4;&#xD551;&#xD560; &#xB54C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;</li>
+</ul>
+<h4 id="&#xBC38;&#xB958;-&#xCEEC;&#xB809;&#xC158;--&#xBCC4;&#xB3C4;-&#xD14C;&#xC774;&#xBE14;-&#xB9E4;&#xD551;">&#xBC38;&#xB958; &#xCEEC;&#xB809;&#xC158; : &#xBCC4;&#xB3C4; &#xD14C;&#xC774;&#xBE14; &#xB9E4;&#xD551;</h4>
+<ul>
+<li>Order, OrderLine&#xC758; &#xAD00;&#xACC4;&#xCC98;&#xB7FC; 1:N&#xC744; &#xAC00;&#xC9C4; &#xAD00;&#xACC4;&#xC5D0;&#xC11C; OrderLine&#xC740; &#xBC38;&#xB958;&#xD0C0;&#xC785;&#xC774;&#xB2E4;.</li>
+<li>&#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC740; Entity&#xB85C; &#xB9E4;&#xD551;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC8FC;&#xB85C; @Embeddable, @Embedded&#xB85C; &#xB9E4;&#xD551;&#xD558;&#xB294;&#xB370; &#xC774;&#xB7F0; &#xACBD;&#xC6B0; &#xAD00;&#xACC4;&#xD45C;&#xD604;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD560; &#xC218; &#xC788;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-comment">// @Embeddable&#xB85C; &#xB9E4;&#xD551;&#xB41C; &#xBC38;&#xB958;&#xD0C0;&#xC785;&#xC744; &#xCEEC;&#xB809;&#xC158;&#xC73C;&#xB85C; &#xB9E4;&#xD551;</span>
+<span class="hljs-comment">// @OneToMany &#xB4F1; &#xC77C;&#xBC18; &#xAD00;&#xACC4; &#xB9E4;&#xD551; &#xC2DC; &#xCC98;&#xB7FC;, &#xC870;&#xC778; &#xCEEC;&#xB7FC;&#xC744; &#xB9E4;&#xD551;&#xD574;&#xC918;&#xC57C;&#xD568;</span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table</span>(name = <span class="hljs-string">&quot;puchase_order&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span> </span>{
+      <span class="hljs-meta">@ElementCollection</span>
+      <span class="hljs-meta">@CollectionTable</span>(name = <span class="hljs-string">&quot;order_line&quot;</span>, joinColumns = <span class="hljs-meta">@JoinColumn</span>(name = <span class="hljs-string">&quot;order_number&quot;</span>))
+      <span class="hljs-meta">@OrderColumn</span>(name = <span class="hljs-string">&quot;line_idx&quot;</span>)
+      <span class="hljs-keyword">private</span> List&lt;OrderLine&gt; orderLines;
+      ...
+}
+<span class="hljs-comment">// &#xBC38;&#xB958;</span>
+<span class="hljs-meta">@Embeddable</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderLine</span> </span>{
+      <span class="hljs-meta">@Column</span>(name = <span class="hljs-string">&quot;...&quot;</span>)
+      <span class="hljs-keyword">private</span> String field;
+      ...
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="&#xBC38;&#xB958;-&#xCEEC;&#xB809;&#xC158;--&#xD55C;-&#xAC1C;-&#xCEEC;&#xB7FC;&#xC5D0;-&#xB9E4;&#xD551;">&#xBC38;&#xB958; &#xCEEC;&#xB809;&#xC158; : &#xD55C; &#xAC1C; &#xCEEC;&#xB7FC;&#xC5D0; &#xB9E4;&#xD551;</h4>
+<ul>
+<li>&#xBC38;&#xB958; &#xCEEC;&#xB809;&#xC158;&#xC744; &#xD55C; &#xAC1C;&#xC758; &#xCEEC;&#xB7FC;&#xC5D0; &#xB9E4;&#xD551;&#xD574;&#xC57C;&#xD558;&#xB294; &#xACBD;&#xC6B0; (&#xC5EC;&#xB7EC; &#xAC12;&#xC744; &#xD55C; &#xCEEC;&#xB7FC;&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xACE0; , &#xB85C; &#xAD6C;&#xBD84; &#xB4F1;)&#xC740; AttributeConverter&#xC640; <code>&#xC77C;&#xAE09; &#xCEEC;&#xB809;&#xC158;</code>&#xC744; &#xD65C;&#xC6A9;&#xD574; &#xB9E4;&#xD551;</li>
+<li><p>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xC774;&#xBA54;&#xC77C; &#xC8FC;&#xC18C;&#xB97C; ,&#xB85C; &#xAD6C;&#xBD84;&#xD574; &#xD55C; &#xCEEC;&#xB7FC;&#xC5D0; &#xC800;&#xC7A5;&#xD574;&#xC57C;&#xD558;&#xB294; &#xACBD;&#xC6B0;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#xC77C;&#xAE09; &#xCEEC;&#xB809;&#xC158;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmailSet</span> </span>{
+      <span class="hljs-keyword">private</span> Set&lt;Email&gt; emails = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();
+
+      <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">EmailSet</span><span class="hljs-params">()</span> </span>{}
+
+      <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">EmailSet</span><span class="hljs-params">(Set&lt;Email&gt; emails)</span> </span>{
+          <span class="hljs-keyword">this</span>.emails = emails; 
+      }
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Set&lt;Email&gt; <span class="hljs-title">getEmails</span><span class="hljs-params">()</span> </span>{
+          <span class="hljs-keyword">return</span> Collections.unmodifiableSet(emails); <span class="hljs-comment">// &#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xC758; Immutable &#xC131;&#xC9C8;&#xC744; &#xC704;&#xD55C; &#xCF54;&#xB4DC;</span>
+      }
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="&#xBC38;&#xB958;&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xC544;&#xC774;&#xB514;-&#xB9E4;&#xD551;">&#xBC38;&#xB958;&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xC544;&#xC774;&#xB514; &#xB9E4;&#xD551;</h4>
+<ul>
+<li>&#xC77C;&#xBC18;&#xC801;&#xC778; ID&#xB97C; &#xBC38;&#xB958;&#xB85C; &#xD45C;&#xD604;&#xD574; &#xB9E4;&#xD551;&#xD558;&#xB294; &#xACBD;&#xC6B0;, @EmbeddedId, @Embeddable&#xC744; &#xD65C;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>&#xC544;&#xC774;&#xB514;&#xB97C; &#xBC38;&#xB958;&#xB85C; &#xD45C;&#xD604;&#xD560; &#xB54C; &#xC5BB;&#xC744;&#xC218; &#xC788;&#xB294; &#xC7A5;&#xC810;&#xC740; &#xC2DD;&#xBCC4;&#xC790;&#xC5D0; &#xAE30;&#xB2A5;&#xC744; &#xB123;&#xC744;&#xC218; &#xC788;&#xB2E4;&#xB294; &#xC810;&#xC774;&#xB2E4;.</li>
+<li><code>equals</code>&#xC640; <code>hashcode</code>&#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xAD6C;&#xD604;&#xD574;&#xC918;&#xC57C;&#xD568;</li>
+</ul>
+<h4 id="&#xBCC4;&#xB3C4;-&#xD14C;&#xC774;&#xBE14;&#xC5D0;-&#xC800;&#xC7A5;&#xD558;&#xB294;-&#xBC38;&#xB958;-&#xB9E4;&#xD551;">&#xBCC4;&#xB3C4; &#xD14C;&#xC774;&#xBE14;&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xBC38;&#xB958; &#xB9E4;&#xD551;</h4>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0;&#xC11C; &#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0;&#xB97C; &#xC81C;&#xC678;&#xD558;&#xBA74; &#xB300;&#xBD80;&#xBD84; &#xBC38;&#xB958;&#xC774;&#xB2E4;.</li>
+<li>&#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0; &#xC774;&#xC678; &#xB2E4;&#xB978; &#xC5D4;&#xD2F0;&#xD2F0;&#xAC00; &#xC788;&#xB2E4;&#xBA74; &#xC9C4;&#xC9DC; &#xC5D4;&#xD2F0;&#xD2F0;&#xC778;&#xC9C0; &#xC758;&#xC2EC;&#xD574;&#xBD10;&#xC57C; &#xD55C;&#xB2E4;.<ul>
+<li>&#xB2E8;&#xC21C;&#xD788; &#xD14C;&#xC774;&#xBE14;&#xC5D0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;&#xACE0; &#xD574;&#xC11C; &#xC5D4;&#xD2F0;&#xD2F0;&#xAC00; &#xC544;&#xB2C8;&#xB2E4;!!</li>
+</ul>
+</li>
+<li>&#xBC38;&#xB958;&#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xC5D4;&#xD2F0;&#xD2F0;&#xAC00; &#xD655;&#xC2E4;&#xD558;&#xB2E4;&#xBA74; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xC544;&#xB2CC;&#xC9C0; &#xC758;&#xC2EC;&#xD574;&#xBD10;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>&#xAC1D;&#xCCB4;&#xAC00; &#xB2E4;&#xB978; &#xB77C;&#xC774;&#xD504;&#xC0AC;&#xC774;&#xD074;&#xC744; &#xAC16;&#xB294;&#xB2E4;&#xBA74; &#xB2E4;&#xB978; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC77C; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xB2E4;.</li>
+<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xC0C1;&#xD488; &#xC0C1;&#xC138;&#xD654;&#xBA74;&#xC5D0;&#xC11C; &#xC0C1;&#xD488; &#xC815;&#xBCF4;&#xC640; &#xB9AC;&#xBDF0; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xC5EC;&#xC904; &#xB54C;, &#xB9AC;&#xBDF0;&#xB97C; &#xC0C1;&#xD488;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xC815;&#xBCF4;&#xB85C; &#xC0DD;&#xAC01;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xC0C1;&#xD488;&#xACFC; &#xB9AC;&#xBDF0;&#xB294; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xB77C;&#xC774;&#xD504;&#xC0AC;&#xC774;&#xD074;&#xC744; &#xAC16;&#xB294;&#xB2E4;. &#xC989; &#xC0C1;&#xD488;&#xC774; &#xC0DD;&#xC131;&#xB420; &#xB54C; &#xB9AC;&#xBDF0;&#xAC00; &#xAC19;&#xC774; &#xC0DD;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;, &#xD568;&#xAED8; &#xBCC0;&#xACBD;&#xB418;&#xC9C0;&#xB3C4; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xC774;&#xCC98;&#xB7FC; &#xB9AC;&#xBDF0;&#xB294; &#xC2DD;&#xBCC4;&#xC790;&#xB97C; &#xAC16;&#xB294; &#xC5D4;&#xD2F0;&#xD2F0;&#xB294; &#xB9DE;&#xC9C0;&#xB9CC; &#xC0C1;&#xD488; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC9C0;&#xB294; &#xC54A;&#xB294;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xC18D;&#xD55C; &#xAC1D;&#xCCB4;&#xAC00; &#xC5D4;&#xD2F0;&#xD2F0;&#xC778;&#xC9C0; &#xBC38;&#xB958;&#xC778;&#xC9C0; &#xAD6C;&#xBCC4;&#xD558;&#xB294; &#xAC83;&#xC740; &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xAC00; &#xACE0;&#xC720;&#xD55C; &#xC2DD;&#xBCC4;&#xC790;&#xB97C; &#xAC16;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.<ul>
+<li>&#xD14C;&#xC774;&#xBE14;&#xC758; PK&#xB97C; &#xAC16;&#xB294;&#xB2E4;&#xACE0; &#xBAA8;&#xB450; &#xC5D4;&#xD2F0;&#xD2F0;&#xB294; &#xC544;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD574;&#xB2F9; PK&#xAC00; &#xB2E8;&#xC21C;&#xD788; 1:1 &#xAD00;&#xACC4;&#xC5D0;&#xC11C; &#xB9E4;&#xD551; &#xD639;&#xC740; &#xC870;&#xC778;&#xC744; &#xC704;&#xD574; &#xAC16;&#xACE0; &#xC788;&#xB294; &#xAC12;&#xC774;&#xB77C;&#xBA74; &#xD574;&#xB2F9; &#xD14C;&#xC774;&#xBE14;&#xB294; &#xBC38;&#xB958;&#xB85C; &#xB9E4;&#xD551;&#xD558;&#xB294;&#xAC83;&#xC774; &#xB9DE;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D4; @OneToOne &#xB9E4;&#xD551;&#xC774; &#xC544;&#xB2CC; @SecondaryTable&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xB9E4;&#xD551;&#xD55C;&#xB2E4;.</li>
+</ul>
+<h4 id="&#xBC38;&#xB958;-&#xCEEC;&#xB809;&#xC158;&#xC744;-entity&#xB85C;-&#xB9E4;&#xD551;&#xD558;&#xAE30;">&#xBC38;&#xB958; &#xCEEC;&#xB809;&#xC158;&#xC744; @Entity&#xB85C; &#xB9E4;&#xD551;&#xD558;&#xAE30;</h4>
+<ul>
+<li>&#xAD6C;&#xD604; &#xAE30;&#xC220;&#xC758; &#xD55C;&#xACC4;&#xB098; &#xD300; &#xD45C;&#xC900; &#xB54C;&#xBB38;&#xC5D0; @Entity&#xB85C; &#xB9E4;&#xD551;&#xD574;&#xC57C;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xB2E4;.</li>
+<li>JPA&#xC5D0;&#xC11C; &#xC0C1;&#xC18D;&#xC758; &#xACBD;&#xC6B0; @Embeddable &#xD0C0;&#xC785; &#xB9E4;&#xD551;&#xC740; &#xC0C1;&#xC18D; &#xB9E4;&#xD551;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xB54C;&#xBB38;&#xC5D0; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C; &#xBC38;&#xB958; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; @Entity&#xB97C; &#xD65C;&#xC6A9;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-comment">// &#xC0C1;&#xC18D;&#xAD6C;&#xC870;&#xC5D0;&#xC11C; &#xC0C1;&#xC704; &#xAC1C;&#xB150;(abstract)&#xC744; &#xB9E4;&#xD551;  </span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Inheritance</span>(strategy = InheritanceType.SINGLE_TABLE)
+<span class="hljs-meta">@DiscriminatorColumn</span>(name = <span class="hljs-string">&quot;image_type&quot;</span>)
+<span class="hljs-meta">@Table</span>(name = <span class="hljs-string">&quot;image&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Image</span> </span>{
+      ...
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> String <span class="hljs-title">getURL</span><span class="hljs-params">()</span></span>;
+}
+<span class="hljs-comment">// &#xC0C1;&#xC18D;&#xAD6C;&#xC870;&#xC5D0;&#xC11C; &#xAD6C;&#xCCB4;&#xD654;&#xB41C; &#xAC1C;&#xB150;(extends)&#xB97C; &#xB9E4;&#xD551;</span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@DiscriminatorValue</span>(<span class="hljs-string">&quot;ii&quot;</span>) <span class="hljs-comment">// image_type&#xC5D0;&#xC11C; &#xAD6C;&#xCCB4;&#xD654;&#xB41C; &#xAC1C;&#xB150;&#xC744; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC12;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InternalImage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Image</span> </span>{
+      ...
+}
+</code></pre>
+</li>
+<li>&#xC774; &#xACBD;&#xC6B0;&#xC5D4; Image&#xB294; @Entity&#xB97C; &#xB9E4;&#xD551;&#xD588;&#xC9C0;&#xB9CC; &#xBC38;&#xB958; &#xAC1D;&#xCCB4;&#xC774;&#xBBC0;&#xB85C; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC740; &#xB123;&#xC9C0; &#xC54A;&#xB294;&#xB2E4; (setter &#xB4F1;)</li>
+<li>&#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0;&#xC640; &#xB9E4;&#xD551; &#xC2DC;&#xC5D4; &#xC5D4;&#xD2F0;&#xD2F0;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; @OneToMany &#xB4F1; &#xC5D4;&#xD2F0;&#xD2F0; &#xAD00;&#xACC4; &#xB9E4;&#xD551;&#xD558;&#xB294; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xB9E4;&#xD551;&#xD55C;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xC5EC;&#xAE30;&#xC11C; &#xC911;&#xC694;&#xD55C; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xB2E4;.<ul>
+<li>&#xD558;&#xC774;&#xBC84;&#xB124;&#xC774;&#xD2B8;&#xB294; @OneToMany&#xB85C; &#xB41C; &#xB300;&#xC0C1;&#xC774; &#xC0AD;&#xC81C;&#xB418;&#xBA74; (Collection&#xC758; clear&#xB4F1;) select&#xB85C; &#xC0AD;&#xC81C;&#xB300;&#xC0C1; &#xAC1D;&#xCCB4;&#xB97C; &#xB85C;&#xB529;&#xD55C; &#xD6C4; delete&#xCFFC;&#xB9AC;&#xB97C; &#xC218;&#xD589;&#xD55C;&#xB2E4;.</li>
+<li>@Embeddable&#xD0C0;&#xC785;&#xC758; &#xACBD;&#xC6B0; &#xD55C; &#xBC88;&#xC5D0; delete &#xCFFC;&#xB9AC;&#xB97C; &#xC218;&#xD589;&#xD55C;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xB530;&#xB77C;&#xC11C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xD2B9;&#xC131;&#xC744; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xC774; &#xC131;&#xB2A5; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xBA74; &#xC0C1;&#xC18D; &#xAD6C;&#xC870;&#xB97C; &#xD3EC;&#xAE30;&#xD558;&#xACE0; @Embeddable&#xB85C; &#xB9E4;&#xD551;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</li>
+</ul>
+<h4 id="id-&#xCC38;&#xC870;&#xC640;-&#xC870;&#xC778;-&#xD14C;&#xC774;&#xBE14;&#xC744;-&#xC774;&#xC6A9;&#xD55C;-&#xB2E8;&#xBC29;&#xD5A5;-mn-&#xB9E4;&#xD551;">ID &#xCC38;&#xC870;&#xC640; &#xC870;&#xC778; &#xD14C;&#xC774;&#xBE14;&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xB2E8;&#xBC29;&#xD5A5; M:N &#xB9E4;&#xD551;</h4>
+<ul>
+<li>&#xC660;&#xB9CC;&#xD558;&#xBA74; M:N &#xC5F0;&#xAD00; &#xAD00;&#xACC4; &#xB9E4;&#xD551;&#xC740; &#xD53C;&#xD558;&#xB294;&#xAC8C; &#xC88B;&#xC74C;</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xD574;&#xC57C;&#xD558;&#xB294;&#xACBD;&#xC6B0; ID &#xCC38;&#xC870; + &#xB2E8;&#xBC29;&#xD5A5; &#xB9E4;&#xD551;&#xC744; &#xD1B5;&#xD574; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC74C;</li>
+<li>ID&#xCC38;&#xC870;&#xB97C; &#xC704;&#xD574; &#xBC38;&#xB958; &#xD0C0;&#xC785; &#xB9E4;&#xD551;&#xACFC; @ElementCollection &#xC0AC;&#xC6A9;</li>
+<li>@ElementCollection &#xC774;&#xC6A9;</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xC9C1;&#xC811; &#xCC38;&#xC870; &#xB300;&#xC2E0; ID&#xCC38;&#xC870;&#xB97C; &#xC774;&#xC6A9;</li>
+</ul>
+<h2 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;-&#xB85C;&#xB529;-&#xC804;&#xB7B5;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB85C;&#xB529; &#xC804;&#xB7B5;</h2>
+<ul>
+<li>JPA &#xB9E4;&#xD551;&#xC744; &#xC124;&#xC815;&#xD560; &#xB54C; &#xD56D;&#xC0C1; &#xAE30;&#xC5B5;&#xD574;&#xC57C; &#xD560; &#xC810;&#xC740; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC5D0; &#xC18D;&#xD55C; &#xAC1D;&#xCCB4;&#xAC00; &#xBAA8;&#xB450; &#xBAA8;&#xC5EC;&#xC57C; &#xD558;&#xB098;&#xAC00; &#xC644;&#xC131;&#xB41C; &#xB2E4;&#xB294; &#xC810;&#xC774;&#xB2E4;.</li>
+<li>&#xC989; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8;&#xB97C; &#xB85C;&#xB529;&#xD558;&#xBA74; &#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0;&#xC5D0; &#xC18D;&#xD55C; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xAC00; &#xC644;&#xC804;&#xD55C; &#xC0C1;&#xD0DC;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.</li>
+<li>FetchType.EAGER&#xB85C; &#xC124;&#xC815; &#xC2DC; &#xC5D4;&#xD2F0;&#xD2F0; &#xC870;&#xD68C; &#xC2DC;&#xC810;&#xC5D0; &#xC989;&#xC2DC; &#xB85C;&#xB529;&#xD55C;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xCEEC;&#xB809;&#xC158; &#xB4F1;&#xC740; &#xC989;&#xC2DC;&#xB85C;&#xB529; &#xBC29;&#xC2DD;&#xC774; &#xBB38;&#xC81C;&#xAC00; &#xB420; &#xC218; &#xC787;&#xB2E4;. (N + 1, &#xC989;&#xC2DC; &#xB85C;&#xB529; &#xC2DC; outer join &#xB4F1;)</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xB294; &#xC644;&#xC804;&#xD55C; &#xC0C1;&#xD0DC;&#xC5EC;&#xC57C;&#xD558;&#xC9C0;&#xB9CC; &#xBC18;&#xB4DC;&#xC2DC; &#xC989;&#xC2DC;&#xB85C;&#xB529;&#xC744; &#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xB2E4;.</li>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xC644;&#xC804;&#xD574;&#xC57C;&#xD558;&#xB294; &#xC774;&#xC720;<ul>
+<li>&#xC0C1;&#xD0DC; &#xBCC0;&#xACBD; &#xAE30;&#xB2A5; &#xC2E4;&#xD589; &#xC2DC; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC0C1;&#xD0DC;&#xAC00; &#xC644;&#xC804;&#xD574;&#xC57C;&#xD568;<ul>
+<li>JPA&#xB294; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xBC94;&#xC704; &#xB0B4;&#xC5D0;&#xC11C; &#xC9C0;&#xC5F0; &#xB85C;&#xB529;&#xC744; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;. &#xB54C;&#xBB38;&#xC5D0; &#xC2E4;&#xC81C; &#xC815;&#xBCF4;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC2DC;&#xC810;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB9CC; &#xC9C0;&#xC5F0; &#xB85C;&#xB529;&#xD558;&#xB294;&#xAC8C; &#xC720;&#xB9AC;</li>
+</ul>
+</li>
+<li>&#xD45C;&#xD604; &#xC601;&#xC5ED;&#xC5D0;&#xC11C; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xC5EC;&#xC904; &#xB54C; &#xD544;&#xC694;<ul>
+<li>&#xC774; &#xACBD;&#xC6B0; &#xB300;&#xBD80;&#xBD84; &#xBCC4;&#xB3C4;&#xC758; &#xC870;&#xD68C; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC8C; &#xC720;&#xB9AC;&#xD560; &#xB584;&#xAC00; &#xB9CE;&#xC74C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xADF8;&#xB9AC;&#xACE0; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xACBD;&#xC6B0; &#xBCC0;&#xACBD;&#xBCF4;&#xB2E8; &#xC870;&#xD68C; &#xBE48;&#xB3C4;&#xAC00; &#xD6E8;&#xC52C; &#xB192;&#xB2E4;.</li>
+</ul>
+<h2 id="&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758;-&#xC601;&#xC18D;&#xC131;-&#xC804;&#xD30C;">&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xC758; &#xC601;&#xC18D;&#xC131; &#xC804;&#xD30C;</h2>
+<ul>
+<li>&#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8;&#xAC00; &#xAC1C;&#xB150;&#xC801;&#xC73C;&#xB85C; &#xC644;&#xC804;&#xD55C; &#xD558;&#xB098;&#xB77C;&#xB294; &#xAC83;&#xC740; &#xC560;&#xADF8;&#xB9AC;&#xAC70;&#xD2B8; &#xB8E8;&#xD2B8; &#xC870;&#xD68C;&#xBFD0;&#xB9CC;&#xC544;&#xB2C8;&#xB77C; &#xC800;&#xC7A5; &#xBC0F; &#xC0AD;&#xC81C;&#xB420; &#xB54C;&#xB3C4; &#xD558;&#xB098;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5B4;&#xC57C;&#xD568;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC800;&#xC7A5; &#xC2DC; &#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0;&#xB9CC; &#xC800;&#xC7A5;&#xD558;&#xB294;&#xAC8C; &#xC544;&#xB2C8;&#xB77C; &#xC18D;&#xD55C; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;</li>
+<li>&#xC0AD;&#xC81C; &#xC2DC; &#xB8E8;&#xD2B8; &#xC5D4;&#xD2F0;&#xD2F0;&#xB9CC; &#xC800;&#xC7A5;&#xD558;&#xB294;&#xAC8C; &#xC544;&#xB2C8;&#xB77C; &#xC18D;&#xD55C; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AD;&#xC81C;</li>
+</ul>
+</li>
+<li>@Embeddable&#xD0C0;&#xC785;&#xC740; &#xCD94;&#xAC00; &#xC124;&#xC815;&#xC5C6;&#xC774; &#xD558;&#xB098;&#xB85C; &#xCC98;&#xB9AC;&#xB41C;&#xB2E4;.</li>
+<li>@Entity&#xD0C0;&#xC785;&#xC740; <code>cascade</code>&#xC18D;&#xC131;&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xC800;&#xC7A5;, &#xC0AD;&#xC81C; &#xC2DC; &#xCC98;&#xB9AC;&#xB418;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>@OneToOne, @OneToMany&#xB294; <code>cascade</code> &#xAE30;&#xBCF8;&#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; CascaseType.PERSIST, CascaseType.REMOVE&#xB97C; &#xC124;&#xC815;&#xD574;&#xC918;&#xC57C;&#xD55C;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#xC2DD;&#xBCC4;&#xC790;-&#xC0DD;&#xC131;-&#xAE30;&#xB2A5;">&#xC2DD;&#xBCC4;&#xC790; &#xC0DD;&#xC131; &#xAE30;&#xB2A5;</h2>
+<ul>
+<li>&#xC2DD;&#xBCC4;&#xC790;&#xB294; &#xD06C;&#xAC8C; 3&#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC744; &#xD1B5;&#xD574; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; &#xC0DD;&#xC131;<ul>
+<li>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; &#xC0DD;&#xC131;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC2DD;&#xBCC4;&#xC790; &#xC0DD;&#xC131; &#xAE30;&#xB2A5;&#xC744; &#xAD6C;&#xD604;&#xD560; &#xD544;&#xC694; &#xC5C6;&#xC74C;</li>
+</ul>
+</li>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1;&#xC73C;&#xB85C; &#xC0DD;&#xC131;<ul>
+<li>&#xC2DD;&#xBCC4;&#xC790; &#xC0DD;&#xC131; &#xADDC;&#xCE59;&#xC774; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xC5D4;&#xD2F0;&#xD2F0;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xB54C; &#xC774;&#xBBF8; &#xC0DD;&#xC131;&#xD55C; &#xC2DD;&#xBCC4;&#xC790;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xBBC0;&#xB85C;, &#xC5D4;&#xD2F0;&#xD2F0;&#xC5D0; &#xAD6C;&#xD604;&#xD558;&#xAE30; &#xBCF4;&#xB2E8; &#xBCC4;&#xB3C4; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;.</li>
+<li>&#xC2DD;&#xBCC4;&#xC790; &#xC0DD;&#xC131; &#xAE30;&#xB2A5;&#xC740; &#xB3C4;&#xBA54;&#xC778; &#xC601;&#xC5ED;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB3C4;&#xBA54;&#xC778; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xAD6C;&#xD604;&#xD558;&#xACE0;, &#xC751;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>&#xB610;&#xB294; &#xB9AC;&#xD3EC;&#xC9C0;&#xD130;&#xB9AC;&#xC5D0; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xB2E4;.   </li>
+</ul>
+</li>
+<li>DB&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xC77C;&#xB828;&#xBC88;&#xD638;(&#xC2DC;&#xD000;&#xC2A4;) &#xC0AC;&#xC6A9;<ul>
+<li>@GeneratedValue&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>@Id&#xB85C; &#xB9E4;&#xD551;&#xD55C; &#xD544;&#xB4DC;&#xC5D0; &#xC0DD;&#xC131;&#xB41C; &#xC2DD;&#xBCC4;&#xC790;&#xAC00; &#xD560;&#xB2F9;&#xB41C;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
                                 
@@ -689,7 +902,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.1.4","depth":3,"next":{"title":"5. 리포지터리와 조회 기능(JPA 중심)","level":"1.4.1.5","depth":3,"ref":"","articles":[]},"previous":{"title":"3. 애그리거트","level":"1.4.1.3","depth":3,"path":"content/architecture/ddd-start!/3.md","ref":"content/architecture/ddd-start!/3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/architecture/ddd-start!/4.md","mtime":"2020-01-14T15:46:15.234Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-19T12:12:19.119Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4. 리포지터리와 모델구현(JPA 중심)","level":"1.4.1.4","depth":3,"next":{"title":"5. 리포지터리와 조회 기능(JPA 중심)","level":"1.4.1.5","depth":3,"ref":"","articles":[]},"previous":{"title":"3. 애그리거트","level":"1.4.1.3","depth":3,"path":"content/architecture/ddd-start!/3.md","ref":"content/architecture/ddd-start!/3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/architecture/ddd-start!/4.md","mtime":"2020-01-21T14:47:45.421Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T14:47:53.957Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
