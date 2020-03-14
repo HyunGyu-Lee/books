@@ -1,0 +1,821 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-collapse/collapse.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../frontend/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Backend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Effective Java 3/E
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1" data-path="item1.html">
+            
+                <a href="item1.html">
+            
+                    
+                    아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../frontend/">
+            
+                <a href="../../frontend/">
+            
+                    
+                    Frontend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../architecture/">
+            
+                <a href="../../architecture/">
+            
+                    
+                    Architecture
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../architecture/ddd-start!/">
+            
+                <a href="../../architecture/ddd-start!/">
+            
+                    
+                    DDD Start!
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../architecture/ddd-start!/1.html">
+            
+                <a href="../../architecture/ddd-start!/1.html">
+            
+                    
+                    1. 도메인 모델 시작
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../architecture/ddd-start!/2.html">
+            
+                <a href="../../architecture/ddd-start!/2.html">
+            
+                    
+                    2. 아키텍쳐 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../architecture/ddd-start!/3.html">
+            
+                <a href="../../architecture/ddd-start!/3.html">
+            
+                    
+                    3. 애그리거트
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../../architecture/ddd-start!/4.html">
+            
+                <a href="../../architecture/ddd-start!/4.html">
+            
+                    
+                    4. 리포지터리와 모델구현(JPA 중심)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" >
+            
+                <span>
+            
+                    
+                    5. 리포지터리와 조회 기능(JPA 중심)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" >
+            
+                <span>
+            
+                    
+                    6. 응용 서비스와 표현 영역
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" >
+            
+                <span>
+            
+                    
+                    7. 도메인 서비스
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" >
+            
+                <span>
+            
+                    
+                    8. 애그리거트 트랜잭션 관리
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" >
+            
+                <span>
+            
+                    
+                    9. 도메인 모델과 BOUNDED CONTEXT
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" >
+            
+                <span>
+            
+                    
+                    10. 이벤트
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.11" >
+            
+                <span>
+            
+                    
+                    11. CQRS
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../better-developer/">
+            
+                <a href="../../better-developer/">
+            
+                    
+                    Better Developer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../better-developer/the-art-of-readable-code/">
+            
+                <a href="../../better-developer/the-art-of-readable-code/">
+            
+                    
+                    읽기 좋은 코드가 좋은 코드다
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../better-developer/the-art-of-readable-code/">
+            
+                <a href="../../better-developer/the-art-of-readable-code/">
+            
+                    
+                    1. 코드는 이해하기 쉬워야 한다.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" >
+            
+                <span>
+            
+                    
+                    2. 이름에 정보 담기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" >
+            
+                <span>
+            
+                    
+                    3. 오해할 수 없는 이름들
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" >
+            
+                <span>
+            
+                    
+                    4. 미학
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" >
+            
+                <span>
+            
+                    
+                    5. 주석에 담아야 하는 대상
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" >
+            
+                <span>
+            
+                    
+                    6 명확하고 간결한 주석 달기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.7" >
+            
+                <span>
+            
+                    
+                    7. 읽기 쉽게 흐름제어 만들기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.8" >
+            
+                <span>
+            
+                    
+                    8. 거대한 표현을 잘게 쪼개기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.9" >
+            
+                <span>
+            
+                    
+                    9. 변수와 가독성
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.10" >
+            
+                <span>
+            
+                    
+                    10. 상관없는 하위문제 추출하기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.11" >
+            
+                <span>
+            
+                    
+                    11. 한 번에 하나씩
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.12" >
+            
+                <span>
+            
+                    
+                    12. 생각을 코드로 만들기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.13" >
+            
+                <span>
+            
+                    
+                    13. 코드 분량 줄이기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.14" >
+            
+                <span>
+            
+                    
+                    14. 테스트와 가독성
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.15" >
+            
+                <span>
+            
+                    
+                    15. '분/시간 카운터'를 설계하고 구현하기
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xC0DD;&#xC131;&#xC790;-&#xB300;&#xC2E0;-&#xC815;&#xC801;-&#xD329;&#xD130;&#xB9AC;-&#xBA54;&#xC11C;&#xB4DC;&#xB97C;-&#xACE0;&#xB824;&#xD558;&#xB77C;">&#xC0DD;&#xC131;&#xC790; &#xB300;&#xC2E0; &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xACE0;&#xB824;&#xD558;&#xB77C;</h1>
+<h4 id="1-&#xD074;&#xB798;&#xC2A4;&#xC758;-&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C;-&#xC0DD;&#xC131;&#xD558;&#xB294;-&#xC5EC;&#xB7EC;-&#xBC29;&#xBC95;">#1. &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xC5EC;&#xB7EC; &#xBC29;&#xBC95;</h4>
+<ul>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC5BB;&#xB294; &#xC804;&#xD1B5;&#xC801;&#xC778; &#xC218;&#xB2E8;&#xC740; public &#xC0DD;&#xC131;&#xC790;&#xC774;&#xB2E4;.</li>
+<li>&#xC0DD;&#xC131;&#xC790;&#xC640; &#xBCC4;&#xB3C4;&#xB85C; &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;(static factory method)&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC544;&#xB798;&#xB294; boolean&#xD0C0;&#xC785;&#xC744; &#xBC1B;&#xC544; Boolean(&#xBC15;&#xC2F1; &#xD074;&#xB798;&#xC2A4;)&#xB85C; &#xBC18;&#xD658;&#xD574;&#xC8FC;&#xB294; &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xC774;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Boolean <span class="hljs-title">valueOf</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> b)</span> </span>{
+  <span class="hljs-keyword">return</span> b ? Boolean.TRUE : Boolean.FALSE;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="2-public-&#xC0DD;&#xC131;&#xC790;&#xC5D0;-&#xBE44;&#xD574;-&#xC815;&#xC801;-&#xD329;&#xD1A0;&#xB9AC;-&#xBA54;&#xC18C;&#xB4DC;&#xAC00;-&#xAC16;&#xB294;-&#xC7A5;&#xC810;">#2. public &#xC0DD;&#xC131;&#xC790;&#xC5D0; &#xBE44;&#xD574; &#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xAC16;&#xB294; &#xC7A5;&#xC810;</h4>
+<ul>
+<li>&#xC774;&#xB984;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xC0DD;&#xC131;&#xC790;&#xC5D0; &#xB118;&#xAE30;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xC0DD;&#xC131;&#xC790;&#xB9CC;&#xC73C;&#xB85C;&#xB294; &#xBC18;&#xD658;&#xB420; &#xAC1D;&#xCCB4;&#xC758; &#xD2B9;&#xC131;&#xC744; &#xC81C;&#xB300;&#xB85C; &#xC124;&#xBA85;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</li>
+<li>&#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xBA85;&#xB9CC; &#xC798; &#xC9C0;&#xC73C;&#xBA74; &#xBC18;&#xD658;&#xB420; &#xAC1D;&#xCCB4;&#xC758; &#xD2B9;&#xC131;&#xC744; &#xC27D;&#xAC8C; &#xBB18;&#xC0AC;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li><code>BigInteger(int, int, Random)</code>&#xACFC; <code>BigInteger.probablePrime</code> &#xC911; &#xC5B4;&#xB290;&#xCABD;&#xC774; <code>&#xC18C;&#xC218;&#xC778; BigInteger&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;</code>&#xB97C; &#xC798; &#xC124;&#xBA85;&#xD558;&#xB294;&#xC9C0; &#xBE44;&#xAD50;</li>
+<li>&#xD558;&#xB098;&#xC758; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xB85C;&#xB294; &#xC0DD;&#xC131;&#xC790; &#xD558;&#xB098;&#xB9CC; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC774;&#xB984;&#xC774; &#xB2E4;&#xB978; &#xB3D9;&#xC77C;&#xD55C; &#xC2DC;&#xADF8;&#xB2C8;&#xCC98;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xD638;&#xCD9C;&#xB420; &#xB54C; &#xB9C8;&#xB2E4; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.<ul>
+<li><strong>&#xBD88;&#xBCC0; &#xD074;&#xB798;&#xC2A4;</strong>&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBBF8;&#xB9AC; &#xB9CC;&#xB4E4;&#xC5B4;&#xB193;&#xAC70;&#xB098;, &#xCE90;&#xC2F1;&#xD558;&#xC5EC; &#xC7AC;&#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xAC1D;&#xCCB4;&#xC0DD;&#xC131;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xD2B9;&#xD788; &#xC0DD;&#xC131; &#xBE44;&#xC6A9;&#xC774; &#xD070; &#xACBD;&#xC6B0; &#xC131;&#xB2A5;&#xC744; &#xC0C1;&#xB2F9; &#xBD80;&#xBD84; &#xAC1C;&#xC120;&#xD574;&#xC904; &#xC218; &#xC788;&#xB2E4;. (<a href="https://palpit.tistory.com/198" target="_blank">&#xD50C;&#xB77C;&#xC774;&#xC6E8;&#xC774;&#xD2B8; &#xD328;&#xD134;</a>&#xACFC; &#xC720;&#xC0AC;)</li>
+<li>&#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; <strong>&#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD1B5;&#xC81C; &#xD074;&#xB798;&#xC2A4;(instance-controlled class)</strong>&#xB85C; &#xB9CC;&#xB4E4;&#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xD1B5;&#xC81C;&#xD558;&#xBA74; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC2F1;&#xAE00;&#xD134;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC218;&#xB3C4;, &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xD654; &#xBD88;&#xAC00;&#xD654;, &#xB3D9;&#xCE58;&#xC778; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xB2E8; &#xD558;&#xB098;&#xB9CC;&#xC784;&#xC744; &#xBCF4;&#xC7A5;&#xD558;&#xB294; &#xB4F1; &#xC5EC;&#xB7EC; &#xC81C;&#xC57D;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC758; &#xD558;&#xC704; &#xD0C0;&#xC785; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xC218; &#xC788;&#xB294; &#xB2A5;&#xB825;&#xC774; &#xC788;&#xB2E4;.<ul>
+<li>API&#xB97C; &#xB9CC;&#xB4E4; &#xB54C; &#xAD6C;&#xD604; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xACF5;&#xAC1C;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xC218; &#xC788;&#xC5B4; API&#xB97C; &#xC791;&#xAC8C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC790;&#xBC14;8 &#xC804;&#xC5D0;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC801; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC120;&#xC5B8;&#xD560; &#xC218; &#xC5C6;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, <code>Type</code>&#xB958; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xBC18;&#xD658;&#xD558;&#xB294; &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xD544;&#xC694;&#xD558;&#xB2E4;&#xBA74; &#xD574;&#xB2F9; &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xAC16;&#xB294; <code>Types</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xC5C8;&#xB2E4;.</li>
+<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xCEEC;&#xB809;&#xC158; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;&#xC758; &#xACBD;&#xC6B0; <strong>&#xC218;&#xC815;&#xBD88;&#xAC00;(Unmodifiable)</strong>, <strong>&#xB3D9;&#xAE30;&#xD654;(Synchroized)</strong> &#xB4F1;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; <code>java.util.Collections</code> &#xD074;&#xB798;&#xC2A4; &#xD558;&#xB098;&#xB85C; &#xC5BB;&#xC5B4;&#xC62C; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC124;&#xACC4;&#xB418;&#xC5B4;&#xC788;&#xB2E4;. (API &#xC678;&#xACAC;&#xC774; &#xC791;&#xACE0;, &#xD574;&#xB2F9; API&#xB97C; &#xC798; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC775;&#xD600;&#xC57C; &#xD558;&#xB294; &#xAC1C;&#xB150;&#xACFC; &#xB09C;&#xC774;&#xB3C4;&#xB3C4; &#xB0AE;&#xC544;&#xC9D0;)</li>
+<li>&#xB610;&#xD55C; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xD574;&#xB2F9; &#xAD6C;&#xD604;&#xCCB4;&#xAC00; &#xC544;&#xB2CC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB9CC;&#xC744; &#xC8FC;&#xB85C; &#xB2E4;&#xB8E8;&#xAC8C; &#xB41C;&#xB2E4;. (&#xC88B;&#xC740; &#xC2B5;&#xAD00;)</li>
+</ul>
+</li>
+<li>&#xC785;&#xB825; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xB530;&#xB77C; &#xB9E4;&#xBC88; &#xB2E4;&#xB978; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC758; &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC774;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xC5B4;&#xB5A4; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB358; &#xC0C1;&#xAD00;&#xC774; &#xC5C6;&#xB2E4;.<ul>
+<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; <code>EnumSet</code>&#xC758; &#xACBD;&#xC6B0; Enum&#xC774; 64&#xAC1C; &#xC774;&#xD558;&#xC774;&#xBA74; long &#xBCC0;&#xC218;&#xB85C; &#xAD00;&#xB9AC;&#xD558;&#xB294; <code>RegularEnumSet</code>, &#xC774;&#xC0C1;&#xC774;&#xBA74; long[]&#xC73C;&#xB85C; &#xAD00;&#xB9AC;&#xD558;&#xB294; <code>JumboEnumSet</code>&#xC744; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</li>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC774; &#xB450; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC874;&#xC7AC;&#xB97C; &#xBAA8;&#xB974;&#xBA70; &#xC54C; &#xD544;&#xC694;&#xB3C4; &#xC5C6;&#xB2E4;. API&#xCE21;&#xC5D0;&#xC11C;&#xB294; &#xC138;&#xBD80; &#xAD6C;&#xD604; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xCD94;&#xAC00;, &#xC0AD;&#xC81C;&#xD574;&#xB3C4; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCE21;&#xC5D0;&#xC11C; &#xBB38;&#xC81C;&#xAC00; &#xC5C6;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xC2DC;&#xC810;&#xC5D0;&#xB294; &#xBC18;&#xD658;&#xD560; &#xAC1D;&#xCCB4;&#xC758; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.<ul>
+<li>&#xC774; &#xC720;&#xC5F0;&#xD568;&#xC740; &#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C; (Service Provider Framework)&#xC758; &#xADFC;&#xAC04;&#xC774; &#xB41C;&#xB2E4;. (&#xB300;&#xD45C;&#xC801;&#xC73C;&#xB85C; JDBC)</li>
+<li>&#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;&#xB294; 3&#xAC00;&#xC9C0; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4;&#xB2E4;.<ul>
+<li>&#xAD6C;&#xD604;&#xCCB4;&#xC758; &#xB3D9;&#xC791;&#xC744; &#xC815;&#xC758;&#xD558;&#xB294; <strong>&#xC11C;&#xBE44;&#xC2A4; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</strong> (JDBC&#xC5D0;&#xC11C; <code>Connection</code>)</li>
+<li>&#xC81C;&#xACF5;&#xC790;(&#xC11C;&#xBE44;&#xC2A4; &#xAD6C;&#xD604;&#xCCB4;)&#xAC00; &#xAD6C;&#xD604;&#xCCB4;&#xB97C; &#xB4F1;&#xB85D;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <strong>&#xC81C;&#xACF5;&#xC790; &#xB4F1;&#xB85D; API</strong> (JDBC&#xC5D0;&#xC11C; <code>DriverManager.registerDriver</code>)</li>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC5BB;&#xC744; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <strong>&#xC11C;&#xBE44;&#xC2A4; &#xC811;&#xADFC; API</strong> (JDBC&#xC5D0;&#xC11C; <code>DriverManager.getConnection</code>)</li>
+<li>&#xC11C;&#xBE44;&#xC2A4; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xD329;&#xD130;&#xB9AC; &#xAC1D;&#xCCB4;&#xB97C; &#xC124;&#xBA85;&#xD574;&#xC8FC;&#xB294; <strong>&#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;</strong> (JDBC&#xC5D0;&#xC11C; <code>Driver</code>)</li>
+</ul>
+</li>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; <strong>&#xC11C;&#xBE44;&#xC2A4; &#xC811;&#xADFC; API</strong>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC6D0;&#xD558;&#xB294; &#xAD6C;&#xD604;&#xCCB4;&#xC758; &#xC870;&#xAC74;&#xC744; &#xBA85;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC790;&#xBC14;5 &#xBD80;&#xD130;&#xB294; <code>java.util.ServiceLoader</code>&#xB77C;&#xB294; <a href="https://riptutorial.com/ko/java/example/19523/%EA%B0%84%EB%8B%A8%ED%95%9C-serviceloader-%EC%98%88%EC%A0%9C" target="_blank">&#xBC94;&#xC6A9; &#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;</a>&#xAC00; &#xC81C;&#xACF5;&#xB41C;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-&#xC815;&#xC801;-&#xD329;&#xD130;&#xB9AC;-&#xBA54;&#xC18C;&#xB4DC;&#xC758;-&#xB2E8;&#xC810;">#3. &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xB2E8;&#xC810;</h4>
+<ul>
+<li>&#xC0C1;&#xC18D;&#xC744; &#xD558;&#xB824;&#xBA74; public, protected &#xC0DD;&#xC131;&#xC790;&#xAC00; &#xD544;&#xC694;&#xD558;&#xBBC0;&#xB85C;, &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC0C1;&#xC18D;&#xC744; &#xD560; &#xC218; &#xC5C6;&#xB2E4;.</li>
+<li>&#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xAC00; &#xCC3E;&#xAE30; &#xC5B4;&#xB835;&#xB2E4;.<ul>
+<li>&#xC0DD;&#xC131;&#xC790;&#xCC98;&#xB7FC; API &#xC124;&#xBA85;&#xC5D0; &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xB4DC;&#xB7EC;&#xB098;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xC790;&#xBC14;&#xB3C5;&#xC5D0; &#xC798; &#xD45C;&#xD604;&#xB418;&#xB3C4;&#xB85D; &#xB110;&#xB9AC; &#xC54C;&#xB824;&#xC9C4; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>from : &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xD558;&#xB098; &#xBC1B;&#xC544;&#xC11C; &#xD574;&#xB2F9; &#xD0C0;&#xC785;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xD615;&#xBCC0;&#xD658; &#xBA54;&#xC11C;&#xB4DC;<ul>
+<li>Date d = Date.from(instant);</li>
+</ul>
+</li>
+<li>of : &#xC5EC;&#xB7EC; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xBC1B;&#xC544; &#xC801;&#xD569;&#xD55C; &#xD0C0;&#xC785;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xC9D1;&#xACC4; &#xBA54;&#xC11C;&#xB4DC;<ul>
+<li>Set<rank> faceCards = EnumSet.of(JACK, QUEEN, KING);</rank></li>
+</ul>
+</li>
+<li>valueOf : from&#xACFC; of&#xC758; &#xB354; &#xC790;&#xC138;&#xD55C; &#xBC84;&#xC804;<ul>
+<li>BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);</li>
+</ul>
+</li>
+<li>instance / getInstance : (&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xBC1B;&#xB294;&#xB2E4;&#xBA74;) &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xBA85;&#xC2DC;&#xD55C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xC9C0;&#xB9CC;, &#xAC19;&#xC740; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC784;&#xC744; &#xBCF4;&#xC7A5;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.<ul>
+<li>StackWaler luke = StackWaler.getInstance(options);</li>
+</ul>
+</li>
+<li>create / newInstance : instance &#xD639;&#xC740; getInstance&#xC640; &#xAC19;&#xC9C0;&#xB9CC;, &#xB9E4;&#xBC88; &#xC0C8;&#xB85C;&#xC6B4; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD574; &#xBC18;&#xD658;&#xD568;&#xC744; &#xBCF4;&#xC7A5;&#xD55C;&#xB2E4;.<ul>
+<li>Object newArray = Array.newInstance(classObject, arrayLen);</li>
+</ul>
+</li>
+<li>getType : getInstance&#xC640; &#xAC19;&#xC9C0;&#xB9CC; &#xC0DD;&#xC131;&#xD560; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC815;&#xC758;&#xD560; &#xB54C; &#xC4F4;&#xB2E4;. <strong>Type</strong>&#xC740; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xBC18;&#xD658;&#xD560; &#xAC1D;&#xCCB4;&#xC758; &#xD0C0;&#xC785;<ul>
+<li>FileStore fs = Files.getFileStore(path);</li>
+<li>Drawer drawer = Drawers.getDrawer(opts);</li>
+</ul>
+</li>
+<li>newType : newInstance&#xC640; &#xAC19;&#xC9C0;&#xB9CC;, &#xC0DD;&#xC131;&#xD560; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC815;&#xC758;&#xD560; &#xB54C; &#xC4F4;&#xB2E4;. <strong>Type</strong>&#xC740; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xBC18;&#xD658;&#xD560; &#xAC1D;&#xCCB4;&#xC758; &#xD0C0;&#xC785;<ul>
+<li>BufferedReader br = Files.newBufferedReader(path);</li>
+</ul>
+</li>
+<li>type : getType, newType&#xC758; &#xAC04;&#xACB0;&#xD55C; &#xBC84;&#xC804;<ul>
+<li>List<string> names = Collections.list(nameArrays);</string></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Effective Java 3/E">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../frontend/" class="navigation navigation-next " aria-label="Next page: Frontend">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라","level":"1.2.1.1","depth":3,"next":{"title":"Frontend","level":"1.3","depth":1,"path":"content/frontend/index.md","ref":"content/frontend/index.md","articles":[]},"previous":{"title":"Effective Java 3/E","level":"1.2.1","depth":2,"path":"content/backend/effective-java-3e/index.md","ref":"content/backend/effective-java-3e/index.md","articles":[{"title":"아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라","level":"1.2.1.1","depth":3,"path":"content/backend/effective-java-3e/item1.md","ref":"content/backend/effective-java-3e/item1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item1.md","mtime":"2020-03-14T13:16:28.243Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-14T13:16:38.652Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapse/collapse.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

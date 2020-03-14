@@ -1,6 +1,2 @@
-# Summary
-
-* [Backend](README.md)    
-* [Frontend](README.md)
-* [Better Developer](better-developer/the-art-of-readable-code.md)
-    * [읽기 좋은](a.md)
+# Backend 카테고리
+* [Effective Java 3/E](content/backend/effective-java-3e/index.md)

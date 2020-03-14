@@ -1,6 +1,8 @@
 # Summary
 
 * [Backend](content/backend/index.md) 
+    * [Effective Java 3/E](content/backend/effective-java-3e/index.md)
+        * [아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라](content/backend/effective-java-3e/item1.md)
 * [Frontend](content/frontend/index.md)
 * [Architecture](content/architecture/index.md)
     * [DDD Start!](content/architecture/ddd-start!/index.md)
