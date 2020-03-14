@@ -61,3 +61,7 @@ public static Boolean valueOf(boolean b) {
       - BufferedReader br = Files.newBufferedReader(path);
     - type : getType, newType의 간결한 버전
       - List<String> names = Collections.list(nameArrays);
+
+#### \# 결론
+- 정적 팩터리 메소드와 public 생성자는 각자의 쓰임새가 있으니 상대적인 장단점을 이해하고 사용하는 것이 좋다.
+- 하지만 일반적으로 정적 팩터리 메소드를 사용하는게 유리한 경우가 많으므로 무작정 public 생성자를 제공하는 습관이 있다면 고치자.

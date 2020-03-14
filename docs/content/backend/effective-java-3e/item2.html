@@ -1,0 +1,891 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-collapse/collapse.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="item3.html" />
+    
+    
+    <link rel="prev" href="item1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Backend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Effective Java 3/E
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="item1.html">
+            
+                <a href="item1.html">
+            
+                    
+                    아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.2" data-path="item2.html">
+            
+                <a href="item2.html">
+            
+                    
+                    아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="item3.html">
+            
+                <a href="item3.html">
+            
+                    
+                    아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="item4.html">
+            
+                <a href="item4.html">
+            
+                    
+                    아이템4. 인스턴스화를 막으려거든 private 생성자를 사용하라
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../frontend/">
+            
+                <a href="../../frontend/">
+            
+                    
+                    Frontend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../architecture/">
+            
+                <a href="../../architecture/">
+            
+                    
+                    Architecture
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../architecture/ddd-start!/">
+            
+                <a href="../../architecture/ddd-start!/">
+            
+                    
+                    DDD Start!
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../architecture/ddd-start!/1.html">
+            
+                <a href="../../architecture/ddd-start!/1.html">
+            
+                    
+                    1. 도메인 모델 시작
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../architecture/ddd-start!/2.html">
+            
+                <a href="../../architecture/ddd-start!/2.html">
+            
+                    
+                    2. 아키텍쳐 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../architecture/ddd-start!/3.html">
+            
+                <a href="../../architecture/ddd-start!/3.html">
+            
+                    
+                    3. 애그리거트
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../../architecture/ddd-start!/4.html">
+            
+                <a href="../../architecture/ddd-start!/4.html">
+            
+                    
+                    4. 리포지터리와 모델구현(JPA 중심)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" >
+            
+                <span>
+            
+                    
+                    5. 리포지터리와 조회 기능(JPA 중심)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" >
+            
+                <span>
+            
+                    
+                    6. 응용 서비스와 표현 영역
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" >
+            
+                <span>
+            
+                    
+                    7. 도메인 서비스
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" >
+            
+                <span>
+            
+                    
+                    8. 애그리거트 트랜잭션 관리
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" >
+            
+                <span>
+            
+                    
+                    9. 도메인 모델과 BOUNDED CONTEXT
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" >
+            
+                <span>
+            
+                    
+                    10. 이벤트
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.11" >
+            
+                <span>
+            
+                    
+                    11. CQRS
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../better-developer/">
+            
+                <a href="../../better-developer/">
+            
+                    
+                    Better Developer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../better-developer/the-art-of-readable-code/">
+            
+                <a href="../../better-developer/the-art-of-readable-code/">
+            
+                    
+                    읽기 좋은 코드가 좋은 코드다
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../better-developer/the-art-of-readable-code/">
+            
+                <a href="../../better-developer/the-art-of-readable-code/">
+            
+                    
+                    1. 코드는 이해하기 쉬워야 한다.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" >
+            
+                <span>
+            
+                    
+                    2. 이름에 정보 담기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" >
+            
+                <span>
+            
+                    
+                    3. 오해할 수 없는 이름들
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" >
+            
+                <span>
+            
+                    
+                    4. 미학
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" >
+            
+                <span>
+            
+                    
+                    5. 주석에 담아야 하는 대상
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" >
+            
+                <span>
+            
+                    
+                    6 명확하고 간결한 주석 달기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.7" >
+            
+                <span>
+            
+                    
+                    7. 읽기 쉽게 흐름제어 만들기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.8" >
+            
+                <span>
+            
+                    
+                    8. 거대한 표현을 잘게 쪼개기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.9" >
+            
+                <span>
+            
+                    
+                    9. 변수와 가독성
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.10" >
+            
+                <span>
+            
+                    
+                    10. 상관없는 하위문제 추출하기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.11" >
+            
+                <span>
+            
+                    
+                    11. 한 번에 하나씩
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.12" >
+            
+                <span>
+            
+                    
+                    12. 생각을 코드로 만들기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.13" >
+            
+                <span>
+            
+                    
+                    13. 코드 분량 줄이기
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.14" >
+            
+                <span>
+            
+                    
+                    14. 테스트와 가독성
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.15" >
+            
+                <span>
+            
+                    
+                    15. '분/시간 카운터'를 설계하고 구현하기
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xC0DD;&#xC131;&#xC790;&#xC5D0;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00;-&#xB9CE;&#xB2E4;&#xBA74;-&#xBE4C;&#xB354;&#xB97C;-&#xACE0;&#xB824;&#xD558;&#xB77C;">&#xC0DD;&#xC131;&#xC790;&#xC5D0; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xB9CE;&#xB2E4;&#xBA74; &#xBE4C;&#xB354;&#xB97C; &#xACE0;&#xB824;&#xD558;&#xB77C;</h1>
+<h4 id="1-&#xBE4C;&#xB354;&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xB294;-&#xC774;&#xC720;">#1. &#xBE4C;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC774;&#xC720;</h4>
+<ul>
+<li>&#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xC5D0;&#xB294; public &#xC0DD;&#xC131;&#xC790;&#xC640; &#xAC19;&#xC774;, &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xB9CE;&#xC740; &#xACBD;&#xC6B0; &#xC801;&#xC808;&#xD788; &#xB300;&#xC751;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xB2E4;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
+<li>&#xAE30;&#xC874;&#xC5D0;&#xB294; &#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; / &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xBC1B;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xB298;&#xB824;&#xAC00;&#xBA70; &#xC791;&#xC131;&#xD558;&#xB294; <strong>&#xC810;&#xCE35;&#xC801; &#xC0DD;&#xC131;&#xC790; &#xD328;&#xD134;</strong>&#xC774; &#xC8FC;&#xB85C; &#xC0AC;&#xC6A9;&#xB410;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xC810;&#xCE35;&#xC801; &#xC0DD;&#xC131;&#xC790; &#xD328;&#xD134;&#xB3C4; &#xACB0;&#xAD6D;&#xC740; &#xC6D0;&#xCE58;&#xC54A;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xD3EC;&#xD568;&#xB420; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xACE0;, &#xC774;&#xB7F0; &#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCE21; &#xCF54;&#xB4DC;&#xAC00; &#xC791;&#xC131;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xACE0; &#xC77D;&#xAE30; &#xC5B4;&#xB824;&#xC6CC;&#xC9C4;&#xB2E4;.</li>
+<li>&#xB450; &#xBC88;&#xC9F8;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; Setter&#xB85C; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294; <strong>&#xC790;&#xBC14;&#xBE48;&#xC988; &#xD328;&#xD134;</strong>&#xC774;&#xB2E4;.</li>
+<li>&#xC774; &#xBC29;&#xBC95;&#xC740; <strong>&#xC810;&#xCE35;&#xC801; &#xC0DD;&#xC131;&#xC790; &#xD328;&#xD134;</strong>&#xC5D0; &#xBE44;&#xD574; &#xC77D;&#xAE30;&#xB294; &#xC27D;&#xC9C0;&#xB9CC; &#xAC1D;&#xCCB4; &#xD558;&#xB098; &#xC0DD;&#xC131;&#xC744; &#xC704;&#xD574; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC5EC;&#xB7EC; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C;&#xD558;&#xACE0;, &#xAC12; &#xC124;&#xC815;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xAE30; &#xC804;&#xAE4C;&#xC9C0;&#xB294; &#xC77C;&#xAD00;&#xC131;&#xC774; &#xBB34;&#xB108;&#xC9C4; &#xC0C1;&#xD0DC;&#xC5D0; &#xB193;&#xC774;&#xAC8C; &#xB41C;&#xB2E4;.</li>
+<li>&#xB610;&#xD55C; &#xBD88;&#xBCC0;&#xC131;&#xC774; &#xAE68;&#xC9C0;&#xACE0; &#xC2A4;&#xB808;&#xB4DC; &#xC548;&#xC815;&#xC131;&#xC744; &#xC704;&#xD574; &#xCD94;&#xAC00; &#xC791;&#xC5C5;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;.</li>
+</ul>
+<h4 id="2-&#xC810;&#xCE35;&#xC801;-&#xC0DD;&#xC131;&#xC790;-&#xD328;&#xD134;&#xC758;-&#xC548;&#xC815;&#xC131;&#xACFC;-&#xC790;&#xBC14;&#xBE48;&#xC988;-&#xD328;&#xD134;&#xC758;-&#xAC00;&#xB3C5;&#xC131;&#xC744;-&#xACB8;&#xBE44;&#xD55C;-&#xBE4C;&#xB354;-&#xD328;&#xD134;">#2. &#xC810;&#xCE35;&#xC801; &#xC0DD;&#xC131;&#xC790; &#xD328;&#xD134;&#xC758; &#xC548;&#xC815;&#xC131;&#xACFC; &#xC790;&#xBC14;&#xBE48;&#xC988; &#xD328;&#xD134;&#xC758; &#xAC00;&#xB3C5;&#xC131;&#xC744; &#xACB8;&#xBE44;&#xD55C; &#xBE4C;&#xB354; &#xD328;&#xD134;</h4>
+<ul>
+<li>&#xBE4C;&#xB354; &#xD328;&#xD134;&#xC740; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xAC1D;&#xCCB4;&#xB97C; &#xC9C1;&#xC811; &#xB9CC;&#xB4DC;&#xB294; &#xB300;&#xC2E0;, &#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB9CC;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xC790;(&#xD639;&#xC740; &#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;)&#xB97C; &#xD638;&#xCD9C;&#xD574; &#xBE4C;&#xB354; &#xAC1D;&#xCCB4;&#xB97C; &#xC5BB;&#xB294;&#xB2E4;.</li>
+<li>&#xC774;&#xD6C4; &#xC120;&#xD0DD;&#xC801; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC8FC;&#xACE0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; build &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xD544;&#xC694;&#xD55C; &#xAC1D;&#xCCB4;&#xB97C; &#xC5BB;&#xC5B4;&#xB0B8;&#xB2E4;.</li>
+<li>&#xBE4C;&#xB354;&#xB294; &#xC0DD;&#xC131;&#xD560; &#xD074;&#xB798;&#xC2A4; &#xC548;&#xC5D0; &#xC815;&#xC801; &#xBA64;&#xBC84; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xB450;&#xB294;&#xAC8C; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xB2E4;.</li>
+<li><p>&#xBE4C;&#xB354; &#xD328;&#xD134; &#xC608;&#xC2DC;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NutritionFacts</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> servingSize;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> servings;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> calories;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> fat;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Builder</span> </span>{
+      <span class="hljs-comment">// &#xD544;&#xC218; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</span>
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> servingSize;
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> servings;
+
+      <span class="hljs-comment">// &#xC120;&#xD0DD; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; (default &#xAC12; &#xCD08;&#xAE30;&#xD654;)</span>
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> calories = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> fat = <span class="hljs-number">0</span>;
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Builder</span><span class="hljs-params">(<span class="hljs-keyword">int</span> servingSize, <span class="hljs-keyword">int</span> servings)</span> </span>{
+          <span class="hljs-keyword">this</span>.servingSize = servingSize;
+          <span class="hljs-keyword">this</span>.servings = servings;
+      }
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">calories</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+          <span class="hljs-keyword">this</span>.calories = val;
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+      }
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">fat</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+          <span class="hljs-keyword">this</span>.fat = val;
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+      }        
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> NutritionFacts <span class="hljs-title">build</span><span class="hljs-params">()</span> </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NutritionFacts(<span class="hljs-keyword">this</span>);
+      }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">NutritionFacts</span><span class="hljs-params">(Builder builder)</span> </span>{
+      <span class="hljs-keyword">this</span>.servingSize = builder.servingSize;
+      <span class="hljs-keyword">this</span>.servings = builder.servings;
+      <span class="hljs-keyword">this</span>.calories = builder.calories;
+      <span class="hljs-keyword">this</span>.fat = builder.fat;
+  }
+}
+</code></pre>
+</li>
+<li>&#xBE4C;&#xB354; &#xD328;&#xD134;&#xC5D0;&#xC11C; &#xC785;&#xB825;&#xAC12;&#xC758; &#xC720;&#xD6A8;&#xC131; &#xAC80;&#xC0AC; &#xD6C4; IllegalArgumentException&#xC744; &#xC0AC;&#xC6A9;&#xD574; &#xC624;&#xB958;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xCF1C; &#xC8FC;&#xBA74; &#xB41C;&#xB2E4;.</li>
+</ul>
+<h4 id="3-&#xBE4C;&#xB354;&#xD328;&#xD134;&#xACFC;-&#xACC4;&#xCE35;-&#xC124;&#xACC4;-&#xD074;&#xB798;&#xC2A4;">#3. &#xBE4C;&#xB354;&#xD328;&#xD134;&#xACFC; &#xACC4;&#xCE35; &#xC124;&#xACC4; &#xD074;&#xB798;&#xC2A4;</h4>
+<ul>
+<li>&#xBE4C;&#xB354; &#xD328;&#xD134;&#xC740; &#xACC4;&#xCE35;&#xC801;&#xC73C;&#xB85C; &#xC124;&#xACC4;&#xB41C; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xD568;&#xAED8; &#xC4F0;&#xAE30; &#xC88B;&#xB2E4;</li>
+<li>&#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xCD94;&#xC0C1; &#xBE4C;&#xB354;&#xB97C;, &#xAD6C;&#xCCB4; &#xD074;&#xB798;&#xC2A4;(concrete class)&#xB294; &#xAD6C;&#xCCB4; &#xBE4C;&#xB354;&#xB97C; &#xAC16;&#xAC8C; &#xD55C;&#xB2E4;.</li>
+<li>&#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4; &#xC608;&#xC2DC;</li>
+<li><p>&#xC544;&#xB798; &#xC608;&#xC2DC;&#xC5D0;&#xC11C; <strong>self &#xCD94;&#xC0C1; &#xBA54;&#xC18C;&#xB4DC;</strong>&#xB294; &#xC140;&#xD504; &#xD0C0;&#xC785; &#xAD00;&#xC6A9;&#xAD6C;(simulated self-type)&#xB77C; &#xD568;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pizza</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> Topping { HAM, MUSHROOM, ONION }
+  <span class="hljs-keyword">final</span> Set&lt;Topping&gt; toppings;
+
+  <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Builder</span>&lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Builder</span>&lt;<span class="hljs-title">T</span>&gt;&gt; </span>{
+      EnumSet&lt;Topping&gt; toppings = EnumSet.noneOf(Topping.class);
+
+      <span class="hljs-comment">// addTopping &#xBA54;&#xC18C;&#xB4DC;&#xC5D0; &#xD615;&#xBCC0;&#xD658; &#xC5C6;&#xC774; &#xBA54;&#xC18C;&#xB4DC; &#xCCB4;&#xC774;&#xB2DD;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC704;&#xD574; self &#xC774;&#xC6A9;</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">addTopping</span><span class="hljs-params">(Topping topping)</span> </span>{
+          toppings.add(topping);
+          <span class="hljs-keyword">return</span> self();
+      }
+
+      <span class="hljs-function"><span class="hljs-keyword">abstract</span> Pizza <span class="hljs-title">build</span><span class="hljs-params">()</span></span>;
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> T <span class="hljs-title">self</span><span class="hljs-params">()</span></span>;
+  }
+
+  Pizza(Builder&lt;?&gt; builder) {
+      <span class="hljs-keyword">this</span>.toppings = builder.toppings.clone();
+  }
+}
+</code></pre>
+</li>
+<li>&#xD558;&#xC704; &#xD074;&#xB798;&#xC2A4; &#xC608;&#xC2DC;</li>
+<li><p>build &#xBA54;&#xC18C;&#xB4DC; &#xC7AC;&#xC815;&#xC758; &#xC2DC; <strong>&#xC790;&#xC2E0;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xD658;(&#xACF5;&#xBCC0; &#xBC18;&#xD658; &#xD0C0;&#xC774;&#xD551;)</strong>&#xC744; &#xD1B5;&#xD574; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD615;&#xBCC0;&#xD658;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB418;&#xAC8C;&#xD568;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NyPizza</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pizza</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> Size { SMALL, MEDIUM, LARGE }
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Size size;
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Builder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pizza</span>.<span class="hljs-title">Builder</span>&lt;<span class="hljs-title">Builder</span>&gt; </span>{
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Size size;
+
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Builder</span><span class="hljs-params">(Size size)</span> </span>{
+          <span class="hljs-keyword">this</span>.size = Objects.requireNonNull(size);
+      }
+
+      <span class="hljs-comment">// &#xD558;&#xC704; &#xD074;&#xB798;&#xC2A4;&#xC758; build &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xC11C; &#xC0C1;&#xC704; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC815;&#xC758;&#xB300;&#xC2E0; &#xD558;&#xC704; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xD658;&#xD558;&#xB294; &#xAC83;&#xC744; &#xACF5;&#xBCC0; &#xBC18;&#xD658; &#xD0C0;&#xC774;&#xD551;&#xC774;&#xB77C; &#xD568;</span>
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> NyPizza <span class="hljs-title">build</span><span class="hljs-params">()</span> </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NyPizza(<span class="hljs-keyword">this</span>);
+      }
+
+      <span class="hljs-comment">// self &#xBA54;&#xC18C;&#xB4DC; &#xAD6C;&#xD604;</span>
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">self</span><span class="hljs-params">()</span> </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+      }
+  }
+
+  NyPizza(Builder builder) {
+      <span class="hljs-keyword">super</span>(builder);
+      <span class="hljs-keyword">this</span>.size = builder.size;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="&#xACB0;&#xB860;"># &#xACB0;&#xB860;</h4>
+<ul>
+<li>&#xC0DD;&#xC131;&#xC790;&#xB098; &#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xCC98;&#xB9AC;&#xD574;&#xC57C;&#xD560; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xB9CE;&#xB2E4;&#xBA74; &#xBE4C;&#xB354; &#xD328;&#xD134;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB294;&#xAC8C; &#xB0AB;&#xB2E4;.</li>
+<li>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC911; &#xB2E4;&#xC218;&#xAC00; &#xD544;&#xC218;&#xAC00; &#xC544;&#xB2C8;&#xAC70;&#xB098; &#xAC19;&#xC740; &#xD0C0;&#xC785;&#xC774;&#xBA74; &#xD2B9;&#xD788; &#xADF8;&#xB807;&#xB2E4;.</li>
+<li>&#xBE4C;&#xB354;&#xB294; &#xC810;&#xCE35;&#xC801; &#xC0DD;&#xC131;&#xC790;&#xBCF4;&#xB2E4; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xC77D;&#xACE0; &#xC4F0;&#xAE30;&#xAC00; &#xD6E8;&#xC52C; &#xAC04;&#xD3B8;&#xD558;&#xB2E4;.</li>
+<li>&#xBE4C;&#xB354;&#xB294; &#xC790;&#xBC14;&#xBE48;&#xC988;&#xBCF4;&#xB2E4; &#xD6E8;&#xC52C; &#xC548;&#xC804;&#xD558;&#xB2E4;.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="item1.html" class="navigation navigation-prev " aria-label="Previous page: 아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="item3.html" class="navigation navigation-next " aria-label="Next page: 아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라","level":"1.2.1.2","depth":3,"next":{"title":"아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라","level":"1.2.1.3","depth":3,"path":"content/backend/effective-java-3e/item3.md","ref":"content/backend/effective-java-3e/item3.md","articles":[]},"previous":{"title":"아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라","level":"1.2.1.1","depth":3,"path":"content/backend/effective-java-3e/item1.md","ref":"content/backend/effective-java-3e/item1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item2.md","mtime":"2020-03-14T16:13:52.493Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-14T17:59:15.372Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapse/collapse.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

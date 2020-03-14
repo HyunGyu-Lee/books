@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>읽기 좋은 코드가 좋은 코드다 · GitBook</title>
+        <title>아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="./" />
+    <link rel="next" href="item4.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="item2.html" />
     
 
     </head>
@@ -106,9 +106,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../../backend/">
+        <li class="chapter " data-level="1.2" data-path="../">
             
-                <a href="../../backend/">
+                <a href="../">
             
                     
                     Backend
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../../backend/effective-java-3e/">
+        <li class="chapter " data-level="1.2.1" data-path="./">
             
-                <a href="../../backend/effective-java-3e/">
+                <a href="./">
             
                     
                     Effective Java 3/E
@@ -134,9 +134,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="../../backend/effective-java-3e/item1.html">
+        <li class="chapter " data-level="1.2.1.1" data-path="item1.html">
             
-                <a href="../../backend/effective-java-3e/item1.html">
+                <a href="item1.html">
             
                     
                     아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2" data-path="../../backend/effective-java-3e/item2.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="item2.html">
             
-                <a href="../../backend/effective-java-3e/item2.html">
+                <a href="item2.html">
             
                     
                     아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라
@@ -160,9 +160,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.3" data-path="../../backend/effective-java-3e/item3.html">
+        <li class="chapter active" data-level="1.2.1.3" data-path="item3.html">
             
-                <a href="../../backend/effective-java-3e/item3.html">
+                <a href="item3.html">
             
                     
                     아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라
@@ -173,9 +173,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.4" data-path="../../backend/effective-java-3e/item4.html">
+        <li class="chapter " data-level="1.2.1.4" data-path="item4.html">
             
-                <a href="../../backend/effective-java-3e/item4.html">
+                <a href="item4.html">
             
                     
                     아이템4. 인스턴스화를 막으려거든 private 생성자를 사용하라
@@ -390,9 +390,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../">
+        <li class="chapter " data-level="1.5" data-path="../../better-developer/">
             
-                <a href="../">
+                <a href="../../better-developer/">
             
                     
                     Better Developer
@@ -404,9 +404,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="./">
+        <li class="chapter " data-level="1.5.1" data-path="../../better-developer/the-art-of-readable-code/">
             
-                <a href="./">
+                <a href="../../better-developer/the-art-of-readable-code/">
             
                     
                     읽기 좋은 코드가 좋은 코드다
@@ -418,9 +418,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1.1" data-path="./">
+        <li class="chapter " data-level="1.5.1.1" data-path="../../better-developer/the-art-of-readable-code/">
             
-                <a href="./">
+                <a href="../../better-developer/the-art-of-readable-code/">
             
                     
                     1. 코드는 이해하기 쉬워야 한다.
@@ -653,7 +653,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >읽기 좋은 코드가 좋은 코드다</a>
+        <a href="../../.." >아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라</a>
     </h1>
 </div>
 
@@ -668,13 +668,84 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#xC77D;&#xAE30;-&#xC88B;&#xC740;-&#xCF54;&#xB4DC;&#xAC00;-&#xC88B;&#xC740;-&#xCF54;&#xB4DC;&#xB2E4;"><center>&#xC77D;&#xAE30; &#xC88B;&#xC740; &#xCF54;&#xB4DC;&#xAC00; &#xC88B;&#xC740; &#xCF54;&#xB4DC;&#xB2E4;</center></h2>
-<h6 id="the-art-of-readable-code"><center>The Art of Readable Code</center></h6>
-<h6 id="&#xB354;-&#xB098;&#xC740;-&#xCF54;&#xB4DC;&#xB97C;-&#xC791;&#xC131;&#xD558;&#xB294;-&#xAC04;&#xB2E8;&#xD558;&#xACE0;-&#xC2E4;&#xC804;&#xC801;&#xC778;-&#xD14C;&#xD06C;&#xB2C9;"><center>&#xB354; &#xB098;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xAC04;&#xB2E8;&#xD558;&#xACE0; &#xC2E4;&#xC804;&#xC801;&#xC778; &#xD14C;&#xD06C;&#xB2C9;</center></h6>
-<h5 id="-&#xB9C8;&#xD2F4;-&#xD30C;&#xC6B8;&#xB7EC;--"><center>- &#xB9C8;&#xD2F4; &#xD30C;&#xC6B8;&#xB7EC; -</center></h5>
-<h4 id="&#xCC45;-&#xC18C;&#xAC1C;">&#xCC45; &#xC18C;&#xAC1C;</h4>
-<p>&#xC774; &#xCC45;&#xC740; &#xB9E4;&#xC6B0; &#xC77D;&#xAE30; &#xD3B8;&#xD55C; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD55C;&#xB2E4;. &#xC774; &#xCC45;&#xC744; &#xAD00;&#xD1B5;&#xD558;&#xB294; &#xD575;&#xC2EC; &#xC544;&#xC774;&#xB514;&#xC5B4;&#xB294; &apos;&#xCF54;&#xB4DC;&#xB294; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC26C;&#xC6CC;&#xC57C; &#xD55C;&#xB2E4;&apos;&#xB294; &#xAC83;&#xC774;&#xB2E4;. &#xC790;&#xC2E0;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xB978; &#xC0AC;&#xB78C;&#xC774; &#xC77D;&#xACE0; &#xC774;&#xD574;&#xD560; &#xB54C; &#xAC78;&#xB9AC;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xCD5C;&#xC18C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;. &#xADF8;&#xB807;&#xB2E4;&#xACE0; &#xC5B4;&#xB824;&#xC6B4; &#xAE30;&#xBC95;&#xC744; &#xC7A5;&#xD669;&#xD788; &#xC124;&#xBA85;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. &#xC2E4;&#xC804;&#xC801;&#xC778; &#xAC04;&#xB2E8;&#xD55C; &#xAE30;&#xBC95;&#xB9CC;&#xC73C;&#xB85C;&#xB3C4; &#xCF54;&#xB4DC;&#xB97C; &#xD6E8;&#xC52C; &#xC77D;&#xAE30; &#xD3B8;&#xD558;&#xAC8C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xAC8C; &#xC774;&#xB04C;&#xC5B4;&#xC900;&#xB2E4;.</p>
-<p>&#xC774; &#xCC45;&#xC740; &#xBC14;&#xB85C; &#xC774; &#xC544;&#xC774;&#xB514;&#xC5B4;&#xB97C; C++, &#xD30C;&#xC774;&#xC36C;, &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;, &#xC790;&#xBC14; &#xB4F1;&#xC744; &#xD3EC;&#xD568;&#xD55C; &#xC5EC;&#xB7EC; &#xC5B8;&#xC5B4;&#xB85C; &#xC791;&#xC131;&#xB41C; &#xCF54;&#xB4DC;&#xB97C; &#xC608;&#xB85C; &#xB4E4;&#xBA70; &#xC124;&#xBA85;&#xD55C;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; &#xAC01; &#xC5B8;&#xC5B4;&#xC5D0; &#xC885;&#xC18D;&#xB41C; &#xACE0;&#xAE09; &#xAE30;&#xB2A5;&#xC744; &#xC77C;&#xBD80;&#xB7EC; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC124;&#xB839; &#xC774;&#xB7F0; &#xC5B8;&#xC5B4;&#xB97C; &#xB2E4; &#xC54C;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;&#xACE0; &#xD574;&#xB3C4; &#xCC45;&#xC744; &#xC77D;&#xB294; &#xB370;&#xB294; &#xC544;&#xBB34;&#xB7F0; &#xC5B4;&#xB824;&#xC6C0;&#xC774; &#xC5C6;&#xC744; &#xAC83;&#xC774;&#xB2E4;.</p>
+                                <h1 id="private-&#xC0DD;&#xC131;&#xC790;&#xB098;-&#xC5F4;&#xAC70;-&#xD0C0;&#xC785;&#xC73C;&#xB85C;-&#xC2F1;&#xAE00;&#xD134;&#xC784;&#xC744;-&#xBCF4;&#xC99D;&#xD558;&#xB77C;">private &#xC0DD;&#xC131;&#xC790;&#xB098; &#xC5F4;&#xAC70; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC2F1;&#xAE00;&#xD134;&#xC784;&#xC744; &#xBCF4;&#xC99D;&#xD558;&#xB77C;</h1>
+<h4 id="1-&#xC2F1;&#xAE00;&#xD134;">#1. &#xC2F1;&#xAE00;&#xD134;</h4>
+<ul>
+<li>&#xC2F1;&#xAE00;&#xD134;&#xC774;&#xB780; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC624;&#xC9C1; &#xD558;&#xB098;&#xB9CC; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9D0;&#xD55C;&#xB2E4;.</li>
+<li>&#xC2F1;&#xAE00;&#xD134;&#xC758; &#xC804;&#xD615;&#xC801;&#xC778; &#xC608;&#xB85C;&#xB294; &#xD568;&#xC218;&#xC640; &#xAC19;&#xC740; &#xBB34;&#xC0C1;&#xD0DC; &#xAC1D;&#xCCB4;&#xB098; &#xC124;&#xACC4;&#xC0C1; &#xC720;&#xC77C;&#xD574;&#xC57C;&#xD558;&#xB294; &#xC2DC;&#xC2A4;&#xD15C; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; &#xB4E4; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC2F1;&#xAE00;&#xD134;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xBA74; &#xC774;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB97C; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6CC;&#xC9C8; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xD0C0;&#xC785;&#xC744; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB85C; &#xC815;&#xC758;&#xD55C; &#xD6C4; &#xD574;&#xB2F9; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC2F1;&#xAE00;&#xD134;&#xC73C;&#xB85C; &#xD55C; &#xAC8C; &#xC544;&#xB2C8;&#xB77C;&#xBA74; Mocking&#xC774; &#xC5B4;&#xB835;&#xB2E4;</li>
+</ul>
+</li>
+<li>&#xC2F1;&#xAE00;&#xD134;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xBCF4;&#xD1B5; &#xB458; &#xC911; &#xD558;&#xB098;&#xC774;&#xACE0;, &#xB450; &#xBC29;&#xC2DD; &#xBAA8;&#xB450; &#xC0DD;&#xC131;&#xC790;&#xB97C; private&#xB85C; &#xAC10;&#xCD94;&#xB294; &#xAC83;&#xC744; &#xAE30;&#xBCF8;&#xC73C;&#xB85C; &#xD55C;&#xB2E4;.</li>
+</ul>
+<h4 id="2-public-static-final-&#xD544;&#xB4DC;-&#xBC29;&#xC2DD;&#xC758;-&#xC2F1;&#xAE00;&#xD134;">#2. public static final &#xD544;&#xB4DC; &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Elvis</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Elvis INSTANCE = <span class="hljs-keyword">new</span> Elvis();
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Elvis</span><span class="hljs-params">()</span> </span>{ ... }
+
+    ...
+}
+</code></pre>
+<ul>
+<li>private &#xC0DD;&#xC131;&#xC790;&#xB294; <code>public static final</code> &#xD544;&#xB4DC;&#xC778; <code>INSTANCE</code>&#xB97C; &#xCD08;&#xAE30;&#xD654;&#xD560; &#xB54C; &#xB531; &#xD55C;&#xBC88; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</li>
+<li>public&#xC774;&#xB098; protected &#xC0DD;&#xC131;&#xC790;&#xAC00; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; Elvis &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xCD08;&#xAE30;&#xD654;&#xB420;&#xB54C; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xD558;&#xB098;&#xC784;&#xC774; &#xBCF4;&#xC7A5;&#xB41C;&#xB2E4;.</li>
+<li>&#xB2E8;, &#xAD8C;&#xD55C;&#xC774; &#xC788;&#xB294; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; <code>AccessibleObject.setAccessible</code>&#xC744; &#xC0AC;&#xC6A9;&#xD574; private &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC774; &#xACBD;&#xC6B0; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xB824;&#xD560;&#xB54C; &#xC608;&#xC678;&#xB97C; &#xB358;&#xC9C0;&#xB3C4;&#xB85D; &#xAD6C;&#xD604;&#xD574;&#xB450;&#xBA74; &#xBC29;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+<h4 id="3-&#xC815;&#xC801;-&#xD329;&#xD130;&#xB9AC;-&#xBC29;&#xC2DD;&#xC758;-&#xC2F1;&#xAE00;&#xD134;">#3. &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Elvis</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Elvis INSTANCE = <span class="hljs-keyword">new</span> Elvis();
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Elvis</span><span class="hljs-params">()</span> </span>{ ... }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Elvis <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> INSTANCE;
+    }
+
+    ...
+}
+</code></pre>
+<ul>
+<li><code>Elvis.getInstance</code>&#xB294; &#xD56D;&#xC0C1; &#xB611;&#xAC19;&#xC740; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xBBC0;&#xB85C; &#xC81C; 2&#xC758; Elvis &#xAC1D;&#xCCB4;&#xB294; &#xC808;&#xB300; &#xC0DD;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. (&#xB9AC;&#xD50C;&#xB809;&#xC158; &#xACF5;&#xACA9; &#xBC29;&#xC5B4;&#xB294; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC801;&#xC6A9;)</li>
+</ul>
+<h4 id="4-&#xB450;-&#xBC29;&#xC2DD;&#xC758;-&#xBE44;&#xAD50;">#4. &#xB450; &#xBC29;&#xC2DD;&#xC758; &#xBE44;&#xAD50;</h4>
+<ul>
+<li><code>public static final</code> &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xC740; &#xD574;&#xB2F9; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC2F1;&#xAE00;&#xD134;&#xC784;&#xC774; API&#xC5D0; &#xBA85;&#xBC31;&#xD788; &#xB4DC;&#xB77C;&#xB09C;&#xB2E4;&#xB294; &#xC810;&#xC774;&#xB2E4;.</li>
+<li><code>public static final</code> &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xC740; &#xAC04;&#xACB0;&#xD558;&#xB2E4;.</li>
+<li>&#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xC740; API&#xB97C; &#xBC14;&#xAFB8;&#xC9C0; &#xC54A;&#xACE0; &#xC2F1;&#xAE00;&#xD134;&#xC774; &#xC544;&#xB2C8;&#xAC8C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xC740; &#xC815;&#xC801; &#xC81C;&#xB124;&#xB9AD; &#xC2F1;&#xAE00;&#xD134; &#xD329;&#xD130;&#xB9AC;&#xB85C; &#xC27D;&#xAC8C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li><p>&#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xC740; &#xBA54;&#xC18C;&#xB4DC; &#xCC38;&#xC870; &#xBC29;&#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doWithElvis</span><span class="hljs-params">(Supplier&lt;Elvis&gt; elvisSupplier)</span> </span>{
+      ...
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// getInstance&#xB97C; &#xBA54;&#xC18C;&#xB4DC; &#xCC38;&#xC870;&#xB85C; &#xD65C;&#xC6A9;</span>
+      doWithElvis(Elvis::getInstance);
+  } 
+}
+</code></pre>
+</li>
+<li>&#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC758; &#xC7A5;&#xC810;&#xC774; &#xAD73;&#xC774; &#xD544;&#xC694;&#xC5C6;&#xB2E4;&#xBA74;, <code>public static final</code>&#xBC29;&#xC2DD;&#xC758; &#xC2F1;&#xAE00;&#xD134;&#xC774; &#xC88B;&#xB2E4;.</li>
+</ul>
+<h4 id="5-&#xC2F1;&#xAE00;&#xD134;-&#xD074;&#xB798;&#xC2A4;&#xC758;-&#xC9C1;&#xB82C;&#xD654;">#5. &#xC2F1;&#xAE00;&#xD134; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC9C1;&#xB82C;&#xD654;</h4>
+<ul>
+<li>&#xC2F1;&#xAE00;&#xD134; &#xBC29;&#xC2DD; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC9C1;&#xB82C;&#xD654;&#xD558;&#xB824;&#xBA74; &#xB2E8;&#xC21C;&#xD788; <code>Serializable</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C;&#xB294; &#xBD80;&#xC871;&#xD558;&#xB2E4;.</li>
+<li>&#xBAA8;&#xB4E0; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xD544;&#xB4DC;&#xB97C; <code>transient</code>&#xB85C; &#xC120;&#xC5B8;&#xD558;&#xACE0; <code>readResolve</code>&#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC5ED;&#xC9C1;&#xB82C;&#xD654; &#xD560; &#xB54C; &#xB9C8;&#xB2E4; &#xC0C8;&#xB85C;&#xC6B4; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB41C;&#xB2E4;.</li>
+</ul>
+<h4 id="6-&#xC5F4;&#xAC70;-&#xD0C0;&#xC785;&#xC744;-&#xD65C;&#xC6A9;&#xD55C;-&#xC2F1;&#xAE00;&#xD134;">#6. &#xC5F4;&#xAC70; &#xD0C0;&#xC785;&#xC744; &#xD65C;&#xC6A9;&#xD55C; &#xC2F1;&#xAE00;&#xD134;</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> Elvis {
+    INSTANCE;
+}
+</code></pre>
+<ul>
+<li>&#xC5F4;&#xAC70; &#xD0C0;&#xC785; &#xC2F1;&#xAE00;&#xD134; &#xBC29;&#xC2DD;&#xC774; &#xD604;&#xC7AC; &#xB110;&#xB9AC; &#xC0AC;&#xC6A9;&#xB418;&#xC9C4; &#xC54A;&#xC9C0;&#xB9CC; &#xC704; &#xC18C;&#xAC1C;&#xD55C; 2&#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC758; &#xB2E8;&#xC810;&#xC744; &#xD574;&#xACB0;&#xD574;&#xC8FC;&#xBA74;&#xC11C; &#xAC04;&#xACB0;&#xD55C; &#xBC29;&#xBC95;&#xC774;&#xAE30;&#xB3C4; &#xD558;&#xB2E4;. </li>
+</ul>
 
                                 
                                 </section>
@@ -702,12 +773,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Better Developer">
+                <a href="item2.html" class="navigation navigation-prev " aria-label="Previous page: 아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="./" class="navigation navigation-next " aria-label="Next page: 1. 코드는 이해하기 쉬워야 한다.">
+                <a href="item4.html" class="navigation navigation-next " aria-label="Next page: 아이템4. 인스턴스화를 막으려거든 private 생성자를 사용하라">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -718,7 +789,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"읽기 좋은 코드가 좋은 코드다","level":"1.5.1","depth":2,"next":{"title":"1. 코드는 이해하기 쉬워야 한다.","level":"1.5.1.1","depth":3,"path":"content/better-developer/the-art-of-readable-code/index.md","ref":"content/better-developer/the-art-of-readable-code/index.md","articles":[]},"previous":{"title":"Better Developer","level":"1.5","depth":1,"path":"content/better-developer/index.md","ref":"content/better-developer/index.md","articles":[{"title":"읽기 좋은 코드가 좋은 코드다","level":"1.5.1","depth":2,"path":"content/better-developer/the-art-of-readable-code/index.md","ref":"content/better-developer/the-art-of-readable-code/index.md","articles":[{"title":"1. 코드는 이해하기 쉬워야 한다.","level":"1.5.1.1","depth":3,"path":"content/better-developer/the-art-of-readable-code/index.md","ref":"content/better-developer/the-art-of-readable-code/index.md","articles":[]},{"title":"2. 이름에 정보 담기","level":"1.5.1.2","depth":3,"ref":"","articles":[]},{"title":"3. 오해할 수 없는 이름들","level":"1.5.1.3","depth":3,"ref":"","articles":[]},{"title":"4. 미학","level":"1.5.1.4","depth":3,"ref":"","articles":[]},{"title":"5. 주석에 담아야 하는 대상","level":"1.5.1.5","depth":3,"ref":"","articles":[]},{"title":"6 명확하고 간결한 주석 달기","level":"1.5.1.6","depth":3,"ref":"","articles":[]},{"title":"7. 읽기 쉽게 흐름제어 만들기","level":"1.5.1.7","depth":3,"ref":"","articles":[]},{"title":"8. 거대한 표현을 잘게 쪼개기","level":"1.5.1.8","depth":3,"ref":"","articles":[]},{"title":"9. 변수와 가독성","level":"1.5.1.9","depth":3,"ref":"","articles":[]},{"title":"10. 상관없는 하위문제 추출하기","level":"1.5.1.10","depth":3,"ref":"","articles":[]},{"title":"11. 한 번에 하나씩","level":"1.5.1.11","depth":3,"ref":"","articles":[]},{"title":"12. 생각을 코드로 만들기","level":"1.5.1.12","depth":3,"ref":"","articles":[]},{"title":"13. 코드 분량 줄이기","level":"1.5.1.13","depth":3,"ref":"","articles":[]},{"title":"14. 테스트와 가독성","level":"1.5.1.14","depth":3,"ref":"","articles":[]},{"title":"15. '분/시간 카운터'를 설계하고 구현하기","level":"1.5.1.15","depth":3,"ref":"","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/better-developer/the-art-of-readable-code/index.md","mtime":"2019-12-20T15:16:55.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-14T17:59:15.372Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"아이템3. private 생성자나 열거 타입으로 싱글턴임을 보증하라","level":"1.2.1.3","depth":3,"next":{"title":"아이템4. 인스턴스화를 막으려거든 private 생성자를 사용하라","level":"1.2.1.4","depth":3,"path":"content/backend/effective-java-3e/item4.md","ref":"content/backend/effective-java-3e/item4.md","articles":[]},"previous":{"title":"아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라","level":"1.2.1.2","depth":3,"path":"content/backend/effective-java-3e/item2.md","ref":"content/backend/effective-java-3e/item2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item3.md","mtime":"2020-03-14T17:52:40.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-14T17:59:15.372Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

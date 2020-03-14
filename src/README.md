@@ -14,3 +14,4 @@ HTML, CSS, JS, Vue, React 등 프런트엔드 기술 관련 도서를 정리한 
 ##### 도서 목록
 - [읽기 좋은 코드가 좋은 코드다](content/better-developer/the-art-of-readable-code/index.md)
 - [DDD Start!](content/architecture/ddd-start!/index.md)
+- [Effective Java 3/E](content/backend/effective-java-3e/index.md)
