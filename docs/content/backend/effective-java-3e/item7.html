@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>아이템5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라 · GitBook</title>
+        <title>아이템7. 다 쓴 객체 참조를 해제하라 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="item6.html" />
+    <link rel="next" href="item8.html" />
     
     
-    <link rel="prev" href="item4.html" />
+    <link rel="prev" href="item6.html" />
     
 
     </head>
@@ -186,7 +186,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.5" data-path="item5.html">
+        <li class="chapter " data-level="1.2.1.5" data-path="item5.html">
             
                 <a href="item5.html">
             
@@ -212,7 +212,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.7" data-path="item7.html">
+        <li class="chapter active" data-level="1.2.1.7" data-path="item7.html">
             
                 <a href="item7.html">
             
@@ -705,7 +705,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >아이템5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라</a>
+        <a href="../../.." >아이템7. 다 쓴 객체 참조를 해제하라</a>
     </h1>
 </div>
 
@@ -720,49 +720,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xC790;&#xC6D0;&#xC744;-&#xC9C1;&#xC811;-&#xBA85;&#xC2DC;&#xD558;&#xC9C0;-&#xB9D0;&#xACE0;-&#xC758;&#xC874;-&#xAC1D;&#xCCB4;-&#xC8FC;&#xC785;&#xC744;-&#xC0AC;&#xC6A9;&#xD558;&#xB77C;">&#xC790;&#xC6D0;&#xC744; &#xC9C1;&#xC811; &#xBA85;&#xC2DC;&#xD558;&#xC9C0; &#xB9D0;&#xACE0; &#xC758;&#xC874; &#xAC1D;&#xCCB4; &#xC8FC;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB77C;</h1>
+                                <h1 id="&#xB2E4;-&#xC4F4;-&#xAC1D;&#xCCB4;-&#xCC38;&#xC870;&#xB97C;-&#xD574;&#xC81C;&#xD558;&#xB77C;">&#xB2E4; &#xC4F4; &#xAC1D;&#xCCB4; &#xCC38;&#xC870;&#xB97C; &#xD574;&#xC81C;&#xD558;&#xB77C;</h1>
+<h4 id="1-&#xAC00;&#xBE44;&#xC9C0;-&#xCEEC;&#xB809;&#xD130;&#xB97C;-&#xAC16;&#xCD98;-&#xC5B8;&#xC5B4;&#xC5D0;-&#xB300;&#xD55C;-&#xC624;&#xD574;">#1. &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xB97C; &#xAC16;&#xCD98; &#xC5B8;&#xC5B4;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xD574;</h4>
 <ul>
-<li>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xC790;&#xC6D0;&#xC5D0; &#xC758;&#xC874;&#xD55C;&#xB2E4;.</li>
-<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xB9DE;&#xCDA4;&#xBC95; &#xAC80;&#xC0AC;&#xAE30;&#xC758; &#xACBD;&#xC6B0; &#xC0AC;&#xC804;&#xC5D0; &#xC758;&#xC874;&#xD55C;&#xB2E4;.</li>
-<li><p>&#xBB54;&#xAC00; &#xC790;&#xC6D0;&#xC744; &#xC758;&#xC874;&#xD558;&#xB294;&#xB370; &#xC815;&#xC801; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB098; &#xC2F1;&#xAE00;&#xD134;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC758;&#xC874;&#xD558;&#xB294; &#xC790;&#xC6D0;&#xC744; &#xD074;&#xB798;&#xC2A4; &#xB0B4;&#xBD80;&#xC5D0; &#xBA85;&#xC2DC;&#xD558;&#xBA74; &#xC720;&#xC5F0;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xAE30; &#xC5B4;&#xB835;&#xB2E4;.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpellChecker</span> </span>{
-  <span class="hljs-comment">// &#xC790;&#xC6D0;&#xC744; &#xD074;&#xB798;&#xC2A4; &#xB0B4;&#xBD80;&#xC5D0; &#xC9C1;&#xC811; &#xBA85;&#xC2DC;</span>
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Lexicon dictionary = ...;
-
-  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SpellChecker</span><span class="hljs-params">()</span> </span>{}
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isValid</span><span class="hljs-params">(String word)</span> </span>{ ... }
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> List&lt;String&gt; <span class="hljs-title">suggestions</span><span class="hljs-params">(String type)</span> </span>{ ... }
-}
-</code></pre>
-</li>
-<li>&#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC740; &#xC0AC;&#xC804;&#xC744; &#xB2E8; 1&#xAC1C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xB294;&#xAC70;&#xB098; &#xB2E4;&#xB984;&#xC5C6;&#xC5B4; &#xC720;&#xC5F0;&#xC131;&#xC774; &#xC2EC;&#xAC01;&#xD558;&#xAC8C; &#xC800;&#xD558;&#xB41C;&#xB2E4;.</li>
-<li><code>SpellChecker</code>&#xAC00; &#xC5EC;&#xB7EC; &#xC0AC;&#xC804;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xBCC0;&#xACBD;&#xD558;&#xB294;&#xAC74; &#xAC04;&#xB2E8;&#xD558;&#xB2E4;.</li>
-<li>&#xB2E8;&#xC21C;&#xD788; &#xC0AC;&#xC804;&#xC744; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xC774;&#xB7F0; &#xBC29;&#xC2DD;&#xC740; &#xC624;&#xB958;&#xB97C; &#xB0B4;&#xAE30; &#xC26C;&#xC6B0;&#xBA70; &#xBA40;&#xD2F0; &#xC2A4;&#xB808;&#xB4DC; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</li>
-<li>&#xC704; &#xC774;&#xC57C;&#xAE30;&#xB4E4;&#xC744; &#xC885;&#xD569;&#xD574;&#xBCF4;&#xBA74;, <strong>&#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC790;&#xC6D0;&#xC5D0; &#xB530;&#xB77C; &#xB3D9;&#xC791;&#xC774; &#xB2EC;&#xB77C;&#xC9C0;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xB294; &#xC815;&#xC801; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB098; &#xC2F1;&#xAE00;&#xD134; &#xBC29;&#xC2DD;&#xC740; &#xC801;&#xD569;&#xD558;&#xC9C0; &#xC54A;&#xB2E4;.</strong></li>
-<li><p>&#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xC801;&#xD569;&#xD55C; &#xBC29;&#xC2DD;&#xC740; <code>&#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xC0DD;&#xC131; &#xC2DC; &#xC790;&#xC6D0;&#xC744; &#xB118;&#xACA8;&#xC8FC;&#xB294; &#xBC29;&#xC2DD;</code>&#xC774;&#xB2E4;. (&#xC758;&#xC874; &#xAC1D;&#xCCB4; &#xC8FC;&#xC785;&#xC758; &#xD55C; &#xBC29;&#xC2DD;)</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpellChecker</span> </span>{
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Lexicon dictionary;
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SpellChecker</span><span class="hljs-params">(Lexicon dictionary)</span> </span>{
-      <span class="hljs-keyword">this</span>.dictionary = Objects.requireNonNull(dictionary);
+<li>C, C++ &#xCC98;&#xB7FC; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xC9C1;&#xC811; &#xAD00;&#xB9AC;&#xD574;&#xC57C;&#xD558;&#xB294; &#xC5B8;&#xC5B4;&#xC5D0; &#xBE44;&#xD574; &#xC790;&#xBC14;&#xC640; &#xAC19;&#xC774; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xB97C; &#xAC16;&#xCD98; &#xC5B8;&#xC5B4;&#xB294; &#xC0C1;&#xB2F9;&#xD788; &#xD3B8;&#xB9AC;&#xD568;&#xC744; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xADF8;&#xB807;&#xB2E4;&#xACE0; &#xBA54;&#xBAA8;&#xB9AC; &#xAD00;&#xB9AC;&#xC5D0; &#xC804;&#xD600; &#xC2E0;&#xACBD;&#xC4F0;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB418;&#xB294;&#xAC74; &#xC808;&#xB300; &#xC544;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB2E4;&#xC74C;&#xC740; &#xC2A4;&#xD0DD;&#xC5D0;&#xC11C; pop &#xAE30;&#xB2A5;&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xBA54;&#xC18C;&#xB4DC;&#xC774;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">pop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">if</span> (size = <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> EmptyStackException();
   }
-
-  ...
+  <span class="hljs-keyword">return</span> elements[--size];
 }
 </code></pre>
 </li>
-<li>&#xC704; &#xBC29;&#xC2DD;&#xC740; &#xBD88;&#xBCC0;&#xC744; &#xBCF4;&#xC7A5;&#xD558;&#xC5EC; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC758;&#xC874; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xC548;&#xC2EC;&#xD558;&#xACE0; &#xACF5;&#xC720;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
-<li>&#xC774; &#xBC29;&#xC2DD;&#xC758; &#xC751;&#xC6A9;&#xC73C;&#xB85C; <code>Supplier&lt;T&gt;</code>&#xB97C; &#xD65C;&#xC6A9;&#xD574; &#xC790;&#xC6D0;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xD329;&#xD130;&#xB9AC;&#xB97C; &#xB118;&#xACA8;&#xC904; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.</li>
-<li>&#xC758;&#xC874; &#xAC1D;&#xCCB4; &#xC8FC;&#xC785;&#xC774; &#xC720;&#xC5F0;&#xC131;&#xACFC; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC6A9;&#xC774;&#xD558;&#xAC8C; &#xD574;&#xC8FC;&#xC9C0;&#xB9CC;, &#xC758;&#xC874;&#xC131;&#xC774; &#xB9CE;&#xC544;&#xC9C0;&#xBA74; &#xCF54;&#xB4DC;&#xAC00; &#xBCF5;&#xC7A1;&#xD574;&#xC9C8; &#xC218; &#xC788;&#xB2E4;.<ul>
-<li>&#xC774; &#xACBD;&#xC6B0;&#xC5D4; <a href="https://dagger.dev/users-guide" target="_blank"><code>Dagger</code></a>, <a href="https://github.com/google/guice" target="_blank"><code>Guice</code></a>, <code>Spring</code> &#xB4F1; DI &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;&#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xBCF5;&#xC7A1;&#xC131;&#xC744; &#xC904;&#xC77C; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC704; &#xCF54;&#xB4DC;&#xB294; &#xB2E8;&#xC21C;&#xD788; &#xBCF4;&#xBA74; &#xBCC4; &#xBB38;&#xC81C; &#xC5C6;&#xC5B4;&#xBCF4;&#xC774;&#xC9C0;&#xB9CC;, &#xB354; &#xC774;&#xC0C1; &#xC0AC;&#xC6A9;&#xB420; &#xC77C;&#xC774; &#xC5C6;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; <code>elements[size]</code>&#xC5D0; &#xACC4;&#xC18D; &#xB0A8;&#xC544;&#xC788;&#xAC8C; &#xB418;&#xB294; &#xBB38;&#xC81C;&#xAC00; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</li>
+<li>&#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xB294; &#xBD88;&#xD544;&#xC694; &#xAC1D;&#xCCB4;&#xB97C; &#xD68C;&#xC218; &#xD310;&#xB2E8;&#xD560; &#xB54C;, &#xD574; &#xB2F9; &#xAC1D;&#xCCB4;&#xBFD0;&#xB9CC;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xAC00; &#xCC38;&#xC870;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB4E4;&#xC758; &#xCC38;&#xC870;&#xB97C; &#xD68C;&#xC218;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB584;&#xBB38;&#xC5D0; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4; &#xBA54;&#xBAA8;&#xB9AC; &#xC0C1;&#xC5D0;&#xB294; &#xACC4;&#xC18D; &#xC874;&#xC7AC;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;. &#xC774;&#xB294; &#xACE7; <code>OOM</code>&#xC73C;&#xB85C; &#xC774;&#xC5B4;&#xC9C4;&#xB2E4;.</li>
+<li>&#xD574;&#xACB0;&#xBC95;&#xC740; &#xB2E8;&#xC21C;&#xD558;&#xB2E4;. <code>elements[size] = null</code>&#xB85C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xAC1D;&#xCCB4;&#xC5D0; null&#xC744; &#xD560;&#xB2F9;&#xD558;&#xBA74; &#xCC38;&#xC870;&#xAC00; &#xD574;&#xC81C;&#xB418;&#xACE0;, &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xAC00; &#xD68C;&#xC218;&#xD574;&#xAC04;&#xB2E4;.</li>
+<li>&#xB2E4; &#xC4F4; &#xAC1D;&#xCCB4;&#xB97C; null &#xCC98;&#xB9AC; &#xD558;&#xB294; &#xAC83;&#xC740; &#xCD94;&#xD6C4;&#xC5D0; &#xC2E4;&#xC218;&#xB85C; &#xC774; &#xAC1D;&#xCCB4;&#xB97C; &#xB2E4;&#xC2DC; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xD560;&#xB54C; <code>NPE</code>&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC5EC; &#xBC84;&#xADF8;&#xB97C; &#xBBF8;&#xC5F0;&#xC5D0; &#xBC29;&#xC9C0;&#xD574;&#xC8FC;&#xB294; &#xC5ED;&#xD560;&#xB3C4; &#xD558;&#xAC8C;&#xB41C;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB97C; &#xC77C;&#xC77C;&#xD788; null&#xCC98;&#xB9AC;&#xD558;&#xB294; &#xAC83;&#xC740; &#xADF8;&#xB9AC; &#xBC14;&#xB78C;&#xC9C1;&#xD55C; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xC218;&#xC758; &#xBC94;&#xC704;&#xB97C; &#xAC00;&#xB2A5;&#xD55C; &#xD55C; &#xC801;&#xAC8C; &#xC7A1;&#xC73C;&#xBA74; &#xC774;&#xB7EC;&#xD55C; &#xC77C;&#xB4E4;&#xC774; &#xC790;&#xC5F0;&#xC2A4;&#xB808; &#xD574;&#xACB0;&#xB41C;&#xB2E4;.</li>
 </ul>
-</li>
-</ul>
-<h2 id="&#xC815;&#xB9AC;">&#xC815;&#xB9AC;</h2>
+<h4 id="2-&#xCE90;&#xC2DC;&#xC5D0;&#xC11C;&#xC758;-&#xBB38;&#xC81C;">#2. &#xCE90;&#xC2DC;&#xC5D0;&#xC11C;&#xC758; &#xBB38;&#xC81C;</h4>
 <ul>
-<li>&#xD074;&#xB798;&#xC2A4;&#xAC00; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xC790;&#xC6D0;&#xC5D0; &#xC758;&#xC874;&#xD558;&#xACE0;, &#xADF8; &#xC790;&#xC6D0;&#xC774; &#xD074;&#xB798;&#xC2A4; &#xB3D9;&#xC791;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC900;&#xB2E4;&#xBA74; &#xC2F1;&#xAE00;&#xD134;, &#xC815;&#xC801; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0; &#xD074;&#xB798;&#xC2A4; &#xBC29;&#xC2DD;&#xC740; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xAC83;&#xC774; &#xC88B;&#xB2E4;.</li>
+<li>&#xCE90;&#xC2DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB2E4;&#xBCF4;&#xBA74; &#xC885;&#xC885; &#xB2E4; &#xC4F4; &#xAC1D;&#xCCB4;&#xAC00; &#xCE90;&#xC2DC;&#xC5D0; &#xC0C1;&#xC8FC;&#xD558;&#xAC8C; &#xB418;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</li>
+<li>&#xBCF4;&#xD1B5;&#xC758; Map &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xB41C; &#xCE90;&#xC2DC;&#xC5D0;&#xC11C; &#xD0A4;&#xAC12;&#xC774; Null&#xC774; &#xB418;&#xC5B4; Map&#xC548;&#xC5D0; Value&#xB97C; &#xAEBC;&#xB0BC;&#xC218; &#xC5C6;&#xB294; &#xC0C1;&#xD669;&#xC778;&#xB370; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC0C1;&#xC8FC;&#xD55C;&#xB2E4;&#xBA74; &#xBD84;&#xBA85; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xB294;&#xAC83;&#xC774;&#xB2E4;.</li>
+<li>&#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; WeakHashMap&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xB2E4;. WeakHashMap&#xC740; key&#xAC00; null&#xC774;&#xB418;&#xBA74; &#xD574;&#xB2F9; &#xC5D4;&#xD2B8;&#xB9AC;&#xB97C; &#xC0AD;&#xC81C;&#xD574;&#xBC84;&#xB9AC;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC790;&#xC5F0;&#xC2A4;&#xB808; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xD130;&#xC5D0; &#xC758;&#xD574; &#xD68C;&#xC218;&#xB41C;&#xB2E4;.</li>
+<li>&#xC774;&#xC678;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xBCF4;&#xD1B5; &#xCE90;&#xC2DC; &#xB0B4; &#xC5D4;&#xD2B8;&#xB9AC;&#xC758; &#xC720;&#xD6A8; &#xAE30;&#xAC04;&#xC744; &#xC815;&#xD655;&#xD788; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC5C6;&#xAE30;&#xB54C;&#xBB38;&#xC5D0; &#xC624;&#xB798;&#xB41C; &#xC5D4;&#xD2F0;&#xD2F0;&#xC758; &#xAC00;&#xCE58;&#xB97C; &#xB5A8;&#xC5B4;&#xD2B8;&#xB9AC;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>&#xC2A4;&#xCF00;&#xC974;&#xB7EC; &#xB4F1;&#xC744; &#xD1B5;&#xD574; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xAC70;&#xB098; &#xC624;&#xB798;&#xB41C; &#xC5D4;&#xD2B8;&#xB9AC;&#xB97C; &#xC815;&#xB9AC;&#xD574;&#xC8FC;&#xAC70;&#xB098;, LinkedHashMap&#xC758; &#xACBD;&#xC6B0; removeEldestEntry&#xB97C; &#xD65C;&#xC6A9;&#xD574; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+</ul>
+<h4 id="3-&#xB9AC;&#xC2A4;&#xB108;-or-&#xCF5C;&#xBC31;">#3. &#xB9AC;&#xC2A4;&#xB108; or &#xCF5C;&#xBC31;</h4>
+<ul>
+<li>&#xCF5C;&#xBC31;&#xB3C4; &#xC0AC;&#xC6A9; &#xD6C4; &#xBA85;&#xD655;&#xD788; &#xD574;&#xC9C0;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74; &#xCF5C;&#xBC31; &#xAC1D;&#xCCB4;&#xAC00; &#xACC4;&#xC18D; &#xC313;&#xC77C;&#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC774; &#xACBD;&#xC6B0; WeakReference&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; GC&#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xBA85;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC5B4; &#xCF5C;&#xBC31;&#xC774; &#xACC4;&#xC18D; &#xC313;&#xC774;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
 </ul>
 
                                 
@@ -791,12 +780,12 @@
 
             
                 
-                <a href="item4.html" class="navigation navigation-prev " aria-label="Previous page: 아이템4. 인스턴스화를 막으려거든 private 생성자를 사용하라">
+                <a href="item6.html" class="navigation navigation-prev " aria-label="Previous page: 아이템6. 불필요한 객체 생성을 피하라">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="item6.html" class="navigation navigation-next " aria-label="Next page: 아이템6. 불필요한 객체 생성을 피하라">
+                <a href="item8.html" class="navigation navigation-next " aria-label="Next page: 아이템8. finalizer와 cleaner 사용을 피하라">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -807,7 +796,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"아이템5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라","level":"1.2.1.5","depth":3,"next":{"title":"아이템6. 불필요한 객체 생성을 피하라","level":"1.2.1.6","depth":3,"path":"content/backend/effective-java-3e/item6.md","ref":"content/backend/effective-java-3e/item6.md","articles":[]},"previous":{"title":"아이템4. 인스턴스화를 막으려거든 private 생성자를 사용하라","level":"1.2.1.4","depth":3,"path":"content/backend/effective-java-3e/item4.md","ref":"content/backend/effective-java-3e/item4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item5.md","mtime":"2020-03-27T14:55:41.107Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T11:32:38.026Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"아이템7. 다 쓴 객체 참조를 해제하라","level":"1.2.1.7","depth":3,"next":{"title":"아이템8. finalizer와 cleaner 사용을 피하라","level":"1.2.1.8","depth":3,"path":"content/backend/effective-java-3e/item8.md","ref":"content/backend/effective-java-3e/item8.md","articles":[]},"previous":{"title":"아이템6. 불필요한 객체 생성을 피하라","level":"1.2.1.6","depth":3,"path":"content/backend/effective-java-3e/item6.md","ref":"content/backend/effective-java-3e/item6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item7.md","mtime":"2020-03-27T17:41:22.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T11:32:38.026Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
