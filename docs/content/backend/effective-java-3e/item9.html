@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>아이템6. 불필요한 객체 생성을 피하라 · GitBook</title>
+        <title>아이템9. try-finally보다는 try-with-resources를 사용하라 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="item7.html" />
+    <link rel="next" href="item10.html" />
     
     
-    <link rel="prev" href="item5.html" />
+    <link rel="prev" href="item8.html" />
     
 
     </head>
@@ -199,7 +199,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.6" data-path="item6.html">
+        <li class="chapter " data-level="1.2.1.6" data-path="item6.html">
             
                 <a href="item6.html">
             
@@ -238,7 +238,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.9" data-path="item9.html">
+        <li class="chapter active" data-level="1.2.1.9" data-path="item9.html">
             
                 <a href="item9.html">
             
@@ -757,7 +757,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >아이템6. 불필요한 객체 생성을 피하라</a>
+        <a href="../../.." >아이템9. try-finally보다는 try-with-resources를 사용하라</a>
     </h1>
 </div>
 
@@ -772,54 +772,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#xBD88;&#xD544;&#xC694;&#xD55C;-&#xAC1D;&#xCCB4;-&#xC0DD;&#xC131;&#xC744;-&#xD53C;&#xD558;&#xB77C;">&#xBD88;&#xD544;&#xC694;&#xD55C; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC744; &#xD53C;&#xD558;&#xB77C;</h1>
-<h4 id="1-&#xAC1D;&#xCCB4;-&#xC7AC;&#xC0AC;&#xC6A9;">#1. &#xAC1D;&#xCCB4; &#xC7AC;&#xC0AC;&#xC6A9;</h4>
+                                <h1 id="try-finally&#xBCF4;&#xB2E4;&#xB294;-try-with-resources&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xB77C;">try-finally&#xBCF4;&#xB2E4;&#xB294; try-with-resources&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB77C;</h1>
+<h4 id="1-&#xC790;&#xBC14;&#xC758;-&#xC790;&#xC6D0;-&#xCC98;&#xB9AC;&#xC640;-&#xC804;&#xD1B5;&#xC801;&#xC778;-try-finally">#1. &#xC790;&#xBC14;&#xC758; &#xC790;&#xC6D0; &#xCC98;&#xB9AC;&#xC640; &#xC804;&#xD1B5;&#xC801;&#xC778; try-finally</h4>
 <ul>
-<li>&#xB611;&#xAC19;&#xC740; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB294; &#xB9E4;&#xBC88; &#xC0DD;&#xC131;&#xD558;&#xAE30; &#xBCF4;&#xB2E4;&#xB294; &#xAC1D;&#xCCB4; &#xD558;&#xB098;&#xB97C; &#xC7AC;&#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB098;&#xC744;&#xB54C;&#xAC00; &#xB9CE;&#xB2E4;.</li>
-<li>&#xD2B9;&#xD788; &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB294; &#xC5B8;&#xC81C;&#xB4E0; &#xC7AC;&#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
-<li>&#xC0DD;&#xC131;&#xC790; &#xB300;&#xC2E0; &#xC815;&#xC801; &#xD329;&#xD1A0;&#xB9AC; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBD88;&#xBCC0; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xB2E4;.<ul>
-<li><code>Boolean</code>&#xC758; &#xACBD;&#xC6B0; &#xC0DD;&#xC131;&#xC790;&#xB300;&#xC2E0; <code>Boolean.valueOf</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC83;&#xC774; &#xC88B;&#xB2E4;.</li>
-<li>&#xC2EC;&#xC9C0;&#xC5B4; &#xC790;&#xBC14;9&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xC790;&#xB294; deprecated &#xB410;&#xB2E4;.</li>
-</ul>
-</li>
-<li>&#xC0DD;&#xC131; &#xBE44;&#xC6A9;&#xC774; &#xBE44;&#xC2FC; &#xAC1D;&#xCCB4;&#xC758; &#xACBD;&#xC6B0; <code>&#xCE90;&#xC2F1;</code>&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xD55C;&#xB2E4;.</li>
-<li>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &#xC544;&#xB798;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xBCF4;&#xC790;<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Utils</span> </span>{
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isRomanNumeral</span><span class="hljs-params">(String s)</span> </span>{
-      <span class="hljs-keyword">return</span> s.matches(<span class="hljs-string">&quot;some regex&quot;</span>);
+<li>InputStream, OutputStream, Connection &#xB4F1; &#xC790;&#xC6D0;&#xC744; &#xB2EB;&#xC544;&#xC8FC;&#xC5B4;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&#xC81C;&#xB300;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC131;&#xB2A5;&#xBB38;&#xC81C;&#xB85C; &#xC9C1;&#xACB0;&#xB418;&#xC5B4; &#xC2E0;&#xACBD;&#xC368;&#xC8FC;&#xC5B4;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>&#xC804;&#xD1B5;&#xC801;&#xC778; try-finally &#xD328;&#xD134;<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">static</span> String <span class="hljs-title">firstLineOfFile</span><span class="hljs-params">(String path)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+  BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> FileReader(path));
+  <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">return</span> br.readLine();
+  } <span class="hljs-keyword">finally</span> {
+      br.close();
   }
 }
 </code></pre>
 </li>
-<li>&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xBB38;&#xC81C;&#xB294;, matches&#xB97C; &#xD1B5;&#xD574; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC815;&#xADDC;&#xC2DD;&#xC774; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C; &#xD30C;&#xC2F1;&#xB418;&#xC5B4; Pattern &#xAC1D;&#xCCB4;&#xAC00; &#xB418;&#xACE0;, &#xBA54;&#xC18C;&#xB4DC; &#xC2E4;&#xD589;&#xC644;&#xB8CC; &#xD6C4; &#xBC14;&#xB85C; &#xBC84;&#xB824;&#xC9C0;&#xB294; &#xC810;&#xC774;&#xB2E4;.</li>
-<li>Pattern&#xC758; &#xACBD;&#xC6B0; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xC815;&#xADDC;&#xC2DD; &#xCC98;&#xB9AC;&#xACFC;&#xC815;&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xBE44;&#xC6A9;&#xC774; &#xBE44;&#xC2F8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC704; &#xBC29;&#xBC95;&#xC740; &#xC88B;&#xC740; &#xBC29;&#xBC95;&#xC774;&#xB77C; &#xD560; &#xC218; &#xC5C6;&#xB2E4;.</li>
-<li><p>&#xC544;&#xB798; &#xCE90;&#xC2F1; &#xBC29;&#xC2DD;&#xC744; &#xD65C;&#xC6A9;&#xD574; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC5C6;&#xC774; &#xC7AC;&#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xAC1C;&#xC120;&#xD55C; &#xCF54;&#xB4DC;&#xC774;&#xB2E4;.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Utils</span> </span>{
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Pattern REGEX = Pattern.compile(<span class="hljs-string">&quot;some regex&quot;</span>);
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isRomanNumeral</span><span class="hljs-params">(String s)</span> </span>{
-      r\eturn REGEX.matcher(s).matches();
+<li>&#xC81C;&#xB300;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xB450;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC608;&#xC678;&#xAC00; &#xC9D1;&#xC5B4;&#xC0BC;&#xCF1C;&#xC9C8; &#xC218; &#xC788;&#xACE0; &#xB514;&#xBC84;&#xAE45;&#xC774; &#xC5B4;&#xB824;&#xC6CC;&#xC9C4;&#xB2E4;.</li>
+<li>&#xC774;&#xB7F0; &#xBC29;&#xC2DD;&#xC740; &#xC790;&#xC6D0;&#xC774; 2&#xAC1C;&#xC774;&#xC0C1; &#xB420; &#xACBD;&#xC6B0; &#xB108;&#xBB34; &#xC9C0;&#xC800;&#xBD84;&#xD574;&#xC9C0;&#xACE0;, &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC81C;&#xB300;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xB450;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC608;&#xC678;&#xAC00; &#xC9D1;&#xC5B4;&#xC0BC;&#xCF1C;&#xC9C8; &#xC218; &#xC788;&#xACE0; &#xB514;&#xBC84;&#xAE45;&#xC774; &#xC5B4;&#xB824;&#xC6CC;&#xC9C4;&#xB2E4;.</li>
+</ul>
+<h4 id="2-try-with-resources&#xB97C;-&#xD1B5;&#xD55C;-&#xCC98;&#xB9AC;">#2. try-with-resources&#xB97C; &#xD1B5;&#xD55C; &#xCC98;&#xB9AC;</h4>
+<ul>
+<li>&#xC790;&#xBC14;7&#xC5D0;&#xC11C;&#xB294; <code>try-with-resources</code>&#xB85C; &#xC644;&#xC804;&#xC774; &#xD574;&#xACB0;&#xB418;&#xC5C8;&#xB2E4;.</li>
+<li>&#xC774; &#xBC29;&#xC2DD;&#xC740; &#xB9E4;&#xC6B0; &#xAC04;&#xACB0;&#xD574; &#xC77D;&#xAE30; &#xC26C;&#xC6B0;&#xBA70; &#xB514;&#xBC84;&#xAE45;&#xB3C4; &#xC27D;&#xB2E4;.</li>
+<li><code>try-with-resources</code> &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xB2EB;&#xC544;&#xC57C;&#xD558;&#xB294; &#xC790;&#xC6D0;&#xC744; &#xAD6C;&#xD604;&#xD55C;&#xB2E4;&#xBA74; <code>AutoCloseable</code>&#xC744; &#xAD6C;&#xD604;&#xD574;&#xC8FC;&#xC5B4;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>try-with-resources&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xBC29;&#xBC95;<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">static</span> String <span class="hljs-title">firstLineOfFile</span><span class="hljs-params">(String path)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+  <span class="hljs-keyword">try</span> (BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> FileReader(path))) {
+      <span class="hljs-keyword">return</span> br.readLine();
   }
 }
 </code></pre>
-<h4 id="2-&#xAC1D;&#xCCB4;-&#xCE90;&#xC2F1;">#2. &#xAC1D;&#xCCB4; &#xCE90;&#xC2F1;</h4>
 </li>
-<li>Map&#xC758; &#xACBD;&#xC6B0; keySet() &#xBA54;&#xC18C;&#xB4DC; &#xD638;&#xCD9C; &#xC2DC; &#xD574;&#xB2F9; &#xB9F5;&#xC758; &#xBAA8;&#xB4E0; &#xD0A4;&#xB97C; &#xB2F4;&#xC740; Set &#xD0C0;&#xC785; &#xBDF0; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</li>
-<li>&#xC774;&#xB3C4; &#xB9E4;&#xBC88; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xADF8;&#xB7F4; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xACE0; &#xC774;&#xB4DD;&#xB3C4; &#xC5C6;&#xB2E4;.</li>
-<li>&#xC624;&#xD1A0;&#xBC15;&#xC2F1;&#xC758; &#xACBD;&#xC6B0;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xAE30;&#xBCF8;&#xD615; &#xD0C0;&#xC785;&#xACFC; &#xC11E;&#xC774;&#xBA74; &#xBD88;&#xD544;&#xC694;&#xD55C; &#xBC15;&#xC2F1;&#xB41C; &#xAC1D;&#xCCB4;&#xAC00; &#xB2E4;&#xB7C9;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB420; &#xC218; &#xC788;&#xC73C;&#xB2C8; &#xC8FC;&#xC758;&#xD558;&#xC790;.</li>
-<li><strong>&#xBC15;&#xC2F1;&#xB41C; &#xAE30;&#xBCF8; &#xD0C0;&#xC785; &#xBCF4;&#xB2E4;&#xB294; &#xAE30;&#xBCF8; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;, &#xC758;&#xB3C4;&#xCE58; &#xC54A;&#xC740; &#xC624;&#xD1A0;&#xBC15;&#xC2F1;&#xC774; &#xC228;&#xC5B4;&#xB4E4;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xC8FC;&#xC758;</strong>&#xD558;&#xC790;.</li>
-</ul>
-<h4 id="3-&#xC624;&#xD574;&#xD558;&#xC9C0;-&#xB9D0;-&#xAC83;">#3. &#xC624;&#xD574;&#xD558;&#xC9C0; &#xB9D0; &#xAC83;</h4>
-<ul>
-<li>&#xB2E8;&#xC21C;&#xD788; <code>&#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC740; &#xBE44;&#xC2F8;&#xB2C8; &#xD53C;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</code>&#xAC00; &#xC544;&#xB2C8;&#xB2E4;.</li>
-<li>&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xAC04;&#xACB0;&#xC131;, &#xAE30;&#xB2A5;&#xC744; &#xC704;&#xD574; &#xAC1D;&#xCCB4;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC88B;&#xC740; &#xC77C;&#xC774;&#xB2E4;.</li>
-<li>&#xBC18;&#xB300;&#xB85C; &#xC544;&#xC8FC; &#xBB34;&#xAC70;&#xC6B4; &#xAC1D;&#xCCB4;&#xAC00; &#xC544;&#xB2C8;&#xBA74;, &#xB2E8;&#xC21C;&#xD788; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131;&#xC744; &#xD53C;&#xD558;&#xACE0;&#xC790; &#xAC1D;&#xCCB4; &#xD480;(Pool)&#xC744; &#xB9CC;&#xB4E4;&#xC9C0; &#xB9D0;&#xC790;.</li>
-<li>DBCP&#xC758; &#xACBD;&#xC6B0; &#xCEE4;&#xB125;&#xC158; &#xC0DD;&#xC131; &#xBE44;&#xC6A9;&#xC774; &#xC6CC;&#xB099; &#xBE44;&#xC2F8;&#xB2E4;&#xBCF4;&#xB2C8; &#xC7AC;&#xC0E4;&#xC6A9;&#xC774; &#xD544;&#xC218;&#xC9C0;&#xB9CC;, &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xACE0;&#xC11C;&#xC57C; &#xCF54;&#xB4DC;&#xB97C; &#xD5F7;&#xAC08;&#xB9AC;&#xAC8C; &#xD558;&#xACE0; &#xBA54;&#xBAA8;&#xB9AC; &#xC0AC;&#xC6A9;&#xB7C9;&#xB9CC; &#xB298;&#xB9B4;&#xBFD0;&#xC774;&#xB2E4;.</li>
-<li>&#xC694;&#xC998; JVM&#xC758; &#xC131;&#xB2A5;&#xC774; &#xAC00;&#xBCBC;&#xC6B4; &#xAC1D;&#xCCB4;&#xB4E4;&#xC758; &#xAC1D;&#xCCB4; &#xD480;&#xB9C1;&#xBCF4;&#xB2E4; &#xC6B0;&#xC218;&#xD558;&#xAE30; &#xB54C;&#xBB38;</li>
-<li>&#xBC29;&#xC5B4;&#xC801; &#xBCF5;&#xC0AC;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xAC1D;&#xCCB4;&#xB97C; &#xC7AC;&#xC0AC;&#xC6A9;&#xD588;&#xC744;&#xB54C;&#xAC00; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xBCF5; &#xC0DD;&#xC131;&#xD588;&#xC744;&#xB54C;&#xC758; &#xD53C;&#xD574;&#xBCF4;&#xB2E4; &#xD6E8;&#xC52C; &#xD06C;&#xB2E4;.<ul>
-<li>&#xBC29;&#xC5B4;&#xC801; &#xBCF5;&#xC0AC; &#xC2E4;&#xD328;&#xB294; &#xBC84;&#xADF8;, &#xBCF4;&#xC548; &#xAD6C;&#xBA4D;</li>
-<li>&#xBC18;&#xBCF5; &#xAC1D;&#xCCB4; &#xC0DD;&#xC131; - &#xCF54;&#xB4DC; &#xD615;&#xD0DC; &#xBC0F; &#xC131;&#xB2A5;&#xC5D0; &#xC601;&#xD5A5;</li>
+<li>&#xB9CC;&#xC57D; readLine&#xBA54;&#xC18C;&#xB4DC;&#xC640; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB41C; close &#xB450; &#xACF3;&#xC5D0;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;&#xBA74;, &#xC624;&#xB958;&#xB294; readLine &#xD638;&#xCD9C;&#xC758; &#xC624;&#xB958;&#xAC00; &#xB178;&#xCD9C;&#xB41C;&#xB2E4;.<ul>
+<li>try-finally&#xC5D0;&#xC11C;&#xB294; close &#xC624;&#xB958;&#xC5D0; readLine&#xC624;&#xB958;&#xAC00; &#xBA39;&#xD788;&#xAC8C;&#xB418;&#xB294; &#xC810;&#xC774; &#xAC1C;&#xC120;&#xB428;</li>
+<li>&#xAC8C;&#xB2E4;&#xAC00; close&#xC624;&#xB958;&#xB3C4; &#xC18C;&#xBA78;&#xB418;&#xB294;&#xAC8C; &#xC544;&#xB2C8;&#xB77C; &#xC228;&#xACA8;&#xC84C;&#xB2E4;&#xAC00;(suppressed) &#xB098;&#xC911;&#xC5D0; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;. (getSuppressed() &#xBA54;&#xC18C;&#xB4DC; &#xD1B5;&#xD574; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC0C1;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC62C; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.)</li>
 </ul>
 </li>
+<li>try-with-resources&#xB97C; &#xD65C;&#xC6A9;&#xD55C; &#xB2E4;&#xC911; &#xC790;&#xC6D0; &#xCC98;&#xB9AC;<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">copy</span><span class="hljs-params">(String src, String desc)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+  <span class="hljs-keyword">try</span> (InputStream in = <span class="hljs-keyword">new</span> FileInputStream(src));
+       OutputStream out = <span class="hljs-keyword">new</span> FileOutputStream(dest)) {
+      <span class="hljs-keyword">byte</span>[] buf = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[BUFFER_SIZE];
+      <span class="hljs-keyword">int</span> n;
+      <span class="hljs-keyword">while</span> ((n = in.read(buf)) &gt;= <span class="hljs-number">0</span>) {
+        out.write(buf, <span class="hljs-number">0</span>, n);
+      }
+  }
+}
+</code></pre>
+</li>
+<li>try-with-resources &#xAD6C;&#xBB38;&#xC5D0;&#xC11C;&#xB3C4; catch&#xC808;&#xC744; &#xC4F8; &#xC218; &#xC788;&#xB2E4;. </li>
 </ul>
 
                                 
@@ -848,12 +848,12 @@
 
             
                 
-                <a href="item5.html" class="navigation navigation-prev " aria-label="Previous page: 아이템5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라">
+                <a href="item8.html" class="navigation navigation-prev " aria-label="Previous page: 아이템8. finalizer와 cleaner 사용을 피하라">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="item7.html" class="navigation navigation-next " aria-label="Next page: 아이템7. 다 쓴 객체 참조를 해제하라">
+                <a href="item10.html" class="navigation navigation-next " aria-label="Next page: 아이템10. equals는 일반 규약을 지켜 재정의하라">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -864,7 +864,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"아이템6. 불필요한 객체 생성을 피하라","level":"1.2.1.6","depth":3,"next":{"title":"아이템7. 다 쓴 객체 참조를 해제하라","level":"1.2.1.7","depth":3,"path":"content/backend/effective-java-3e/item7.md","ref":"content/backend/effective-java-3e/item7.md","articles":[]},"previous":{"title":"아이템5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라","level":"1.2.1.5","depth":3,"path":"content/backend/effective-java-3e/item5.md","ref":"content/backend/effective-java-3e/item5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item6.md","mtime":"2020-03-27T14:55:22.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-09T08:47:39.483Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"아이템9. try-finally보다는 try-with-resources를 사용하라","level":"1.2.1.9","depth":3,"next":{"title":"아이템10. equals는 일반 규약을 지켜 재정의하라","level":"1.2.1.10","depth":3,"path":"content/backend/effective-java-3e/item10.md","ref":"content/backend/effective-java-3e/item10.md","articles":[]},"previous":{"title":"아이템8. finalizer와 cleaner 사용을 피하라","level":"1.2.1.8","depth":3,"path":"content/backend/effective-java-3e/item8.md","ref":"content/backend/effective-java-3e/item8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item9.md","mtime":"2020-04-09T06:57:59.849Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-09T08:47:39.483Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

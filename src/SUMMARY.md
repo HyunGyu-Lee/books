@@ -1,5 +1,4 @@
 # Summary
-
 * [Backend](content/backend/index.md) 
     * [Effective Java 3/E](content/backend/effective-java-3e/index.md)
         * [아이템1. 생성자 대신 정적 팩터리 메서드를 고려하라](content/backend/effective-java-3e/item1.md)
@@ -9,8 +8,11 @@
         * [아이템5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라](content/backend/effective-java-3e/item5.md)
         * [아이템6. 불필요한 객체 생성을 피하라](content/backend/effective-java-3e/item6.md)
         * [아이템7. 다 쓴 객체 참조를 해제하라](content/backend/effective-java-3e/item7.md)
-        * [아이템8. finalizer와 cleaner 사용을 피하라](content/backend/effective-java-3e/item8.md)
-        * [아이템10. equalsㄴㅡㄴ 일반 규약을 지켜 재정의하라](content/backend/effective-java-3e/item10.md)
+        * [아이템8. finalizer와 cleaner 사용을 피하라](content/backend/effective-java-3e/item8.md)        
+        * [아이템9. try-finally보다는 try-with-resources를 사용하라](content/backend/effective-java-3e/item9.md)        
+        * [아이템10. equals는 일반 규약을 지켜 재정의하라](content/backend/effective-java-3e/item10.md)
+        * [아이템11. equals를 재정의하려거든 hashCode도 재정의하라](content/backend/effective-java-3e/item11.md)
+        * [아이템12. toString을 항상 재정의하라](content/backend/effective-java-3e/item12.md)        
 * [Frontend](content/frontend/index.md)
 * [Architecture](content/architecture/index.md)
     * [DDD Start!](content/architecture/ddd-start!/index.md)
