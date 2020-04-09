@@ -10,7 +10,7 @@
         * [아이템6. 불필요한 객체 생성을 피하라](content/backend/effective-java-3e/item6.md)
         * [아이템7. 다 쓴 객체 참조를 해제하라](content/backend/effective-java-3e/item7.md)
         * [아이템8. finalizer와 cleaner 사용을 피하라](content/backend/effective-java-3e/item8.md)
-
+        * [아이템10. equalsㄴㅡㄴ 일반 규약을 지켜 재정의하라](content/backend/effective-java-3e/item10.md)
 * [Frontend](content/frontend/index.md)
 * [Architecture](content/architecture/index.md)
     * [DDD Start!](content/architecture/ddd-start!/index.md)
