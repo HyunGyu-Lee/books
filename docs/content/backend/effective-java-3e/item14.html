@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>아이템13. clone 재정의는 주의해서 진행하라 · GitBook</title>
+        <title>아이템14. Comparable을 구현할지 고려하라 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="item14.html" />
+    <link rel="next" href="../../frontend/" />
     
     
-    <link rel="prev" href="item12.html" />
+    <link rel="prev" href="item13.html" />
     
 
     </head>
@@ -290,7 +290,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.13" data-path="item13.html">
+        <li class="chapter " data-level="1.2.1.13" data-path="item13.html">
             
                 <a href="item13.html">
             
@@ -303,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.14" data-path="item14.html">
+        <li class="chapter active" data-level="1.2.1.14" data-path="item14.html">
             
                 <a href="item14.html">
             
@@ -783,7 +783,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >아이템13. clone 재정의는 주의해서 진행하라</a>
+        <a href="../../.." >아이템14. Comparable을 구현할지 고려하라</a>
     </h1>
 </div>
 
@@ -798,175 +798,94 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="clone-&#xC7AC;&#xC815;&#xC758;&#xB294;-&#xC8FC;&#xC758;&#xD574;&#xC11C;-&#xC9C4;&#xD589;&#xD558;&#xB77C;">clone &#xC7AC;&#xC815;&#xC758;&#xB294; &#xC8FC;&#xC758;&#xD574;&#xC11C; &#xC9C4;&#xD589;&#xD558;&#xB77C;</h1>
+                                <h1 id="comparable&#xC744;-&#xAD6C;&#xD604;&#xD560;&#xC9C0;-&#xACE0;&#xBBFC;&#xD558;&#xB77C;">Comparable&#xC744; &#xAD6C;&#xD604;&#xD560;&#xC9C0; &#xACE0;&#xBBFC;&#xD558;&#xB77C;</h1>
 <ul>
-<li>Cloneable&#xC740; &#xBCF5;&#xC81C;&#xD574;&#xB3C4; &#xB418;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC784;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC9C0;&#xB9CC;, &#xBA87; &#xAC00;&#xC9C0; &#xB9F9;&#xC810;&#xC774; &#xC788;&#xB2E4;.<ul>
-<li>clone &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC120;&#xC5B8;&#xB41C; &#xACF3;&#xC774; Clonable&#xC774; &#xC544;&#xB2CC; Object &#xD074;&#xB798;&#xC2A4;&#xC774;&#xB2E4;.</li>
-<li>clone &#xBA54;&#xC18C;&#xB4DC;&#xAC00; protected&#xB85C; &#xC120;&#xC5B8;&#xB418;&#xC5B4; &#xC788;&#xC5B4; &#xC678;&#xBD80; &#xD638;&#xCD9C;&#xC774; &#xC5B4;&#xB835;&#xB2E4;.</li>
-<li>Cloneable &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xAD6C;&#xD604;(implement)&#xC5EC;&#xBD80;&#xC5D0; &#xB530;&#xB77C; clone() &#xBA54;&#xC18C;&#xB4DC; &#xB3D9;&#xC791;&#xC774; &#xB2EC;&#xB77C;&#xC9C4;&#xB2E4;.<ul>
-<li>&#xC774;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC0AC;&#xC6A9;&#xBC29;&#xC2DD;&#xC774; &#xC544;&#xB2C8;&#xBBC0;&#xB85C; &#xB530;&#xB77C;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD55C;&#xB2E4;.</li>
+<li>Comparable &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; compareTo &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xBCF4;&#xC720;&#xD558;&#xACE0; &#xC788;&#xB2E4;.</li>
+<li>compareTo &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB2E8;&#xC21C; &#xB3D9;&#xCE58;&#xC131; &#xBE44;&#xAD50;, &#xC21C;&#xC11C; &#xBE44;&#xAD50;, &#xC81C;&#xB124;&#xB9AD;&#xD55C; &#xD2B9;&#xC9D5;&#xC744; &#xAC16;&#xACE0; &#xC788;&#xB2E4;.</li>
+<li>Comparable&#xC744; &#xAD6C;&#xD604;&#xD588;&#xB2E4;&#xB294; &#xB73B;&#xC740; &#xD574;&#xB2F9; &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB4E4;&#xC5D0; &#xC21C;&#xC11C;&#xAC00; &#xC788;&#xB2E4;&#xB294; &#xB73B;&#xC774;&#xB2E4;.</li>
+<li>&#xAC80;&#xC0C9;, &#xADF9;&#xB2E8;&#xAC12; &#xACC4;&#xC2FC;, &#xC790;&#xB3D9; &#xC815;&#xB82C;&#xB418;&#xB294; &#xCEEC;&#xB809;&#xC158; &#xAD00;&#xB9AC;&#xB3C4; &#xC27D;&#xAC8C; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
+<li>Comparable&#xC744; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xAC83;&#xB9CC;&#xC73C;&#xB85C;&#xB3C4; &#xC790;&#xBC14; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xC758; &#xC81C;&#xB124;&#xB9AD;&#xC73C;&#xB85C; &#xAD6C;&#xD604;&#xB41C; &#xC54C;&#xACE0;&#xB9AC;&#xC998;, &#xCEEC;&#xB809;&#xC158; &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C;&#xC758; &#xD798;&#xC744; &#xB204;&#xB9B4; &#xC218; &#xC788;&#xB2E4;.</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>&#xC2E4;&#xBB34;&#xC5D0;&#xC11C;&#xB294; Cloneable&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB294; public clone&#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xBA70; &#xC81C;&#xB300;&#xB85C; &#xAC1D;&#xCCB4;&#xBCF5;&#xC0AC;&#xAC00; &#xB420; &#xAC83;&#xC73C;&#xB85C; &#xC608;&#xC0C1;&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB97C; &#xC9C0;&#xD0A4;&#xB824;&#xBA74; &#xADF8; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xBAA8;&#xB4E0; &#xC0C1;&#xC704; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xBCF5;&#xC7A1;&#xD55C; &#xAE30;&#xC220; &#xBA85;&#xC138;&#xB97C; &#xC9C0;&#xCF1C;&#xC57C;&#xD55C;&#xB2E4;.</li>
-<li>&#xC0DD;&#xC131;&#xC790; &#xD638;&#xCD9C; &#xC5C6;&#xC774; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; &#xBAA8;&#xC21C;&#xC801;&#xC778; &#xC0C1;&#xD669;&#xB3C4; &#xC0DD;&#xAE34;&#xB2E4;.</li>
-</ul>
-<h4 id="cloneable&#xC758;-&#xADDC;&#xC57D;"># Cloneable&#xC758; &#xADDC;&#xC57D;</h4>
-<ul>
-<li>&#xAC1D;&#xCCB4;&#xC758; &#xBCF5;&#xC0AC;&#xBCF8;&#xC744; &#xC0DD;&#xC131;&#xD574; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.<ul>
-<li>x.clone() != x</li>
-<li>x.clone().getClass() == x.clone()</li>
-<li>x.clone().equals(x)</li>
-</ul>
-</li>
-</ul>
-<h4 id="clone&#xC758;-&#xAD6C;&#xD604;-&#xCF54;&#xB4DC;"># clone&#xC758; &#xAD6C;&#xD604; &#xCF54;&#xB4DC;</h4>
-<ol>
-<li><p>&#xAC00;&#xBCC0;&#xC0C1;&#xD0DC;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC6A9; clone &#xBA54;&#xC18C;&#xB4DC;</p>
-<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> PhoneNumber <span class="hljs-title">clone</span><span class="hljs-params">()</span> </span>{
- <span class="hljs-keyword">try</span> {
-     <span class="hljs-keyword">return</span> (PhoneNumber) <span class="hljs-keyword">super</span>.clone(); <span class="hljs-comment">// Object -&gt; PhoneNumber &#xACF5;&#xBCC0; &#xBC18;&#xD658; &#xD0C0;&#xC774;&#xD551;</span>
- } <span class="hljs-keyword">catch</span> (ClassNotSupportedException e) {
-     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AssertionError(); <span class="hljs-comment">// &#xC808;&#xB300; &#xC77C;&#xC5B4;&#xB0A0; &#xC218; &#xC5C6;&#xB294; &#xC77C;</span>
- }
+<h4 id="1-comparable-&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758;-&#xC77C;&#xBC18;-&#xADDC;&#xC57D;">#1. Comparable &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xC77C;&#xBC18; &#xADDC;&#xC57D;</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(T t)</span></span>;
 }
 </code></pre>
-</li>
-<li><p>&#xAC00;&#xBCC0;&#xC0C1;&#xD0DC;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC6A9; clone &#xBA54;&#xC18C;&#xB4DC;</p>
-<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> Stack <span class="hljs-title">clone</span><span class="hljs-params">()</span> </span>{
- <span class="hljs-keyword">try</span> {
-     Stack stack = (Stack) <span class="hljs-keyword">super</span>.clone();
-     stack.elements = elements.clone();  <span class="hljs-comment">// &#xAC00;&#xBCC0;&#xC0C1;&#xD0DC; &#xD544;&#xB4DC;&#xB97C; &#xD074;&#xB860; &#xCC98;&#xB9AC;</span>
-     <span class="hljs-keyword">return</span> stack;
- } <span class="hljs-keyword">catch</span> (ClassNotSupportedException e) {
-     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AssertionError(); <span class="hljs-comment">// &#xC808;&#xB300; &#xC77C;&#xC5B4;&#xB0A0; &#xC218; &#xC5C6;&#xB294; &#xC77C;</span>
- }
-}
-</code></pre>
-</li>
-<li><p>&#xAC00;&#xBCC0;&#xD544;&#xB4DC; clone &#xBA54;&#xC18C;&#xB4DC; &#xD638;&#xCD9C;&#xB85C; &#xCDA9;&#xBD84;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;</p>
-</li>
-<li><p>&#xC544;&#xB798; &#xC608;&#xC2DC;&#xC758; &#xACBD;&#xC6B0; buckets&#xC758; &#xACBD;&#xC6B0; &#xBCC4;&#xB3C4; &#xBC30;&#xC5F4;&#xC774; &#xBCF5;&#xC0AC;&#xAC00; &#xB418;&#xC9C0;&#xB9CC;, &#xAC01; &#xBC84;&#xD0B7; &#xB0B4;&#xBD80;&#xC5D0; &#xB2E4;&#xC74C; &#xB178;&#xB4DC;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; next&#xAC00; &#xAC19;&#xC740; &#xAC1D;&#xCCB4;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xAC8C;&#xB418;&#xB294; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HashTable</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span> </span>{    
-  <span class="hljs-keyword">private</span> Entry[] buckets;
-
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Entry</span> </span>{
-      <span class="hljs-keyword">final</span> Object key;
-      Object value;
-      Entry next;
-
-      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Entry</span><span class="hljs-params">(Object key, Object value, Entry next)</span> </span>{
-          <span class="hljs-keyword">this</span>.key = key;
-          <span class="hljs-keyword">this</span>.value = value;
-          <span class="hljs-keyword">this</span>.next = next;
-      }
-  }
-
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">protected</span> HashTable <span class="hljs-title">clone</span><span class="hljs-params">()</span> </span>{
-      <span class="hljs-keyword">try</span> {
-          HashTable result = (HashTable) <span class="hljs-keyword">super</span>.clone();
-          result.buckets = buckets.clone();
-          <span class="hljs-keyword">return</span> result;
-      } <span class="hljs-keyword">catch</span> (CloneNotSupportedException e) {
-          <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AssertionError();
-      }
-  }
-}
-</code></pre>
-</li>
-<li><p>&#xC774; &#xACBD;&#xC6B0; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HashTable</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span> </span>{    
-  <span class="hljs-keyword">private</span> Entry[] buckets;
-
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Entry</span> </span>{
-      <span class="hljs-keyword">final</span> Object key;
-      Object value;
-      Entry next;
-
-      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Entry</span><span class="hljs-params">(Object key, Object value, Entry next)</span> </span>{
-          <span class="hljs-keyword">this</span>.key = key;
-          <span class="hljs-keyword">this</span>.value = value;
-          <span class="hljs-keyword">this</span>.next = next;
-      }
-
-      <span class="hljs-comment">// &#xB2E4;&#xC74C; &#xB178;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xBCF5;&#xC0AC; &#xC7AC;&#xADC0; &#xD638;&#xCD9C;</span>
-      <span class="hljs-function">Entry <span class="hljs-title">deepCopy</span><span class="hljs-params">()</span> </span>{
-         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Entry(key, value, next == <span class="hljs-keyword">null</span>? <span class="hljs-keyword">null</span> : next.deepCopy()); 
-      }
-  }
-
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">protected</span> HashTable <span class="hljs-title">clone</span><span class="hljs-params">()</span> </span>{
-      <span class="hljs-keyword">try</span> {
-          HashTable result = (HashTable) <span class="hljs-keyword">super</span>.clone();
-          result.buckets = <span class="hljs-keyword">new</span> Entry[buckets.length];
-          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; buckets.length; i++) {
-              <span class="hljs-keyword">if</span> (butckets[i] != <span class="hljs-keyword">null</span>)
-                  result.buckets[i] = buckets[i].deepCopy();
-          }
-          <span class="hljs-keyword">return</span> result;
-      } <span class="hljs-keyword">catch</span> (CloneNotSupportedException e) {
-          <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AssertionError();
-      }
-  }
-}
-</code></pre>
-</li>
-<li>&#xACE0;&#xC218;&#xC900; API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</li>
-<li>&#xC0DD;&#xC131;&#xC790;&#xC640; &#xACE0;&#xC218;&#xC900; API (&#xC608;&#xB97C;&#xB4E4;&#xBA74; HashMap&#xC758; put &#xBA54;&#xC18C;&#xB4DC; &#xB4F1;)&#xC744; &#xC774;&#xC6A9;&#xD574; &#xBCF5;&#xC0AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774;&#xB2E4;.</li>
-<li>&#xC774; &#xACBD;&#xC6B0; &#xCF54;&#xB4DC;&#xB294; &#xC6B0;&#xC544;&#xD574;&#xC9C0;&#xC9C0;&#xB9CC;, &#xC800;&#xC218;&#xC900; API &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xBCF4;&#xB2E4; &#xB2E4;&#xC18C; &#xB290;&#xB9AC;&#xB2E4;.</li>
-<li>&#xB610;&#xD55C; Cloneable &#xC544;&#xD0A4;&#xD14D;&#xCC98;&#xC758; &#xAE30;&#xBCF8;&#xC778; &#xD544;&#xB4DC; &#xB2E8;&#xC704; &#xAC1D;&#xCCB4; &#xBCF5;&#xC0AC;&#xB97C; &#xC6B0;&#xD68C;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; Cloneable &#xACFC; &#xC5B4;&#xC6B8;&#xB9AC;&#xC9C0; &#xC54A;&#xB294; &#xBC29;&#xC2DD;&#xC774;&#xAE30;&#xB3C4; &#xD558;&#xB2E4;.</li>
-</ol>
-<h4 id="&#xC8FC;&#xC758;&#xC0AC;&#xD56D;"># &#xC8FC;&#xC758;&#xC0AC;&#xD56D;</h4>
 <ul>
-<li>&#xC0DD;&#xC131;&#xC790;&#xC5D0;&#xC11C;&#xB294; clone &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xC548;&#xB41C;&#xB2E4;. (&#xC0DD;&#xC131;&#xC790;&#xC5D0;&#xC11C;&#xB294; &#xC7AC;&#xC815;&#xC758; &#xAC00;&#xB2A5;&#xD55C; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xC548;&#xB428;)<ul>
-<li>&#xB9CC;&#xC57D; &#xD638;&#xCD9C;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xD558;&#xC704; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xBCF5;&#xC81C; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xC790;&#xC2E0;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xAD50;&#xC815;&#xD560; &#xAE30;&#xD68C;&#xB97C; &#xC783;&#xAC8C; &#xB428;</li>
+<li>&#xC774; &#xAC1D;&#xCCB4;&#xC640; &#xC8FC;&#xC5B4;&#xC9C4; &#xAC1D;&#xCCB4;&#xC758; &#xC21C;&#xC11C;&#xB97C; &#xBE44;&#xAD50;&#xD55C;&#xB2E4;. &#xC774; &#xAC1D;&#xCCB4;&#xAC00; &#xC791;&#xC73C;&#xBA74; &#xC74C;&#xC758; &#xC815;&#xC218;, &#xAC19;&#xC73C;&#xBA74; 0, &#xD06C;&#xBA74; &#xC591;&#xC758; &#xC815;&#xC218;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.<ul>
+<li>&#xBE44;&#xAD50;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xC8FC;&#xC5B4;&#xC9C4; &#xACBD;&#xC6B0; ClassCastException&#xC744; &#xB358;&#xC9C4;&#xB2E4;.</li>
 </ul>
 </li>
-<li>&#xC7AC;&#xC815;&#xC758;&#xD55C; clone &#xBA54;&#xC18C;&#xB4DC;&#xB294; CloneNotSupportedException&#xC744; &#xB358;&#xC9C0;&#xBA74; &#xC548;&#xB41C;&#xB2E4;. &#xADF8;&#xB798;&#xC57C; &#xBA54;&#xC18C;&#xB4DC; &#xC0AC;&#xC6A9;&#xC774; &#xC6A9;&#xC774;&#xD574;&#xC9C4;&#xB2E4;.</li>
-<li>&#xC0C1;&#xC18D;&#xC6A9; &#xD074;&#xB798;&#xC2A4;&#xB294; Cloneable&#xC744; &#xAD6C;&#xD604;&#xD574;&#xC11C;&#xB294; &#xC548;&#xB41C;&#xB2E4;.<ul>
-<li>&#xBC29;&#xC9C0;&#xD558;&#xB824;&#xBA74; Object&#xC5D0; &#xAD6C;&#xD604;&#xB418;&#xC788;&#xB294;&#xAC83;&#xCC98;&#xB7FC; &#xC815;&#xC0C1; &#xB3D9;&#xC791;&#xD558;&#xB294; clone &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xAD6C;&#xD604; &#xD6C4; protected&#xB97C; &#xC9C0;&#xC815;&#xD55C;&#xB2E4;.</li>
-<li>&#xB610;&#xB294; &#xC544;&#xC608; clone &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1F4;&#xD654;&#xC2DC;&#xD0A4;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xB2E4;.</li>
+<li>Comparable&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xBAA8;&#xB4E0; x, y&#xC5D0; &#xB300;&#xD574; sgn(x.compareTo(y)) = -sgn(y.compareTo(x))&#xC5EC;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC5EC;&#xAE30;&#xC11C; sgn&#xC740; &#xBD80;&#xD638;&#xD568;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xAC12;&#xC774; &#xC74C;&#xC218;, 0, &#xC591;&#xC218; &#xC77C; &#xB54C; -1, 0, 1&#xC744; &#xBC18;&#xD658;&#xD558;&#xB3C4;&#xB85D; &#xC815;&#xC758;&#xD55C;&#xB2E4;.</li>
 </ul>
 </li>
-<li>clone&#xBA54;&#xC18C;&#xB4DC; &#xAD6C;&#xD604; &#xC2DC; &#xC2A4;&#xB808;&#xB4DC; &#xC548;&#xC804;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;&#xBA74;, &#xB3D9;&#xAE30;&#xD654;&#xB97C; &#xCC98;&#xB9AC;&#xD574;&#xC918;&#xC57C;&#xD55C;&#xB2E4;. Object&#xC758; clone&#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xB3D9;&#xAE30;&#xD654; &#xCC98;&#xB9AC;&#xAC00; &#xB418;&#xC5B4;&#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C;, &#xD544;&#xC694; &#xC2DC; &#xC9C1;&#xC811; &#xD574;&#xC57C;&#xD55C;&#xB2E4;.</li>
-</ul>
-<h4 id="&#xC694;&#xC57D;"># &#xC694;&#xC57D;</h4>
-<ol>
-<li>Cloneable&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xBAA8;&#xB4E0; &#xD074;&#xB798;&#xC2A4;&#xB294; clone&#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC7AC;&#xC815;&#xC758;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.<ul>
-<li>&#xC774; &#xB54C;, &#xC811;&#xADFC;&#xC81C;&#xD55C;&#xC790;&#xB294; public, &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC740; &#xD074;&#xB798;&#xC2A4; &#xC790;&#xC2E0;&#xC73C;&#xB85C; &#xC9C0;&#xC815;</li>
-</ul>
-</li>
-<li>clone&#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xAC00;&#xC7A5; &#xBA3C;&#xC800; super.clone()&#xC744; &#xD638;&#xCD9C;&#xD55C; &#xD6C4;, &#xAC00;&#xBCC0;&#xD544;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xBCF5;&#xC0AC; &#xCC98;&#xB9AC;&#xB97C; &#xD574;&#xC900;&#xB2E4;.<ul>
-<li>&#xD544;&#xC694; &#xC2DC; &#xB0B4;&#xBD80; &#xC6D0;&#xC18C;&#xC5D0; &#xB300;&#xD574; &#xAE4A;&#xC740; &#xBCF5;&#xC0AC;(deep copy)&#xB3C4; &#xCC98;&#xB9AC;&#xD55C;&#xB2E4;.</li>
+<li>Comparable&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB294; <code>&#xCD94;&#xC774;&#xC131;</code>&#xC744; &#xBCF4;&#xC7A5;&#xD574;&#xC57C; &#xD55C;&#xB2E4;. &#xC989; x.compareTo(y) &gt; 0 &amp;&amp; y.compareTo(z) &gt; 0&#xC774;&#xBA74; x.compareTo(z) &gt; 0&#xC774;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;.</li>
+<li>Comparable&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xBAA8;&#xB4E0; z&#xC5D0; &#xB300;&#xD574; x.compareTo(y) == 0&#xC774;&#xBA74; sgn(x.compareTo(z)) == sgn(y.compareTo(z))&#xC5EC;&#xC57C;&#xD55C;&#xB2E4;.</li>
+<li>(x.compareTo(y) == 0) == (x.equals(y))&#xC5EC;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC774; &#xC0AC;&#xD56D;&#xC740; &#xD544;&#xC218;&#xB294; &#xC544;&#xB2C8;&#xC9C0;&#xB9CC; &#xC9C0;&#xD0A4;&#xBA74; &#xC88B;&#xB2E4;.</li>
+<li>&#xC9C0;&#xD0A4;&#xC9C0; &#xC54A;&#xC744;&#xACBD;&#xC6B0; &#xBC18;&#xB4DC;&#xC2DC; &#xBA85;&#xC2DC;&#xD574;&#xC8FC;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</li>
+<li>&#xC774; &#xC0AC;&#xD56D;&#xC744; &#xC9C0;&#xCF1C;&#xC8FC;&#xBA74; compareTo&#xC758; &#xC904;&#xC9C0;&#xC5B4;&#xC9C4; &#xC21C;&#xC11C;&#xC640; equals&#xC758; &#xB3D9;&#xCE58;&#xC131; &#xBE44;&#xAD50;&#xAC00; &#xC77C;&#xAD00;&#xC131;&#xC744; &#xAC16;&#xAC8C;&#xB41C;&#xB2E4;.</li>
+<li>&#xC815;&#xB82C;&#xB41C; &#xCEEC;&#xB809;&#xC158; (TreeMap, TreeSet)&#xB4F1;&#xC740; &#xB3D9;&#xCE58;&#xC131; &#xBE44;&#xAD50; &#xC2DC; equals&#xB300;&#xC2E0; compareTo&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
 </ul>
 </li>
-<li>&#xBD88;&#xBCC0;&#xAC1D;&#xCCB4;&#xC758; &#xACBD;&#xC6B0; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC544;&#xBB34; &#xC218;&#xC815;&#xC744; &#xD560; &#xD544;&#xC694; &#xC5C6;&#xC9C0;&#xB9CC;, &#xC77C;&#xB828;&#xBC88;&#xD638;&#xB098; &#xACE0;&#xC720; ID&#xB4F1;&#xC758; &#xACBD;&#xC6B0; &#xC218;&#xC815;&#xD574;&#xC900;&#xB2E4;.</li>
-</ol>
-<h4 id="&#xBCF5;&#xC0AC;-&#xC0DD;&#xC131;&#xC790;-or-&#xBCF5;&#xC0AC;-&#xD329;&#xD130;&#xB9AC;&#xB97C;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;"># &#xBCF5;&#xC0AC; &#xC0DD;&#xC131;&#xC790; or &#xBCF5;&#xC0AC; &#xD329;&#xD130;&#xB9AC;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
+</ul>
+<h4 id="2-compareto-&#xBA54;&#xC18C;&#xB4DC;-&#xC791;&#xC131;&#xC694;&#xB839;">#2. compareTo &#xBA54;&#xC18C;&#xB4DC; &#xC791;&#xC131;&#xC694;&#xB839;</h4>
 <ul>
-<li>&#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; &#xC0C1;&#xD669;&#xC744; &#xBC18;&#xB4DC;&#xC2DC; &#xC9C0;&#xCF1C;&#xC57C;&#xD558;&#xB294; &#xC0C1;&#xD669;&#xC740; &#xC0DD;&#xAC01;&#xBCF4;&#xB2E4; &#xB9CE;&#xC9C0; &#xC54A;&#xB2E4;.</li>
-<li>&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0; &#xBCF5;&#xC0AC; &#xC0DD;&#xC131;&#xC790; &#xD639;&#xC740; &#xBCF5;&#xC0AC; &#xD329;&#xD130;&#xB9AC;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xB098;&#xC740; &#xBCF5;&#xC0AC;&#xBC29;&#xC2DD;&#xC77C;&#xC218;&#xB3C4; &#xC788;&#xB2E4;.
+<li>&#xBE44;&#xAD50; &#xC778;&#xC790;&#xAC00; null&#xC774;&#xBA74; NPE&#xB97C; &#xB358;&#xC9C4;&#xB2E4;. (&#xC2E4;&#xC81C;&#xB85C; null&#xAC12;&#xC5D0; &#xC811;&#xADFC; &#xC2DC; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBC1C;&#xC0DD;)</li>
+<li>&#xAC1D;&#xCCB4; &#xCC38;&#xC870; &#xD544;&#xB4DC; &#xBE44;&#xAD50; &#xC2DC; &#xD574;&#xB2F9; &#xD544;&#xB4DC;&#xC758; compareTo &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC7AC;&#xADC0;&#xC801;&#xC73C;&#xB85C; &#xD638;&#xCD9C;</li>
+<li>Comparable&#xC744; &#xAD6C;&#xD604;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xD544;&#xB4DC;&#xB098; &#xD45C;&#xC900;&#xC774; &#xC544;&#xB2CC; &#xC21C;&#xC11C;&#xB85C; &#xBE44;&#xAD50;&#xD558;&#xB824;&#xBA74; Comparator&#xB97C; &#xB300;&#xC2E0; &#xC774;&#xC6A9;&#xD55C;&#xB2E4;.<ul>
+<li>Comporator&#xB294; &#xC9C1;&#xC811; &#xAD6C;&#xD604; &#xD639;&#xC740; &#xC790;&#xBC14;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC0AC;&#xC6A9;</li>
+</ul>
+</li>
+<li>&#xC815;&#xC218;, &#xC2E4;&#xC218; &#xB4F1; &#xAE30;&#xBCF8;&#xD0C0;&#xC785;&#xC758; &#xACBD;&#xC6B0; &#xBC15;&#xC2F1;&#xB41C; &#xD074;&#xB798;&#xC2A4;&#xC758; compare &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C; (e.g. Float.compare)</li>
+<li>&#xD074;&#xB798;&#xC2A4;&#xC758; &#xD575;&#xC2EC;&#xD544;&#xB4DC;&#xAC00; &#xC5EC;&#xB7EC; &#xAC1C;&#xB77C;&#xBA74; &#xC911;&#xC694;&#xB3C4;&#xC5D0; &#xB530;&#xB77C; &#xC6B0;&#xC120;&#xC801;&#xC73C;&#xB85C; &#xBE44;&#xAD50;&#xD55C;&#xB2E4;.<ul>
+<li>&#xD575;&#xC2EC;&#xD544;&#xB4DC; &#xBE44;&#xAD50;&#xACB0;&#xACFC;&#xAC00; 0&#xC774; &#xC544;&#xB2C8;&#xB77C;&#xBA74;(&#xAC19;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;) &#xC774;&#xBBF8; &#xC21C;&#xC11C;&#xAC00; &#xACB0;&#xC815;&#xB41C; &#xAC83;&#xC73C;&#xB85C; &#xC774;&#xD6C4; &#xD544;&#xB4DC;&#xB294; &#xBE44;&#xAD50;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;. <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(PhoneNumber pn)</span> </span>{
+<span class="hljs-keyword">int</span> result = Short.compare(areaCode, pn.areaCode);
+<span class="hljs-keyword">if</span> (result == <span class="hljs-number">0</span>) {
+    result = Short.compare(prefix, pn.prefix);
+    <span class="hljs-keyword">if</span> (result == <span class="hljs-number">0</span>) {
+        result = Short.compare(lineNum, pn.lineNum);
+    }
+}
+<span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<h4 id="3-comparator-&#xD65C;&#xC6A9;">#3. Comparator &#xD65C;&#xC6A9;</h4>
+</li>
+</ul>
+</li>
+<li>&#xC790;&#xBC14;8&#xBD80;&#xD130;&#xB294; Comparator &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC77C;&#xB828;&#xC758; &#xBE44;&#xAD50;&#xC790; &#xC0DD;&#xC131; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5; &#xBC0F; &#xBA54;&#xC18C;&#xB4DC; &#xCCB4;&#xC774;&#xB2DD; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xBE44;&#xAD50;&#xC790;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC774;&#xB807;&#xAC8C; &#xC0DD;&#xC131;&#xD55C; &#xBE44;&#xAD50;&#xC790;&#xB294; compareTo&#xC5D0;&#xC11C; &#xD3B8;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xB2E8;, &#xC57D;&#xAC04;&#xC758; &#xC131;&#xB2A5;&#xC800;&#xD558;&#xAC00; &#xC788;&#xC744;&#xC218;&#xC788;&#xB2E4;.
 ```java
-// &#xBCF5;&#xC0AC; &#xC0DD;&#xC131;&#xC790;
-public Data(Data data) {
-  ...
-}</li>
+private static final Comparator<phonenumber> PN_COMPORATOR = 
+Comparator.comparingInt((PhoneNumber pn) -&gt; pn.areaCode)  // &#xB78C;&#xB2E4;&#xC2DD; &#xC0AC;&#xC6A9; &#xC2DC; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC744; &#xB3C4;&#xC640;&#xC8FC;&#xB3C4;&#xB85D; &#xD0C0;&#xC785;&#xC744; &#xBA85;&#xC2DC;<pre><code>      .thenComparingInt(pn -&gt; pn.prefix)
+      .thenComparingINt(pn -&gt; pn.lineNum);
+</code></pre></phonenumber></li>
 </ul>
-<p>// &#xBCF5;&#xC0AC; &#xD329;&#xD130;&#xB9AC;
-public static Data(Data data) {
-    ...
+</li>
+</ul>
+<p>public int compareTo(PhoneNumber pn) {
+    return PN_COMPORATOR.compare(this, pn);
+}</p>
+<pre><code>- &#xAC1D;&#xCCB4; &#xBE44;&#xAD50;&#xB97C; &#xC704;&#xD574; Comparator.comparing &#xBA54;&#xC18C;&#xB4DC;&#xB3C4; &#xD65C;&#xC6A9; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
+
+#### \#4. &#xC8FC;&#xC758;&#xC0AC;&#xD56D;
+- &#xAC12;&#xC758; &#xCC28;&#xB85C; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC77C; &#xB54C; &#xD574;&#xC2DC;&#xCF54;&#xB4DC;&#xB97C; &#xC885;&#xC885; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xB2E4;.
+```java
+public int compareTo(Object o) {
+    return this.hashCode() - o.hashCode();
 }
-```</p>
-<ul>
-<li>&#xC774; &#xBC29;&#xC2DD;&#xC758; &#xACBD;&#xC6B0; Cloneable&#xC774; &#xB0B4;&#xC7AC;&#xD55C; &#xB9F9;&#xC810;&#xB4E4;&#xC744; &#xD68C;&#xD53C;&#xD560; &#xC218; &#xC788;&#xACE0;, &#xBD88;&#xD544;&#xC694;&#xD55C; &#xAC80;&#xC0AC; &#xC608;&#xC678;, &#xD615;&#xBCC0;&#xD658; &#xB4F1;&#xC744; &#xD560; &#xD544;&#xC694;&#xB3C4; &#xC5C6;&#xB2E4;.</li>
-<li>&#xB610;&#xD55C; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB2E4;.<ul>
-<li>&#xC608;&#xCEE8;&#xB370;, &#xC778;&#xC790;&#xB97C; Map&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xD558;&#xBA74; HashSet &#xAC1D;&#xCCB4;&#xB97C; &#xBCF5;&#xC0AC;&#xD558;&#xC5EC; TreeSet &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xBCF5;&#xC81C;&#xAC00; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. </li>
+</code></pre><ul>
+<li>&#xC704; &#xBC29;&#xC2DD;&#xC740; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC548;&#xB41C;&#xB2E4;.<ul>
+<li>&#xC815;&#xC218; &#xC624;&#xBC84;&#xD50C;&#xB85C;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAC70;&#xB098; &#xBD80;&#xB3D9;&#xC18C;&#xC218;&#xC810; &#xACC4;&#xC0B0; &#xBC29;&#xC2DD;&#xC5D0; &#xB530;&#xB978; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
 </ul>
+</li>
+<li>&#xB300;&#xC2E0; &#xC544;&#xB798;&#xC641; &#xAC19;&#xC774; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(Object o)</span> </span>{
+  <span class="hljs-keyword">return</span> Integer.compare(<span class="hljs-keyword">this</span>.hashCode(), o.hashCode());
+}
+</code></pre>
 </li>
 </ul>
 
@@ -996,12 +915,12 @@ public static Data(Data data) {
 
             
                 
-                <a href="item12.html" class="navigation navigation-prev " aria-label="Previous page: 아이템12. toString을 항상 재정의하라">
+                <a href="item13.html" class="navigation navigation-prev " aria-label="Previous page: 아이템13. clone 재정의는 주의해서 진행하라">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="item14.html" class="navigation navigation-next " aria-label="Next page: 아이템14. Comparable을 구현할지 고려하라">
+                <a href="../../frontend/" class="navigation navigation-next " aria-label="Next page: Frontend">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1012,7 +931,7 @@ public static Data(Data data) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"아이템13. clone 재정의는 주의해서 진행하라","level":"1.2.1.13","depth":3,"next":{"title":"아이템14. Comparable을 구현할지 고려하라","level":"1.2.1.14","depth":3,"path":"content/backend/effective-java-3e/item14.md","ref":"content/backend/effective-java-3e/item14.md","articles":[]},"previous":{"title":"아이템12. toString을 항상 재정의하라","level":"1.2.1.12","depth":3,"path":"content/backend/effective-java-3e/item12.md","ref":"content/backend/effective-java-3e/item12.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item13.md","mtime":"2020-04-20T08:02:10.153Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-20T16:12:25.682Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"아이템14. Comparable을 구현할지 고려하라","level":"1.2.1.14","depth":3,"next":{"title":"Frontend","level":"1.3","depth":1,"path":"content/frontend/index.md","ref":"content/frontend/index.md","articles":[]},"previous":{"title":"아이템13. clone 재정의는 주의해서 진행하라","level":"1.2.1.13","depth":3,"path":"content/backend/effective-java-3e/item13.md","ref":"content/backend/effective-java-3e/item13.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/item14.md","mtime":"2020-04-20T16:11:56.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-20T16:12:25.682Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
