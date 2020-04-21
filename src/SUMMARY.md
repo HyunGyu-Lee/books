@@ -15,6 +15,8 @@
         * [아이템12. toString을 항상 재정의하라](content/backend/effective-java-3e/item12.md)        
         * [아이템13. clone 재정의는 주의해서 진행하라](content/backend/effective-java-3e/item13.md)
         * [아이템14. Comparable을 구현할지 고려하라](content/backend/effective-java-3e/item14.md)
+        * [아이템15. 클래스와 멤버의 접근 권한을 최소화하라](content/backend/effective-java-3e/item15.md)        
+        * [아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라](content/backend/effective-java-3e/item16.md)
 * [Frontend](content/frontend/index.md)
 * [Architecture](content/architecture/index.md)
     * [DDD Start!](content/architecture/ddd-start!/index.md)
