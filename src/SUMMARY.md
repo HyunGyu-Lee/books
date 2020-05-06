@@ -20,6 +20,7 @@
         * [4장. 클래스와 인터페이스](/content/backend/effective-java-3e/chapter4/index.md)        
             * [아이템15. 클래스와 멤버의 접근 권한을 최소화하라](/content/backend/effective-java-3e/chapter4/item15.md)        
             * [아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라](/content/backend/effective-java-3e/chapter4/item16.md)
+            * [아이템17. 변경 가능성을 최소화하라](/content/backend/effective-java-3e/chapter4/item17.md)
 * [Frontend](/content/frontend/index.md)
 * [Architecture](/content/architecture/index.md)
     * [DDD Start!](/content/architecture/ddd-start!/index.md)

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라 · GitBook</title>
+        <title>아이템17. 변경 가능성을 최소화하라 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="item17.html" />
+    <link rel="next" href="../../../frontend/" />
     
     
-    <link rel="prev" href="item15.html" />
+    <link rel="prev" href="item16.html" />
     
 
     </head>
@@ -381,7 +381,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.3.2" data-path="item16.html">
+        <li class="chapter " data-level="1.2.1.3.2" data-path="item16.html">
             
                 <a href="item16.html">
             
@@ -394,7 +394,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.3.3" data-path="item17.html">
+        <li class="chapter active" data-level="1.2.1.3.3" data-path="item17.html">
             
                 <a href="item17.html">
             
@@ -879,7 +879,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../../.." >아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라</a>
+        <a href="../../../.." >아이템17. 변경 가능성을 최소화하라</a>
     </h1>
 </div>
 
@@ -894,46 +894,143 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="public-&#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C;&#xB294;-public-&#xD544;&#xB4DC;&#xAC00;-&#xC544;&#xB2CC;-&#xC811;&#xADFC;&#xC790;-&#xBA54;&#xC18C;&#xB4DC;&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xB77C;">public &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; public &#xD544;&#xB4DC;&#xAC00; &#xC544;&#xB2CC; &#xC811;&#xADFC;&#xC790; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB77C;</h1>
+                                <h1 id="&#xBCC0;&#xACBD;-&#xAC00;&#xB2A5;&#xC131;&#xC744;-&#xCD5C;&#xC18C;&#xD654;&#xD558;&#xB77C;">&#xBCC0;&#xACBD; &#xAC00;&#xB2A5;&#xC131;&#xC744; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xB77C;</h1>
 <ul>
-<li>&#xAC00;&#xB054; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBAA8;&#xC544;&#xB450;&#xB294; &#xD1F4;&#xBCF4;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xB2E4;.</li>
-<li>&#xC774;&#xB7F0; &#xD074;&#xB798;&#xC2A4;&#xB294; public&#xC774;&#xC5B4;&#xC11C;&#xB294; &#xC548;&#xB41C;&#xB2E4;.<ul>
-<li>&#xC774; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xB370;&#xC774;&#xD130; &#xD544;&#xB4DC;&#xC5D0; &#xC9C1;&#xC811; &#xC811;&#xADFC;&#xC774; &#xAC00;&#xB2A5;&#xD574; &#xCEA1;&#xC290;&#xD654;&#xC758; &#xC774;&#xC810;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;.</li>
-<li>API&#xB97C; &#xC218;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xACE0;&#xB294; &#xB0B4;&#xBD80; &#xD45C;&#xD604;&#xC744; &#xBC14;&#xAFC0; &#xC218; &#xC5C6;&#xB2E4;.</li>
-<li>&#xBD88;&#xBCC0;&#xC2DD;&#xC744; &#xBCF4;&#xC7A5;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</li>
-<li>&#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xD544;&#xB4DC;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xB54C; &#xBD80;&#xC218; &#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span> </span>{
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> x;
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> y;
+<li>&#xBD88;&#xBCC0; &#xD074;&#xB798;&#xC2A4;&#xB780; &#xAC04;&#xB2E8;&#xD788; &#xB9D0;&#xD574; &#xADF8; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xB0B4;&#xBD80; &#xAC12;&#xC744; &#xC218;&#xC815;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB2E4;.<ul>
+<li>&#xBD88;&#xBCC0; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0; &#xAC04;&#xC9C1;&#xB41C; &#xC815;&#xBCF4;&#xB294; &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xAC00; &#xD30C;&#xAD34;&#xB418;&#xB294; &#xC21C;&#xAC04;&#xAE4C;&#xC9C0; &#xBCC0;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</li>
+<li>&#xC790;&#xBC14; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xB294; String, BigInteger, BigDecimal &#xB4F1;&#xC774; &#xC788;&#xC74C;</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-&#xD074;&#xB798;&#xC2A4;&#xB97C;-&#xBD88;&#xBCC0;-&#xD074;&#xB798;&#xC2A4;&#xB85C;-&#xB9CC;&#xB4DC;&#xB294;-&#xBC29;&#xBC95;">#1. &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xBD88;&#xBCC0; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;</h4>
+<ul>
+<li>&#xAC1D;&#xCCB4;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xD074;&#xB798;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC5C6;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.<ul>
+<li>&#xD558;&#xC704; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; &#xBD80;&#xC8FC;&#xC758;&#xD558;&#xAC8C; &#xD639;&#xC740; &#xB098;&#xC05C; &#xC758;&#xB3C4;&#xB85C; &#xAC1D;&#xCCB4;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xAC8C; &#xD558;&#xB294; &#xC0AC;&#xD0DC;&#xB97C; &#xBC29;&#xC9C0;&#xD55C;&#xB2E4;.</li>
+<li>&#xD074;&#xB798;&#xC2A4;&#xB97C; final&#xB85C; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB300;&#xD45C;&#xC801;&#xC784;</li>
+</ul>
+</li>
+<li>&#xBAA8;&#xB4E0; &#xD544;&#xB4DC;&#xB97C; final&#xB85C; &#xC120;&#xC5B8;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xAC15;&#xC81C;&#xD558;&#xB294; &#xC218;&#xB2E8;&#xC744; &#xD65C;&#xC6A9;&#xD574; &#xC758;&#xB3C4;&#xB97C; &#xBA85;&#xD655;&#xD788; &#xB4DC;&#xB7EC;&#xB0BC; &#xC218; &#xC788;&#xC74C;</li>
+<li>&#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xB3D9;&#xAE30;&#xD654; &#xC5C6;&#xC774; &#xB2E4;&#xB978; &#xC2A4;&#xB808;&#xB4DC;&#xB85C; &#xAC74;&#xB300;&#xB3C4; &#xBB38;&#xC81C;&#xAC00; &#xC5C6;&#xC74C;</li>
+</ul>
+</li>
+<li>&#xBAA8;&#xB4E0; &#xD544;&#xB4DC;&#xB97C; private&#xB85C; &#xC120;&#xC5B8;&#xD55C;&#xB2E4;.<ul>
+<li>&#xD544;&#xB4DC;&#xAC00; &#xCC38;&#xC870;&#xD558;&#xB294; &#xAC00;&#xBCC0; &#xAC1D;&#xCCB4;&#xB97C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; &#xC218;&#xC815;&#xD558;&#xB294; &#xC77C;&#xC744; &#xB9C9;&#xC544;&#xC900;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC790;&#xC2E0; &#xC678;&#xC5D0;&#xB294; &#xB0B4;&#xBD80;&#xC758; &#xAC00;&#xBCC0; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC5C6;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.<ul>
+<li>&#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; &#xAC00;&#xBCC0; &#xAC1D;&#xCCB4;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xD544;&#xB4DC;&#xAC00; &#xD558;&#xB098;&#xB77C;&#xB3C4; &#xC788;&#xB2E4;&#xBA74; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xADF8; &#xAC1D;&#xCCB4;&#xC758; &#xCC38;&#xC870;&#xB97C; &#xC5BB;&#xC744;&#xC218; &#xC5C6;&#xB3C4;&#xB85D; &#xD574;&#xC57C;&#xD568;</li>
+<li>&#xC811;&#xADFC;&#xC790; &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xD574;&#xB2F9; &#xD544;&#xB4DC;&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xBC18;&#xD658;&#xD574;&#xC11C;&#xB294; &#xC548;&#xB418;&#xBA70; &#xBC29;&#xC5B4;&#xC801; &#xBCF5;&#xC0AC;&#xB97C; &#xD574;&#xC57C;&#xD568;</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-&#xBCF5;&#xC18C;&#xC2A4;-&#xD074;&#xB798;&#xC2A4;-&#xC608;&#xC2DC;">#2. &#xBCF5;&#xC18C;&#xC2A4; &#xD074;&#xB798;&#xC2A4; &#xC608;&#xC2DC;</h4>
+<pre><code class="lang-java"><span class="hljs-comment">// final&#xB85C; &#xC120;&#xC5B8;&#xD574; &#xC0C1;&#xC18D; &#xBC29;&#xC9C0;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Complex</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> re;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> im;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Complex</span><span class="hljs-params">(<span class="hljs-keyword">double</span> re, <span class="hljs-keyword">double</span> im)</span> </span>{
+        <span class="hljs-keyword">this</span>.re = re;
+        <span class="hljs-keyword">this</span>.im = im;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">realPart</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> re; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">imaginaryPart</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> im; }
+
+    <span class="hljs-comment">// &#xD53C;&#xC5F0;&#xC0B0;&#xC790; (&#xC790;&#xC2E0;)&#xC758; &#xAC12;&#xC744; &#xC218;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC0C8;&#xB85C;&#xC6B4; &#xAC12;&#xC744; &#xC0DD;&#xC131;</span>
+    <span class="hljs-comment">// &#xBA54;&#xC18C;&#xB4DC;&#xBA85;&#xB97C; add(&#xB3D9;&#xC0AC;)&#xAC00; &#xC544;&#xB2CC; plus(&#xC804;&#xCE58;&#xC0AC;)&#xB85C; &#xBA85;&#xBA85;&#xD574;</span>
+    <span class="hljs-comment">// &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xAC00; &#xAC1D;&#xCCB4; &#xC0C1;&#xD0DC;&#xB97C; &#xBC14;&#xAFB8;&#xC9C0; &#xC54A;&#xB294; &#xB2E4;&#xB294; &#xC810;&#xC744; &#xAC15;&#xC870;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Complex <span class="hljs-title">plus</span><span class="hljs-params">(Complex c)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Complex(re + c.re, im + c.im);
+    }
 }
 </code></pre>
+<h4 id="3-&#xBD88;&#xBCC0;-&#xAC1D;&#xCCB4;-&#xC7A5;&#xC810;">#3. &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4; &#xC7A5;&#xC810;</h4>
+<ol>
+<li>&#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB294; &#xB2E8;&#xC21C;&#xD558;&#xB2E4;.<ul>
+<li>&#xBAA8;&#xB4E0; &#xC0DD;&#xC131;&#xC790;&#xAC00; &#xD074;&#xB798;&#xC2A4; &#xBD88;&#xBCC0;&#xC2DD;&#xC744; &#xBCF4;&#xC7A5;&#xD55C;&#xB2E4;&#xBA74; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xAC00; &#xBCC4;&#xB2E4;&#xB978; &#xB178;&#xB825;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xC601;&#xC6D0;&#xC774; &#xBD88;&#xBCC0;&#xC73C;&#xB85C; &#xB0A8;&#xB294;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB294; &#xADFC;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xB808;&#xB4DC; &#xC548;&#xC804;&#xD558;&#xC5EC; &#xB3D9;&#xAE30;&#xD654; &#xCC98;&#xB9AC;&#xB97C; &#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;.<ul>
+<li>&#xC5EC;&#xB7EC; &#xC2A4;&#xB808;&#xB4DC;&#xAC00; &#xB3D9;&#xC2DC;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xC808;&#xB300; &#xD6FC;&#xC190;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xC2A4;&#xB808;&#xB4DC;&#xAC04; &#xC548;&#xC2EC;&#xD558;&#xACE0; &#xACF5;&#xC720;&#xD574;&#xB3C4; &#xB41C;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC790;&#xC8FC; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC1D;&#xCCB4;&#xB294; &#xC0C1;&#xC218;&#xB85C; &#xC120;&#xC5B8;&#xD574;&#xB450;&#xACE0; &#xACF5;&#xC720;&#xD560; &#xC218; &#xC788;&#xB2E4;.<ul>
+<li>&#xB610;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xC5D0; &#xC790;&#xC8FC; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xAC12;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xB3C4; &#xC788;&#xB2E4;.<ul>
+<li>&#xC774; &#xACBD;&#xC6B0; &#xD544;&#xC694;&#xC5D0; &#xB530;&#xB77C; &#xCE90;&#xC2F1;&#xAE30;&#xB2A5; &#xB4F1;&#xC744; &#xB367;&#xBD99;&#xD790; &#xC218; &#xC788;&#xB2E4;. (&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCF54;&#xB4DC; &#xC218;&#xC815; &#xC5C6;&#xC774; &#xAC00;&#xB2A5;)    </li>
+</ul>
 </li>
 </ul>
 </li>
-<li><p>&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBA38;&#xB77C;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD55C;&#xB2E4;.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span> </span>{
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> x;
-  <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> y;
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Point</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y)</span> </span>{
-      <span class="hljs-keyword">this</span>.x = x;
-      <span class="hljs-keyword">this</span>.y = y;
-  }
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getX</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> x; }
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getY</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> y; }    
-
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setX</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x)</span> </span>{ <span class="hljs-keyword">this</span>.x = x; }
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setY</span><span class="hljs-params">(<span class="hljs-keyword">double</span> y)</span> </span>{ <span class="hljs-keyword">this</span>.y = y; }    
-}
-</code></pre>
-</li>
-<li>&#xD328;&#xD0A4;&#xC9C0; &#xBC14;&#xAE65;&#xC5D0;&#xC11C; &#xC811;&#xADFC; &#xAC00;&#xB2A5;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB77C;&#xBA74; &#xC811;&#xADFC;&#xC790;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xC5EC; &#xD074;&#xB798;&#xC2A4; &#xB0B4;&#xBD80; &#xD45C;&#xD604; &#xBC29;&#xC2DD;&#xC744; &#xC5B8;&#xC81C;&#xB4E0; &#xBC14;&#xAFC0;&#xC218; &#xC788;&#xB2E4;.</li>
-<li>package-private &#xD074;&#xB798;&#xC2A4; &#xD639;&#xC740; private &#xC911;&#xC811; &#xD074;&#xB798;&#xC2A4;&#xB77C;&#xBA74; &#xB370;&#xC774;&#xD130; &#xD544;&#xB4DC;&#xB97C; &#xB178;&#xCD9C;&#xD574;&#xB3C4; &#xBB38;&#xC81C;&#xAC00; &#xC5C6;&#xB2E4;.<ul>
-<li>&#xC5B4;&#xCC28;&#xD53C; &#xD328;&#xD0A4;&#xC9C0; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C;&#xB9CC; &#xB3D9;&#xC791;&#xD558;&#xACE0; &#xD328;&#xD0A4;&#xC9C0; &#xC678;&#xBD80;&#xC5D4; &#xC601;&#xD5A5;&#xC744; &#xBBF8;&#xCE58;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</li>
-<li>private &#xC911;&#xCCA9; &#xD074;&#xB798;&#xC2A4;&#xB294; &#xB354; &#xC81C;&#xD55C;&#xC801;</li>
+<li>&#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xC758; &#xACBD;&#xC6B0; clone / &#xBCF5;&#xC0AC; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.<ul>
+<li>&#xC5B4;&#xCC28;&#xD53C; &#xBCF5;&#xC0AC;&#xD574;&#xBD10;&#xC57C; &#xAC12;&#xC774; &#xB3D9;&#xC77C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBD88;&#xD544;&#xC694;</li>
 </ul>
 </li>
-<li>&#xC790;&#xBC14; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C; Point, Dimension &#xD074;&#xB798;&#xC2A4;&#xB294; &#xC774;&#xB7EC;&#xD55C; &#xC81C;&#xC57D;&#xC744; &#xC5B4;&#xAE34; &#xB300;&#xD45C;&#xC801;&#xC778; &#xC0AC;&#xB840;&#xB85C; &#xB530;&#xB77C;&#xD558;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xC790;.</li>
+<li>&#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xC758; &#xACBD;&#xC6B0; &#xD544;&#xC694;&#xC5D0; &#xB530;&#xB77C; &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4; &#xB07C;&#xB9AC; &#xB0B4;&#xBD80; &#xB370;&#xC774;&#xD130; &#xACF5;&#xC720;&#xAC00; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.<ul>
+<li>&#xC608;&#xC2DC;<ul>
+<li>BigInteger&#xC758; &#xACBD;&#xC6B0; &#xBD80;&#xD638;&#xB294; int &#xBCC0;&#xC218;, &#xD06C;&#xAE30;&#xB294; int&#xBC30;&#xC5F4;&#xB85C; &#xAD00;&#xB9AC;&#xD55C;&#xB2E4;.</li>
+<li>&#xC774; &#xB54C; negate(&#xBD80;&#xD638; &#xBC18;&#xC804;&#xD55C; &#xAC12;&#xC744; &#xBC18;&#xD658;&#xD574;&#xC8FC;&#xB294; &#xBA54;&#xC18C;&#xB4DC;)&#xB294; &#xC0C8;&#xB85C;&#xC6B4; BigInteger&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC9C0;&#xB9CC; &#xBD80;&#xD638;&#xB9CC; &#xBC18;&#xB300;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xACE0; &#xD06C;&#xAE30;(int&#xBC30;&#xC5F4;)&#xC740; &#xC6D0;&#xBCF8; &#xC778;&#xC2A4;&#xD134;&#xB4DC;&#xC640; &#xACF5;&#xC720;&#xD55C;&#xB2E4;.<ul>
+<li>int[]&#xC774; &#xAC00;&#xBCC0;&#xC774;&#xC9C0;&#xB9CC; &#xC5B4;&#xCC28;&#xD53C; BigInteger &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xB458; &#xB2E4; &#xBD88;&#xBCC0;&#xC774;&#xB77C; &#xAC00;&#xB2A5;&#xD55C; &#xAC83;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xD0C0; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4; &#xB54C; &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC774; &#xC810;&#xC774; &#xB9CE;&#xB2E4;.<ul>
+<li>&#xB9F5;&#xC758; &#xD0A4;&#xB098; Set&#xC758; &#xC6D0;&#xC18C;&#xB85C; &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD574;&#xB2F9; &#xCEEC;&#xB809;&#xC158;&#xC758; &#xBD88;&#xBCC0;&#xC2DD;&#xC774; &#xAE68;&#xC9C8; &#xC77C;&#xC774; &#xC5C6;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB294; &#xADF8; &#xC790;&#xCCB4;&#xB85C; &#xC2E4;&#xD328; &#xC6D0;&#xC790;&#xC131;&#xC744; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.<ul>
+<li>&#xC2E4;&#xD328; &#xC6D0;&#xC790;&#xC131;&#xC774;&#xB780; &#xBA54;&#xC18C;&#xB4DC; &#xC2E4;&#xD589; &#xC911; &#xC608;&#xC678;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xB354;&#xB77C;&#xB3C4; &#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xB294; &#xC5EC;&#xC804;&#xD788; &#xD638;&#xCD9C; &#xC804;&#xACFC; &#xAC19;&#xC740; &#xC0C1;&#xD0DC;&#xB97C; &#xC720;&#xC9C0;&#xD574;&#xC57C;&#xD55C;&#xB2E4;&#xB294; &#xC131;&#xC9C8;</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-&#xBD88;&#xBCC0;-&#xAC1D;&#xCCB4;-&#xB2E8;&#xC810;">#4. &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4; &#xB2E8;&#xC810;</h4>
+<ol>
+<li>&#xAC12;&#xC774; &#xB2E4;&#xB974;&#xBA74; &#xBC18;&#xB4DC;&#xC2DC; &#xBCC4;&#xB3C4; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.<ul>
+<li>&#xBC31;&#xB9CC; &#xBE44;&#xD2B8; &#xC9DC;&#xB9AC; BigInteger&#xC5D0;&#xC11C; &#xAC12; 1&#xAC1C;&#xB9CC; &#xBC14;&#xAFD4;&#xC57C;&#xD55C;&#xB2E4;&#xD588;&#xC744;&#xB54C;, &#xC0C8; BigInteger&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294;&#xAC74; &#xB108;&#xBB34; &#xACFC;&#xD558;&#xB2E4;.<ul>
+<li>&#xC774; &#xACBD;&#xC6B0; BitSet&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; &#xC0C1;&#xC218;&#xC2DC;&#xAC04;&#xC548;&#xC5D0; &#xAC12;&#xC744; &#xBC14;&#xAFC0;&#xC218;&#xC788;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC5F0;&#xC0B0;&#xC774; &#xBCF5;&#xC7A1;&#xD558;&#xACE0;, &#xADF8; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBC84;&#xB824;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xB9CE;&#xB2E4;&#xBA74; &#xB354; &#xC2EC;&#xAC01;&#xD558;&#xB2E4;.<ul>
+<li>&#xC774; &#xACBD;&#xC6B0; &#xC790;&#xC8FC; &#xBC1C;&#xC0DD;&#xD560; &#xBC95;&#xD55C; &#xB2E4;&#xB2E8;&#xACC4; &#xC5F0;&#xC0B0;&#xC744; &#xC218;&#xD589;&#xD558;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xBBF8;&#xB9AC; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xB2E4;.</li>
+<li>BigInteger&#xC758; &#xACBD;&#xC6B0; &#xBAA8;&#xB4C8;&#xB7EC; &#xC9C0;&#xC218;&#xB97C; &#xACC4;&#xC0B0;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574; &#xAC00;&#xBCC0; &#xB3D9;&#xBC18; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.</li>
+<li>&#xC774;&#xB7F0; &#xB2E4;&#xB2E8;&#xACC4; &#xC5F0;&#xC0B0;&#xC744; &#xC608;&#xCE21;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6B4; &#xACBD;&#xC6B0; &#xAC00;&#xBCC0; &#xB3D9;&#xBC18; &#xD074;&#xB798;&#xC2A4;&#xB97C; public&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.<ul>
+<li>String&#xC758; &#xACBD;&#xC6B0; StringBuilder&#xAC00; &#xADF8; &#xC608;&#xC774;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-&#xBD88;&#xBCC0;-&#xAC1D;&#xCCB4;&#xB97C;-&#xC124;&#xACC4;&#xD558;&#xB294;-&#xB610;-&#xB2E4;&#xB978;-&#xBC29;&#xBC95;">#5. &#xBD88;&#xBCC0; &#xAC1D;&#xCCB4;&#xB97C; &#xC124;&#xACC4;&#xD558;&#xB294; &#xB610; &#xB2E4;&#xB978; &#xBC29;&#xBC95;</h4>
+<ul>
+<li>&#xD074;&#xB798;&#xC2A4;&#xAC00; &#xBD88;&#xBCC0;&#xC784;&#xC744; &#xBCF4;&#xC7A5;&#xD558;&#xB824;&#xBA74; &#xC790;&#xC2E0;&#xC744; &#xC0C1;&#xC18D;&#xBC1B;&#xC9C0; &#xBABB;&#xD558;&#xAC8C; &#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.<ul>
+<li>&#xC55E;&#xC11C; final&#xB97C; &#xD65C;&#xC6A9;&#xD55C; &#xBC29;&#xBC95;&#xC744; &#xC18C;&#xAC1C;&#xD588;&#xB2E4;.</li>
+<li>&#xB450; &#xBC88;&#xC9F8;&#xB294; &#xBAA8;&#xB4E0; &#xC0DD;&#xC131;&#xC790;&#xB97C; private, package-private&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xACE0; &#xC815;&#xC801; &#xD329;&#xD130;&#xB9AC;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-&#xC815;&#xB9AC;">#6. &#xC815;&#xB9AC;</h4>
+<ul>
+<li>Getter&#xAC00; &#xC788;&#xB2E4;&#xACE0; &#xD574;&#xC11C; &#xBB34;&#xC870;&#xAC74; Setter&#xB97C; &#xB9CC;&#xB4E4;&#xC9C0; &#xB9D0;&#xC790;</li>
+<li>&#xD074;&#xB798;&#xC2A4;&#xB294; &#xAF2D; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xBA74; &#xBD88;&#xBCC0;&#xC774;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;.</li>
+<li>&#xD558;&#xC9C0;&#xB9CC; String, BigInteger&#xC640; &#xAC19;&#xC774; &#xBB34;&#xAC70;&#xC6B4; &#xAC12; &#xAC1D;&#xCCB4;&#xC758; &#xACBD;&#xC6B0; &#xACE0;&#xBBFC;&#xD574;&#xBCF4;&#xC790;<ul>
+<li>&#xC774; &#xACBD;&#xC6B0; &#xC131;&#xB2A5; &#xC800;&#xD558;&#xB97C; &#xBC1B;&#xC544;&#xB0BC; &#xC218; &#xC788;&#xB294; &#xAC00;&#xBCC0; &#xB3D9;&#xBC18; &#xD074;&#xB798;&#xC2A4;&#xB97C; public&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xC790;</li>
+</ul>
+</li>
+<li>&#xBAA8;&#xB4E0; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xBD88;&#xBCC0;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC218;&#xB294; &#xC5C6;&#xB2E4;.<ul>
+<li>&#xD558;&#xC9C0;&#xB9CC; &#xBD88;&#xBCC0;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC218; &#xC5C6;&#xB354;&#xB77C;&#xB3C4; &#xBCC0;&#xACBD; &#xAC00;&#xB2A5;&#xD55C; &#xBD80;&#xBD84;&#xC744; &#xCD5C;&#xC18C;&#xB85C; &#xC904;&#xC774;&#xC790;.</li>
+<li>&#xAC1D;&#xCCB4;&#xAC00; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC788;&#xB294; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xC801;&#xC5B4;&#xC9C8; &#xC218;&#xB85D; &#xAC1D;&#xCCB4;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xC608;&#xCE21;&#xD558;&#xAE30; &#xC27D;&#xACE0; &#xC624;&#xB958;&#xAC00; &#xC0DD;&#xAE38; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xC801;&#xC5B4;&#xC9C4;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xB2E4;&#xB978; &#xD569;&#xB2F9;&#xD55C; &#xC774;&#xC720;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; &#xBAA8;&#xB4E0; &#xD544;&#xB4DC;&#xB294; private final&#xC774;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;.</li>
+<li>&#xC0DD;&#xC131;&#xC790;&#xB294; &#xBD88;&#xBCC0;&#xC2DD; &#xC124;&#xC815;&#xC774; &#xBAA8;&#xB450; &#xC644;&#xB8CC;&#xB41C; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xC644;&#xBCBD;&#xD788; &#xB05D;&#xB09C; &#xC0C1;&#xD0DC;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD574;&#xC57C;&#xD55C;&#xB2E4;.</li>
 </ul>
 
                                 
@@ -962,12 +1059,12 @@
 
             
                 
-                <a href="item15.html" class="navigation navigation-prev " aria-label="Previous page: 아이템15. 클래스와 멤버의 접근 권한을 최소화하라">
+                <a href="item16.html" class="navigation navigation-prev " aria-label="Previous page: 아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="item17.html" class="navigation navigation-next " aria-label="Next page: 아이템17. 변경 가능성을 최소화하라">
+                <a href="../../../frontend/" class="navigation navigation-next " aria-label="Next page: Frontend">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -978,7 +1075,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라","level":"1.2.1.3.2","depth":4,"next":{"title":"아이템17. 변경 가능성을 최소화하라","level":"1.2.1.3.3","depth":4,"path":"content/backend/effective-java-3e/chapter4/item17.md","ref":"content/backend/effective-java-3e/chapter4/item17.md","articles":[]},"previous":{"title":"아이템15. 클래스와 멤버의 접근 권한을 최소화하라","level":"1.2.1.3.1","depth":4,"path":"content/backend/effective-java-3e/chapter4/item15.md","ref":"content/backend/effective-java-3e/chapter4/item15.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/chapter4/item16.md","mtime":"2020-04-23T12:52:59.018Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T15:47:04.489Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"아이템17. 변경 가능성을 최소화하라","level":"1.2.1.3.3","depth":4,"next":{"title":"Frontend","level":"1.3","depth":1,"path":"content/frontend/index.md","ref":"content/frontend/index.md","articles":[]},"previous":{"title":"아이템16. public 클래스에서는 public 필드가 아닌 접근자 메소드를 사용하라","level":"1.2.1.3.2","depth":4,"path":"content/backend/effective-java-3e/chapter4/item16.md","ref":"content/backend/effective-java-3e/chapter4/item16.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapse","collapsible-menu"],"pluginsConfig":{"collapse":{},"collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"content/backend/effective-java-3e/chapter4/item17.md","mtime":"2020-05-06T15:46:41.596Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T15:47:04.489Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
